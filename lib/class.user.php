@@ -5,11 +5,22 @@ class User {
 	private $name;
 	private $password;
 	private $email;
-	private $db;
-	private $db_connect;
+	private $db = 'multiverse';
+	private $db_connect = 'mdata.iriscouch.com';
 	private $system_table = 'gb01';
+	require_once "../lib/couch.php";
+        require_once "../lib/couchClient.php";
+        require_once "../lib/couchDocument.php";
 	
-	//Connects to the database
+        function __construct($couch=null) {
+            if(!is_object($couch)){
+                $this->message = 'no database object supplied. Default will be used';
+                $this->couch = new couchClient($this->db_connect, $this->db);
+            }else{
+                $this->couch = $couch;
+            }
+            
+        }
 	function connect($database){
 		$this->db = new Database();
 		$this->db->connect();
@@ -18,9 +29,10 @@ class User {
 	}
 	
 	function register($name,$user_name,$password,$email) {
-		if ($this->db_connect != true) {
-			$this->connect($this->system_table);
-		}
+            $doc = stdClass();
+            $doc->name = $name;
+            $doc->user_name = $user_name;
+            $doc->password = $password;
 		$this->db->insert('user',array('name','user_name','password','email'),array($name,$user_name,$password,$email));
 		if($this->db->ress == true){
 			$this->message = $user_name."registered";
