@@ -1,0 +1,245 @@
+10
+
+dir
+2
+https://crystalserver.bpe.local:8443/svn/RPG/trunk/core/ckeditor/_source/plugins
+https://crystalserver.bpe.local:8443/svn/RPG
+
+
+
+2012-04-14T14:19:29.519270Z
+2
+sbarratt
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+07976434-aa9c-d645-b4b1-eba19bf90e9f
+
+
+
+
+
+
+0
+
+a11yhelp
+dir
+
+about
+dir
+
+basicstyles
+dir
+
+blockquote
+dir
+
+button
+dir
+
+clipboard
+dir
+
+colorbutton
+dir
+
+colordialog
+dir
+
+contextmenu
+dir
+
+dialog
+dir
+
+dialogui
+dir
+
+div
+dir
+
+domiterator
+dir
+
+editingblock
+dir
+
+elementspath
+dir
+
+enterkey
+dir
+
+entities
+dir
+
+fakeobjects
+dir
+
+filebrowser
+dir
+
+find
+dir
+
+flash
+dir
+
+floatpanel
+dir
+
+font
+dir
+
+format
+dir
+
+forms
+dir
+
+horizontalrule
+dir
+
+htmldataprocessor
+dir
+
+htmlwriter
+dir
+
+iframedialog
+dir
+
+image
+dir
+
+indent
+dir
+
+justify
+dir
+
+keystrokes
+dir
+
+link
+dir
+
+list
+dir
+
+listblock
+dir
+
+maximize
+dir
+
+menu
+dir
+
+menubutton
+dir
+
+newpage
+dir
+
+pagebreak
+dir
+
+panel
+dir
+
+panelbutton
+dir
+
+pastefromword
+dir
+
+pastetext
+dir
+
+popup
+dir
+
+preview
+dir
+
+print
+dir
+
+removeformat
+dir
+
+resize
+dir
+
+richcombo
+dir
+
+save
+dir
+
+scayt
+dir
+
+selection
+dir
+
+showblocks
+dir
+
+showborders
+dir
+
+smiley
+dir
+
+sourcearea
+dir
+
+specialchar
+dir
+
+styles
+dir
+
+stylescombo
+dir
+
+tab
+dir
+
+table
+dir
+
+tabletools
+dir
+
+templates
+dir
+
+toolbar
+dir
+
+uicolor
+dir
+
+undo
+dir
+
+wsc
+dir
+
+wysiwygarea
+dir
+

@@ -1,0 +1,1 @@
+<? echo '{serverTime: ' . date('c') .'}';?>

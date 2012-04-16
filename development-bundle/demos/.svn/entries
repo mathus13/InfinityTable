@@ -1,0 +1,107 @@
+10
+
+dir
+2
+https://crystalserver.bpe.local:8443/svn/RPG/trunk/development-bundle/demos
+https://crystalserver.bpe.local:8443/svn/RPG
+
+
+
+2012-04-14T14:19:29.519270Z
+2
+sbarratt
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+07976434-aa9c-d645-b4b1-eba19bf90e9f
+
+
+
+
+
+
+0
+
+accordion
+dir
+
+addClass
+dir
+
+animate
+dir
+
+autocomplete
+dir
+
+button
+dir
+
+datepicker
+dir
+
+dialog
+dir
+
+draggable
+dir
+
+droppable
+dir
+
+effect
+dir
+
+hide
+dir
+
+images
+dir
+
+position
+dir
+
+progressbar
+dir
+
+removeClass
+dir
+
+resizable
+dir
+
+selectable
+dir
+
+show
+dir
+
+slider
+dir
+
+sortable
+dir
+
+switchClass
+dir
+
+tabs
+dir
+
+toggle
+dir
+
+toggleClass
+dir
+

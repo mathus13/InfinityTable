@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core
+END
+xml.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/xml.js
+END
+skins.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/skins.js
+END
+ckeditor.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/ckeditor.js
+END
+focusmanager.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/focusmanager.js
+END
+dtd.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/dtd.js
+END
+ui.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/ui.js
+END
+loader.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/loader.js
+END
+_bootstrap.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/_bootstrap.js
+END
+lang.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/lang.js
+END
+editor.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/editor.js
+END
+env.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/env.js
+END
+command.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/command.js
+END
+imagecacher.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/imagecacher.js
+END
+htmlparser.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/htmlparser.js
+END
+themes.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/themes.js
+END
+dataprocessor.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/dataprocessor.js
+END
+eventInfo.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/eventInfo.js
+END
+plugindefinition.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/plugindefinition.js
+END
+ckeditor_basic.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/ckeditor_basic.js
+END
+config.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/config.js
+END
+dom.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/dom.js
+END
+ajax.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/ajax.js
+END
+plugins.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/plugins.js
+END
+resourcemanager.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/resourcemanager.js
+END
+commanddefinition.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/commanddefinition.js
+END
+scriptloader.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/scriptloader.js
+END
+editor_basic.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/editor_basic.js
+END
+ckeditor_base.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/ckeditor_base.js
+END
+tools.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/tools.js
+END
+event.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/RPG/!svn/ver/2/trunk/core/ckeditor/_source/core/event.js
+END
