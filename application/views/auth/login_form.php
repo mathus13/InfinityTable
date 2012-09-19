@@ -31,6 +31,7 @@ $captcha = array(
 	'maxlength'	=> 8,
 );
 ?>
+<div class="ui-widget ui-widget-content ui-corner-all" style="margin:15%;">
 <?php echo form_open($this->uri->uri_string()); ?>
 <table>
 	<tr>
@@ -85,9 +86,21 @@ $captcha = array(
 			<?php echo form_checkbox($remember); ?>
 			<?php echo form_label('Remember me', $remember['id']); ?>
 			<?php echo anchor('/auth/forgot_password/', 'Forgot password'); ?>
-			<?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', 'Register'); ?>
+			<?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', 'Register','class="reg_link"'); ?>
 		</td>
 	</tr>
 </table>
 <?php echo form_submit('submit', 'Let me in'); ?>
 <?php echo form_close(); ?>
+</div>
+<script>
+		$('a.reg_link').click(function(){
+			var url = $(this).attr('href');
+			$('#content').fadeOut(function(){
+				$.post(url,function(data){
+					$('#content').html(data).fadeIn();
+				});
+			});
+			return false;
+		});
+</script>

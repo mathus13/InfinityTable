@@ -11,6 +11,10 @@ class Auth extends CI_Controller
 		$this->load->library('security');
 		$this->load->library('tank_auth');
 		$this->lang->load('tank_auth');
+		$this->assets['css'][]='vader/jquery-ui-1.8.5.custom.css';
+		$this->assets['css'][]='test.css';
+		$this->assets['js'][]='jquery.js';
+		$this->assets['js'][]='jquery-ui-1.8.5.custom.min.js';
 	}
 
 	function index()
@@ -92,7 +96,9 @@ class Auth extends CI_Controller
 					$data['captcha_html'] = $this->_create_captcha();
 				}
 			}
-			$this->load->view('auth/login_form', $data);
+			$data['content']=$this->load->view('auth/login_form',$data,true);
+			$data['head'] = $this->assets;
+			$this->load->view('includes/index', $data);
 		}
 	}
 
@@ -188,7 +194,16 @@ class Auth extends CI_Controller
 			$data['use_username'] = $use_username;
 			$data['captcha_registration'] = $captcha_registration;
 			$data['use_recaptcha'] = $use_recaptcha;
-			$this->load->view('auth/register_form', $data);
+			if($this->input->is_ajax_request()){
+				$this->load->view('auth/register_form', $data);
+			}else{
+				$data['content']=$this->load->view('auth/login_form',$data,true);
+				$data['head'] = $this->assets;
+				$this->load->view('includes/index', $data);
+				$this->load->view('auth/register_form', $data);
+				
+			}
+			
 		}
 	}
 

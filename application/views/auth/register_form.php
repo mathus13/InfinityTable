@@ -35,6 +35,8 @@ $captcha = array(
 	'maxlength'	=> 8,
 );
 ?>
+
+<div id="reg_form" class="ui-widget ui-widget-content ui-corner-all" style="margin:15%;">
 <?php echo form_open($this->uri->uri_string()); ?>
 <table>
 	<?php if ($use_username) { ?>
@@ -98,3 +100,14 @@ $captcha = array(
 </table>
 <?php echo form_submit('register', 'Register'); ?>
 <?php echo form_close(); ?>
+</div>
+<script>
+	$('form').submit(function(){
+		var url = $(this).attr('action');
+		var data = $(this).serialize();
+		$.post(url,data,function(data){
+			$('#reg_form').html(data);
+		});
+		return false;
+	});
+</script>

@@ -52,7 +52,7 @@ $autoload['packages'] = array(APPPATH.'third_party');
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database','javascript','firephp','assets','session','tank_auth');
+$autoload['libraries'] = array('database','firephp','session','tank_auth','couchdb');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database','javascript','firephp','assets','sessi
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url','form');
+$autoload['helper'] = array('url','form','html','couch_helper');
 
 
 /*
