@@ -19,7 +19,24 @@ class Groups{
 		$group = $this->couchdb->getDoc($groupId);
 		$group->members[] = $user;
 		$this->couchdb->storeDoc($group);
+		$data['group'] = $this->tank_auth->getProfile($user,'group');
+		$data['group'][]=$groupId;
+		$resp = $this->tank_auth->setProfileData($user,$data);
+		return $resp->ok;
+	}
+	public function leaveGroup($user,$groupId){
+		$group = $this->couchdb->getDoc($groupId);
+		$keys = array_flip($group->members);
+		$mem = $keys[$user];
+		unset($group->members[$mem]);
+		$this->couchdb->storeDoc($group);
 		
+		$data['group'] = $this->tank_auth->getProfile($user,'group');
+		$keys = array_flip($data['group']);
+		$gr = $keys[$groupId];
+		unset($data['group'][$gr]);
+		$resp = $this->tank_auth->setProfileData($user,$data);
+		return $resp->ok;
 	}
 	public function deleteGroup($data){
 		$data['state']='deleted';

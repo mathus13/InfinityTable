@@ -187,6 +187,7 @@ class Tank_auth
 			if (!is_null($res = $this->ci->users->create_user($data, !$email_activation))) {
 				$data['user_id'] = $res['user_id'];
 				$data['password'] = $password;
+				$this->makeProfile($data);
 				unset($data['last_ip']);
 				return $data;
 			}
@@ -479,6 +480,7 @@ class Tank_auth
 			if ($hasher->CheckPassword($password, $user->password)) {			// success
 
 				$this->ci->users->delete_user($user_id);
+				$this->deleteProfile($user->username);
 				$this->logout();
 				return TRUE;
 
@@ -638,6 +640,37 @@ class Tank_auth
 					$login,
 					$this->ci->config->item('login_attempt_expire', 'tank_auth'));
 		}
+	}
+	
+	private function makeProfile($data){
+		$profile = new stdClass();
+		$profile->_id = $data->username;
+		$profile->created = date('c');
+		$profile->last_updated = date('c');
+		$profile->type = 'profile';
+		$resp = $this->couchdb->storeDoc($profile);
+		return $resp;
+	}
+	private function deleteProfile($login){
+		$resp = $this->couchdb->deleteDoc($login);
+		return $resp;
+	}
+	public function getProfile($login,$field = false){
+		$profile = $this->couchdb->getDoc($login);
+		if($field){
+			return $profile->$field;
+		}else{
+			return $profile;
+		}
+		
+	}
+	public function setProfileData($login,$data){
+		$profile = $this->couchdb->getDoc($login);
+		foreach($data as $k=>$v){
+			$profile->$k = $v;
+		}
+		$resp = $this->couchdb->storeDoc($profile);
+		return $resp;
 	}
 }
 
