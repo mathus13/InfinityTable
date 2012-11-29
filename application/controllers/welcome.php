@@ -5,34 +5,26 @@ class Welcome extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		if (!$this->tank_auth->is_logged_in()) {
+		if (!$this->bitauth->logged_in()) {
 			redirect('/auth/login/');
-		}
+			
+        }
+		$this->load->library('characters');
 	}
 
 	function index()
 	{
-		$this->assets->load('jquery-ui-1.8.5.custom.css','dark-hive');
-		$this->assets->load('test.css');
-		$this->assets->load('jquery.js');
-		$this->assets->load('jquery-ui-1.8.5.custom.min.js');
-		$this->assets->load('global.js');
-		$data['head'] = $this->assets->display_header_assets();
-		$data['user_id']	= $this->tank_auth->get_user_id();
-		$data['username']	= $this->tank_auth->get_username();
-		$query = $this->db->get_where('character',array('userID'=>$data['user_id']));
-		$data['characters'] = $query->result_array();
-		$query = $this->db->get_where('user_profiles',array('user_id'=>$data['user_id']));
-		$data['profile'] = $query->result_array();
-		$this->db->where_in('members',$data['user_id']);
-		$query = $this->db->get('group');
-		$data['groups'] = $query->result_array();
-		/*
-		$this->db->where_in('members',$data['user_id']);
-		$query = $this->db->get('chronical');
-		$data['chronicals'] = $query->result_array();
-		*/
-		$this->load->view('welcome', $data);
+		$this->assets['css'][]='vader/jquery-ui-1.8.5.custom.css';
+		$this->assets['css'][]='test.css';
+		$this->assets['js'][]='jquery.js';
+		$this->assets['js'][]='jquery-ui-1.8.5.custom.min.js';
+		//echo '<pre>'.htmlspecialchars(var_export($this->session->all_userdata(),true)).'</pre>';
+		$data['head'] = $this->assets;
+		$data['user_id']	= $this->session->userdata('ba_user_id');
+		$data['characters'] = $this->characters->getCharactersByUser($data['user_id']);
+		$data['profile'] = $this->session->all_userdata();
+		$data['content'] = 'welcome';
+		$this->load->view('includes/index', $data);
 	}
 }
 

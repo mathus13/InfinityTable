@@ -648,15 +648,16 @@ class Tank_auth
 		$profile->created = date('c');
 		$profile->last_updated = date('c');
 		$profile->type = 'profile';
-		$resp = $this->couchdb->storeDoc($profile);
+		$profile->group = array();
+		$resp = $this->ci->couchdb->storeDoc($profile);
 		return $resp;
 	}
 	private function deleteProfile($login){
-		$resp = $this->couchdb->deleteDoc($login);
+		$resp = $this->ci->couchdb->deleteDoc($login);
 		return $resp;
 	}
 	public function getProfile($login,$field = false){
-		$profile = $this->couchdb->getDoc($login);
+		$profile = $this->ci->couchdb->getDoc($login);
 		if($field){
 			return $profile->$field;
 		}else{
@@ -665,11 +666,11 @@ class Tank_auth
 		
 	}
 	public function setProfileData($login,$data){
-		$profile = $this->couchdb->getDoc($login);
+		$profile = $this->ci->couchdb->getDoc($login);
 		foreach($data as $k=>$v){
 			$profile->$k = $v;
 		}
-		$resp = $this->couchdb->storeDoc($profile);
+		$resp = $this->ci->couchdb->storeDoc($profile);
 		return $resp;
 	}
 }

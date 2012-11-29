@@ -1,18 +1,21 @@
 <?php
 class Characters{
 	public function __construct(){
-		$this->couchdb->useDatabase('multiverse');
+		// Get CI instance
+		$this->ci =& get_instance();
+		
+		$this->ci->couchdb->useDatabase('multiverse');
 	}
 	public function newCharacter($data){
 		$char = new stdClass();
 		$doc = $this->couch_helper($char,$data);
-		$resp = $this->couchdb->storeDoc($doc);
+		$resp = $this->ci->couchdb->storeDoc($doc);
 		return $resp;
 	}
 	public function updateCharacter($data){
-		$char = $this->couchdb->getDoc($data->_id);
-		$doc = $this->couch_helper($char,$data);
-		$resp = $this->couchdb->storeDoc($doc);
+		$char = $this->ci->couchdb->getDoc($data->_id);
+		$doc = $this->ci->couch_helper($char,$data);
+		$resp = $this->ci->couchdb->storeDoc($doc);
 		return $resp;
 	}
 	public function deleteCharacter($data){
@@ -21,25 +24,25 @@ class Characters{
 		
 	}
 	public function getCharactersByUser($user){
-		$list = $this->couchdb->key($user)->asArray()->getView('character','user');
-		$list = $this->couch_helper->reduce($list);
+		$list = $this->ci->couchdb->key($user)->asArray()->getView('characters','user');
+		$list = reduce($list);
 		return $list;
 	}
 	public function getCharactersByGame($game){
-		$list = $this->couchdb->key($game)->asArray()->getView('character','game');
-		$list = $this->couch_helper->reduce($list);
+		$list = $this->ci->couchdb->key($game)->asArray()->getView('characters','game');
+		$list = reduce($list);
 		return $list;
 		
 	}
 	public function deleted(){
-		$list = $this->couchdb->asArray()->getView('character','delted');
-		$list = $this->couch_helper->reduce($list);
+		$list = $this->ci->couchdb->asArray()->getView('characters','delted');
+		$list = reduce($list);
 		return $list;
 		
 	}
 	public function publicCharacters(){
-		$list = $this->couchdb->asArray()->getView('character','public');
-		$list = $this->couch_helper->reduce($list);
+		$list = $this->ci->couchdb->asArray()->getView('characters','public');
+		$list = reduce($list);
 		return $list;
 	}
 }

@@ -1,7 +1,7 @@
 <html>
 <?php $this->load->view('header');?>
 <body>
-    <div id="navbar" class="ui-widget-header nav-headbar"><?php $this->load->view('nav');?></div>
+    
 <div id="container">
 	<ul>
 		<li><a href="#profile">Profile</a></li>
