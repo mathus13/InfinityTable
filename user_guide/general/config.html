@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BitAuth User Guide : Configuration</title>
+
+<style type='text/css' media='all'>@import url('../userguide.css');</style>
+<link rel='stylesheet' type='text/css' media='all' href='../userguide.css' />
+
+<script type="text/javascript" src="../nav/nav.js"></script>
+<script type="text/javascript" src="../nav/prototype.lite.js"></script>
+<script type="text/javascript" src="../nav/moo.fx.js"></script>
+<script type="text/javascript" src="../nav/user_guide_menu.js"></script>
+
+<meta http-equiv='expires' content='-1' />
+<meta http-equiv= 'pragma' content='no-cache' />
+<meta name='robots' content='all' />
+<meta name='author' content='Dan Montgomery' />
+<meta name='description' content='BitAuth User Guide' />
+
+</head>
+<body>
+
+
+<!-- START NAVIGATION -->
+<div id="nav"><div id="nav_inner"><script type="text/javascript">create_menu('../');</script></div></div>
+<div id="nav2"><a name="top"></a><a href="javascript:void(0);" onclick="myHeight.toggle();"><img src="../images/nav_toggle_darker.jpg" width="154" height="43" border="0" title="Toggle Table of Contents" alt="Toggle Table of Contents" /></a></div>
+<div id="masthead">
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+<tr>
+<td><h1>BitAuth User Guide Version 1.0</h1></td>
+<td id="breadcrumb_right"><a href="../toc.html">Table of Contents</a></td>
+</tr>
+</table>
+</div>
+<!-- END NAVIGATION -->
+
+
+<!-- START BREADCRUMB -->
+
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+<tr>
+<td id="breadcrumb">
+<a href="http://dmontgomery.net/code/codeigniter-bitauth/">BitAuth</a> &nbsp;&#8250;&nbsp;
+<a href="../index.html">User Guide Home</a> &nbsp;&#8250;&nbsp;
+BitAuth Configuration
+</td>
+</tr>
+</table>
+<!-- END BREADCRUMB -->
+
+<br clear="all" />
+
+<!-- START CONTENT -->
+<div id="content">
+<h1>Configuration</h1>
+
+<p>BitAuth has the following configuration options available:</p>
+
+<table cellpadding="0" cellspacing="1" border="0" style="width:100%" class="tableborder">
+<tr>
+	<th>Config</th>
+	<th width="15%">Default&nbsp;Value</th>
+	<th>Options</th>
+	<th width="60%">Description</th>
+</tr>
+<tr>
+	<td class="td"><strong>require_user_activation</strong></td>
+	<td class="td"><var>TRUE</var></td>
+	<td class="td"><var>TRUE</var>, <var>FALSE</var></td>
+	<td class="td"><p>If set to <var>TRUE</var>, users must be activated before they are able to login.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>default_group_id</strong></td>
+	<td class="td">2</td>
+	<td class="td">Any Existing Group ID</td>
+	<td class="td"><p>The group_id of the default group users will be added to when they register. NOTE: This group's roles will not be inherited by the user until they are activated.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>remember_token_name</strong></td>
+	<td class="td">rememberme</td>
+	<td class="td">&nbsp;</td>
+	<td class="td"><p>Name of the cookie where the "Remember Me" token is stored. This value is prefixed with cookie_prefix value in config.php, if one is set.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>remember_token_expires</strong></td>
+	<td class="td">604800 (7 days)</td>
+	<td class="td">&nbsp;</td>
+	<td class="td"><p>Number of seconds that the "Remember Me" token lasts before expiring. Once this time has passed, the user will need to login again the next time they visit.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>remember_token_updates</strong></td>
+	<td class="td"><var>TRUE</var></td>
+	<td class="td"><var>TRUE</var>, <var>FALSE</var></td>
+	<td class="td"><p>If set to <var>TRUE</var>, the timer on the "Remember Me" token will reset every time this user revisits the site.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>pwd_max_age</strong></td>
+	<td class="td">90</td>
+	<td class="td">&nbsp;</td>
+	<td class="td"><p>Number of days a password is valid for. Once this time has passed, a user cannot login, and must have their password reset by an administrator or through the "Forgot Password" page. To disable, set to <var>FALSE</var>.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>pwd_age_notification</strong></td>
+	<td class="td">7</td>
+	<td class="td">&nbsp;</td>
+	<td class="td"><p>Number of days before password expiration that a user is notified. Once inside this number of days, the user will be directed to a form to change their password every time they login automatically. To disable, set to <var>FALSE</var>.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>pwd_min_length</strong></td>
+	<td class="td">8</td>
+	<td class="td">&nbsp;</td>
+	<td class="td"><p>Minimum required length of passwords. To disable, set to <var>FALSE</var>.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>pwd_max_length</strong></td>
+	<td class="td">20</td>
+	<td class="td">&nbsp;</td>
+	<td class="td"><p>Maximum allowable length of passwords. To disable, set to <var>FALSE</var>.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>pwd_complexity</strong></td>
+	<td class="td">Uppercase: 1<br/>Numbers: 1<br/>Special Chars: 0</td>
+	<td class="td">&nbsp;</td>
+	<td class="td"><p>Minimum number of each type of character required for a password to valid. To disable requirements for any type of character, set that value to 0.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>pwd_complexity_chars</strong></td>
+	<td class="td">Uppercase: [[:upper:]]<br/>Numbers: [[:digit:]]<br/>Special Chars: [[:punct:]]<br/>Spaces: \s</td>
+	<td class="td">&nbsp;</td>
+	<td class="td"><p>The regular expression for each type of character. The default values should be language independent, so you should not need to change them.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>log_logins</strong></td>
+	<td class="td"><var>TRUE</var></td>
+	<td class="td"><var>TRUE</var>,<var>FALSE</var></td>
+	<td class="td"><p>Whether or not to log login attemps. Setting this to <var>FALSE</var> effectively disables locking out users from invalid login attemps.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>invalid_logins</strong></td>
+	<td class="td">3</td>
+	<td class="td">&nbsp;</td>
+	<td class="td"><p>How many invalid logins a user gets before they are locked out.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>mins_login_attempts</strong></td>
+	<td class="td">5</td>
+	<td class="td">&nbsp;</td>
+	<td class="td"><p>Number of minutes between invalid login attemps where a user will be locked out.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>mins_locked_out</strong></td>
+	<td class="td">10</td>
+	<td class="td">&nbsp;</td>
+	<td class="td"><p>Number of minutes before a locked account is unlocked.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>table</strong></td>
+	<td class="td">Users: bitauth_users<br/>Data: bitauth_userdata<br/>Groups: bitauth_groups<br/>Assoc: bitauth_assoc<br/>Logins: bitauth_logins</td>
+	<td class="td">&nbsp;</td>
+	<td class="td">
+		<p>The tables used by BitAuth. If you have changed these in your database, you should change them here.</p>
+		<ul>
+			<li>users: Where user information required by BitAuth is stored.</li>
+			<li>data: Where all optional user data is stored. Any custom fields you add go here.</li>
+			<li>groups: Where all group information is stored.</li>
+			<li>assoc: Where the relationships between users and groups are stored.</li>
+			<li>logins: Where login attempts are logged</li>
+		</ul>
+	</td>
+</tr>
+<tr>
+	<td class="td"><strong>phpass_iterations</strong></td>
+	<td class="td">8</td>
+	<td class="td">&nbsp;</td>
+	<td class="td"><p>Base-2 logarithm of the iteration count used for password stretching by Phpass. See: <a href="http://en.wikipedia.org/wiki/Key_strengthening">http://en.wikipedia.org/wiki/Key_strengthening</a>.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>phpass_portable</strong></td>
+	<td class="td"><var>FALSE</var></td>
+	<td class="td">&nbsp;</td>
+	<td class="td"><p>Require the hashes to be portable to older systems. If <var>FALSE</var>, phpass' preferred hashing method is CRYPT_BLOWFISH, with a fallback to CRYPT_EXT_DES, and then a final fallback to the "portable" hashes. See: <a href="http://www.openwall.com/articles/PHP-Users-Passwords">http://www.openwall.com/articles/PHP-Users-Passwords</a>.</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>date_format</strong></td>
+	<td class="td">Y-m-d H:i:s</td>
+	<td class="td">&nbsp;</td>
+	<td class="td"><p>What format BitAuth stores timestamps in. Defaults to the MySQL DATETIME format. To use unix timestamps, change this value to <var>'U'</var> (in addition to changing your DB structure).</p></td>
+</tr>
+<tr>
+	<td class="td"><strong>roles</strong></td>
+	<td class="td">&nbsp;</td>
+	<td class="td">&nbsp;</td>
+	<td class="td">
+		<p>This is where all of your roles are stored. There is only one role required by BitAuth, <dfn>admin</dfn>. This should always be the first listed.</p>
+		<p>You can read more about roles at <a href="../roles/creating.html">Creating Roles</a>.</p>
+	</td>
+</tr>
+
+
+</table>
+</div>
+<!-- END CONTENT -->
+
+
+<div id="footer">
+<p><a href="#top">Top of Page</a></p>
+</div>
+
+
+</body>
+</html>

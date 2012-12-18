@@ -1,6 +1,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title><?=$title?></title>
+	<title><?=isset($title)?$title:'RPG Multiverse'?></title>
 	<?php foreach($head['css'] as $css):
 		echo link_tag(base_url().'assets/css/'.$css);
 	endforeach;?>

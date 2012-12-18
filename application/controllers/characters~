@@ -1,7 +1,0 @@
-<?php
-class Characters extends CI_Controller {
-    function index(){
-        $this->load->view('character_list');
-    }
-}
-?>

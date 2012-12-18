@@ -1,5 +1,5 @@
 <?php
-class Characters{
+class Character_lib{
 	public function __construct(){
 		// Get CI instance
 		$this->ci =& get_instance();
