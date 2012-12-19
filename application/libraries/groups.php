@@ -3,6 +3,7 @@ class Groups{
 	public function __construct(){
 		$this->couchdb->useDatabase('multiverse');
 	}
+	
 	public function newGroup($data){
 		$char = new stdClass();
 		$doc = $this->couch_helper($char,$data);

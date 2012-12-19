@@ -4,15 +4,10 @@ class Characters extends CI_Controller {
 	{
 		parent::__construct();
 		if (!$this->tank_auth->is_logged_in()) {
+			$this->session->set_usserdata('redir',current_url());
 			redirect('/auth/login/');
-		}else{
-			
-			$this->assets->load('jquery-ui-1.8.5.custom.css','dark-hive');
-			$this->assets->load('test.css');
-			$this->assets->load('jquery.js');
-			$this->assets->load('jquery-ui-1.8.5.custom.min.js');
-			$this->assets->load('character.js');
 		}
+		$this->load->library('character');
 	}
     function index(){
         $user = $_SESSION['id'];
@@ -24,16 +19,16 @@ class Characters extends CI_Controller {
         }
         $this->load->view('character_list',$data);
     }
-    function new_form(){
-	$data['userID'] = $this->tank_auth->get_user_id();
-	$this->db->select('groups')->where->('user_id',$data['userID']);
-	if($query = $this->db->get('user_profiles')){
-            $res = $query->result();
-            if(strstr(',',$res)){
-               $groups = explode();
-            }
-        }
-	
+    function new_character(){
+    	if($form = $this->input->post()){
+    		unset($form['submit']);
+    		$id = $this->character_lib->newCharacter($form);
+    		exit(json_decode($id));
+    	}
+    	$data = array(
+    		'user_id' => $this->session->usedata('ba_userid');
+		);
+		
     }
 }
 ?>
