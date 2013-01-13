@@ -1,21 +1,88 @@
 <?php
+/**
+* Groups
+*
+* @uses     
+*
+* @category Category
+* @package  Package
+* @author    <>
+* @license  
+* @link     
+*/
 class Groups{
 	public function __construct(){
 		$this->couchdb->useDatabase('multiverse');
 	}
 	
+    /**
+     * get
+     * 
+     * @param mixed $id Description.
+     *
+     * @access public
+     *
+     * @return mixed Value.
+     */
+    public function get($id){
+        return $this->ci->couchdb->getDoc($id);
+    }
+
+    /**
+     * save
+     * 
+     * @param mixed $doc Description.
+     *
+     * @access public
+     *
+     * @return mixed Value.
+     */
+    public function save($doc){
+        return $this->save($doc);
+    }
+
+    /**
+     * newGroup
+     * 
+     * @param mixed $data Description.
+     *
+     * @access public
+     *
+     * @return mixed Value.
+     */
 	public function newGroup($data){
 		$char = new stdClass();
 		$doc = $this->couch_helper($char,$data);
 		$resp = $this->couchdb->storeDoc($doc);
 		return $resp;
 	}
+
+    /**
+     * updateGroup
+     * 
+     * @param mixed $data Description.
+     *
+     * @access public
+     *
+     * @return mixed Value.
+     */
 	public function updateGroup($data){
 		$char = $this->couchdb->getDoc($data->_id);
 		$doc = $this->couch_helper($char,$data);
 		$resp = $this->couchdb->storeDoc($doc);
 		return $resp;
 	}
+
+    /**
+     * addUser
+     * 
+     * @param mixed $user    Description.
+     * @param mixed $groupId Description.
+     *
+     * @access public
+     *
+     * @return mixed Value.
+     */
 	public function addUser($user,$groupId){
 		$group = $this->couchdb->getDoc($groupId);
 		$group->members[] = $user;
@@ -25,6 +92,17 @@ class Groups{
 		$resp = $this->tank_auth->setProfileData($user,$data);
 		return $resp->ok;
 	}
+
+    /**
+     * leaveGroup
+     * 
+     * @param mixed $user    Description.
+     * @param mixed $groupId Description.
+     *
+     * @access public
+     *
+     * @return mixed Value.
+     */
 	public function leaveGroup($user,$groupId){
 		$group = $this->couchdb->getDoc($groupId);
 		$keys = array_flip($group->members);

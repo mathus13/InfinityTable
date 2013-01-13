@@ -1,0 +1,229 @@
+--
+-- DbNinja v3.1.0 for MySQL
+--
+-- Dump date: 2013-01-13 19:06:31 (UTC)
+-- Server version: 5.5.28-0ubuntu0.12.10.2
+-- Database: gb01
+--
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8 */;
+
+DROP DATABASE IF EXISTS `gb01`;
+CREATE DATABASE `gb01` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `gb01`;
+
+--
+-- Structure for table: character
+--
+
+CREATE TABLE `character` (
+  `id` int(100) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `userID` int(40) NOT NULL,
+  `group` varchar(40) NOT NULL,
+  `data` longtext NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `closed` bit(1) NOT NULL,
+  `closed_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `note` longblob NOT NULL,
+  `bio` longblob NOT NULL,
+  `image` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+--
+-- Structure for table: ci_sessions
+--
+
+CREATE TABLE `ci_sessions` (
+  `session_id` varchar(40) COLLATE utf8_bin NOT NULL DEFAULT '0',
+  `ip_address` varchar(16) COLLATE utf8_bin NOT NULL DEFAULT '0',
+  `user_agent` varchar(150) COLLATE utf8_bin NOT NULL,
+  `last_activity` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_data` text COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`session_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+--
+-- Structure for table: group
+--
+
+CREATE TABLE `group` (
+  `id` mediumint(100) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `name` varchar(120) NOT NULL,
+  `moderator` int(11) NOT NULL,
+  `members` text NOT NULL,
+  `description` text NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+--
+-- Structure for table: login_attempts
+--
+
+CREATE TABLE `login_attempts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(40) COLLATE utf8_bin NOT NULL,
+  `login` varchar(50) COLLATE utf8_bin NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+--
+-- Structure for table: user_autologin
+--
+
+CREATE TABLE `user_autologin` (
+  `key_id` char(32) COLLATE utf8_bin NOT NULL,
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  `user_agent` varchar(150) COLLATE utf8_bin NOT NULL,
+  `last_ip` varchar(40) COLLATE utf8_bin NOT NULL,
+  `last_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`key_id`,`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+--
+-- Structure for table: user_profiles
+--
+
+CREATE TABLE `user_profiles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `country` varchar(20) COLLATE utf8_bin DEFAULT NULL,
+  `website` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `groups` varchar(100) COLLATE utf8_bin NOT NULL,
+  `characters` varchar(100) COLLATE utf8_bin NOT NULL,
+  `chronicals` varchar(100) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_id` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+--
+-- Structure for table: users
+--
+
+CREATE TABLE `users` (
+  `id` int(11) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) COLLATE utf8_bin NOT NULL,
+  `password` varchar(255) COLLATE utf8_bin NOT NULL,
+  `email` varchar(100) COLLATE utf8_bin NOT NULL,
+  `activated` tinyint(1) NOT NULL DEFAULT '1',
+  `banned` tinyint(1) NOT NULL DEFAULT '0',
+  `ban_reason` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `new_password_key` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `new_password_requested` datetime DEFAULT NULL,
+  `new_email` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `new_email_key` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `last_ip` varchar(40) COLLATE utf8_bin NOT NULL,
+  `last_login` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+--
+-- Data for table: character
+-- Table contains no data
+--
+
+--
+-- Data for table: ci_sessions
+--
+
+LOCK TABLES `ci_sessions` WRITE;
+ALTER TABLE `ci_sessions` DISABLE KEYS;
+INSERT INTO `ci_sessions` 
+	(`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) 
+VALUES 
+	(X'3035303437613832356430623162633664323138656664636333343836373437', X'3132372e302e302e31', X'4d6f7a696c6c612f352e3020285831313b204c696e7578207838365f363429204170706c655765624b69742f3533372e3420', 1358047374, X''),
+	(X'3939333639313134313235656162323965643738383232303762353766633365', X'3132372e302e302e31', X'4d6f7a696c6c612f352e30202857696e646f7773204e5420362e313b20574f5736343b2072763a31312e3029204765636b6f', 1337225820, X''),
+	(X'6135313130623139653133323736613634393930323934343535666336646163', X'3132372e302e302e31', X'4d6f7a696c6c612f352e3020285831313b204c696e7578206936383629204170706c655765624b69742f3533352e3220284b', 1327277662, X'613a333a7b733a373a22757365725f6964223b733a31313a223030303030303030303031223b733a383a22757365726e616d65223b733a383a226d61746875733133223b733a363a22737461747573223b733a313a2231223b7d');
+ALTER TABLE `ci_sessions` ENABLE KEYS;
+UNLOCK TABLES;
+COMMIT;
+
+--
+-- Data for table: group
+-- Table contains no data
+--
+
+--
+-- Data for table: login_attempts
+--
+
+LOCK TABLES `login_attempts` WRITE;
+ALTER TABLE `login_attempts` DISABLE KEYS;
+INSERT INTO `login_attempts` 
+	(`id`, `ip_address`, `login`, `time`) 
+VALUES 
+	(1, X'3132372e302e302e31', X'536362', '2012-01-22 15:04:28');
+ALTER TABLE `login_attempts` ENABLE KEYS;
+UNLOCK TABLES;
+COMMIT;
+
+--
+-- Data for table: user_autologin
+--
+
+LOCK TABLES `user_autologin` WRITE;
+ALTER TABLE `user_autologin` DISABLE KEYS;
+INSERT INTO `user_autologin` 
+	(`key_id`, `user_id`, `user_agent`, `last_ip`, `last_login`) 
+VALUES 
+	(X'6163393436353537633266643238646138323730353433653666316237356234', 1, X'4d6f7a696c6c612f352e3020285831313b204c696e757820693638363b2072763a352e3029204765636b6f2f32303130303130312046697265666f782f352e30', X'3132372e302e302e31', '2011-08-14 11:10:21'),
+	(X'6165326335323237316339316234663734646538663533616336343837656430', 1, X'4d6f7a696c6c612f352e30202857696e646f7773204e5420362e313b20574f57363429204170706c655765624b69742f3533352e3120284b48544d4c2c206c696b65204765636b6f29204368726f6d652f31332e302e3738322e3535205361666172692f3533352e31', X'31302e31302e332e37', '2011-07-19 04:01:45'),
+	(X'6532656461646638643835383137613736643235616365316630376439353236', 1, X'4d6f7a696c6c612f352e3020285831313b204c696e757820693638363b2072763a372e302e3129204765636b6f2f32303130303130312046697265666f782f372e302e3120466972655048502f302e36', X'302e302e302e30', '2011-10-03 16:08:38');
+ALTER TABLE `user_autologin` ENABLE KEYS;
+UNLOCK TABLES;
+COMMIT;
+
+--
+-- Data for table: user_profiles
+--
+
+LOCK TABLES `user_profiles` WRITE;
+ALTER TABLE `user_profiles` DISABLE KEYS;
+INSERT INTO `user_profiles` 
+	(`id`, `user_id`, `country`, `website`, `groups`, `characters`, `chronicals`) 
+VALUES 
+	(1, 1, X'555341', X'687474703a2f2f657468657265616c766973696f6e7370686f746f6772617068792e636f6d', X'303030303030303030312c30303030303030303032', X'', X'');
+ALTER TABLE `user_profiles` ENABLE KEYS;
+UNLOCK TABLES;
+COMMIT;
+
+--
+-- Data for table: users
+--
+
+LOCK TABLES `users` WRITE;
+ALTER TABLE `users` DISABLE KEYS;
+INSERT INTO `users` 
+	(`id`, `username`, `password`, `email`, `activated`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`) 
+VALUES 
+	(00000000001, X'6d61746875733133', X'243261243038242f7153393857574d5150764862416651587839675665446651765873347355794557764b4b314d7377587047796b69643471695969', X'6d6174687573313340676d61696c2e636f6d', 1, 0, NULL, NULL, NULL, NULL, X'6561306534316235333865633235353937623936623561313765376435626238', X'3132372e302e302e31', '2012-01-22 18:06:37', '2011-07-09 17:42:34', '2012-01-22 15:06:37');
+ALTER TABLE `users` ENABLE KEYS;
+UNLOCK TABLES;
+COMMIT;
+
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+

@@ -42,9 +42,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'admin';
-$db['default']['password'] = 'PDyb4xd5Q2c4mhuU';
-$db['default']['database'] = 'multiverse';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'Incossa13';
+$db['default']['database'] = 'gb01';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
