@@ -5,8 +5,8 @@ $nav = isset($nav)?$nav:'nav';
 <html>
 	<?php $this->load->view('includes/header');?>
 	<body>
+		<?php $this->load->view($nav);?>
 		<div id="container">
-			<?php $this->load->view($nav);?>
 			<div id="content">
 				<?=$content?>
 			</div>

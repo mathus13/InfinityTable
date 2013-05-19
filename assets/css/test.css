@@ -29,7 +29,8 @@ body{
 nav.nav-headbar{
 	margin:5px auto;
 	padding:0;	
-	max-width:615px;
+	min-width:615px;
+	width:100%;
 	min-height:20px;
 	box-shadow: 0 5px 5px -5px white;
 	

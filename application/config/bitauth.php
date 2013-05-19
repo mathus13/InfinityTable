@@ -1,4 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+* Authentication can be handled either in MySQL or CouchDB
+* Options: 
+* 'CouchDB': CouchDB NoSQL Server
+* 'MySQL': MySQL Server
+*/
+$config['db'] = 'MySQL';
+
 
 /**
  * Users must be activated before they can login
