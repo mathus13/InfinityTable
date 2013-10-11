@@ -7,9 +7,10 @@ body{
 }
 #container{
 	width:90%;
-	max-width:1200px;
+	max-width:1400px;
 	min-width:500px;
-	min-height:80%;
+	min-height:400px;
+	height:75%;
 	margin:20px auto;
 	padding:5px;
 	border-radius:10px;
@@ -27,7 +28,7 @@ body{
 }
     
 nav.nav-headbar{
-	margin:5px auto;
+	margin:0 auto;
 	padding:0;	
 	min-width:615px;
 	width:100%;
@@ -60,7 +61,12 @@ nav.nav-headbar li{
     position:relative;
 }
 #footer{
-    bottom:0px;
+    bottom:-10px;
     width:100%;
-    position:absolute;
+    position:fixed;
+}
+div.foot{
+    min-height: 80px;
+    width:100%;
+
 }

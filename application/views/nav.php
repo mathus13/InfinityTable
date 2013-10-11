@@ -1,5 +1,5 @@
 
-<nav class="ui-corner-all ui-state-default nav-headbar">
+<nav class="ui-state-default nav-headbar">
 	<div style="margin:0 auto">
 		<ul>
 			<li class="<?=($current_url='welcome'?'ui-state-active':'ui-state-default')?>">
