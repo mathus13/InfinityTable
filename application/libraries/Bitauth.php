@@ -35,6 +35,7 @@ class Bitauth
 	public $_mins_locked_out;
 	public $_date_format;
 	public $_cookie_elem_prefix = 'ba_';
+	public $authUser;
 
 	private $_all_roles;
 	private $_error;
@@ -81,6 +82,7 @@ class Bitauth
 		if($this->logged_in())
 		{
 			$this->get_session_values();
+			$this->authUser = $this->get_user($this->user_id);
 		}
 		else if($this->input->cookie($this->config->item('cookie_prefix').$this->_remember_token_name))
 		{
@@ -158,6 +160,10 @@ class Bitauth
 
 				// Update last login timestamp and IP
 				$this->update_user($user->user_id, $data);
+				
+				//set session user
+				
+				$this->authUser = $user;
 
 				$this->log_attempt($user->user_id, TRUE);
 				return TRUE;
