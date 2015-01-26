@@ -1,3 +1,6 @@
 [submodule "RPG-Multiverse"]
 	path = RPG-Multiverse
 	url = git://github.com/fuel/fuel.git
+[submodule "fuel/vendor/psr/log"]
+	path = fuel/vendor/psr/log
+	url = git://github.com/php-fig/log.git
