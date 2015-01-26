@@ -1,0 +1,3 @@
+[submodule "RPG-Multiverse"]
+	path = RPG-Multiverse
+	url = git://github.com/fuel/fuel.git
