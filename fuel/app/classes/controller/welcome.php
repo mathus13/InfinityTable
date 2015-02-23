@@ -8,7 +8,7 @@
  * @license    MIT License
  * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
- */
+ **/
 
 /**
  * The Welcome Controller.
@@ -18,7 +18,7 @@
  *
  * @package  app
  * @extends  Controller
- */
+ **/
 class Controller_Welcome extends Controller
 {
 

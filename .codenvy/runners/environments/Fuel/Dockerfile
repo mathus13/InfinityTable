@@ -4,7 +4,8 @@
 # You can browse our images in Docker Hub or at
 # github.com/codenvy/dockerfiles. The shellinabox image
 # provides core Linux utilities and terminal access to runner.
-FROM codenvy/shellinabox
+FROM codenvy/php56_apache2
+VOLUME ["/var/www/html"]
 
 # Codenvy uses this port to map IDE clients to the output of
 # your application executing within the Runner. Set these
@@ -58,4 +59,3 @@ FROM codenvy/shellinabox
 # your Dockerfile launches a server or daemon, like Tomcat,
 # you do not need to set this value as Docker will not
 # terminate until that process has finished.
-CMD sleep 365d
