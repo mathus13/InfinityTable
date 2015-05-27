@@ -1,0 +1,833 @@
+[
+    {
+        "name": "fuelphp/upload",
+        "version": "2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fuelphp/upload.git",
+            "reference": "6310108de98ffdbf1083612db5b15411fc140c90"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fuelphp/upload/zipball/6310108de98ffdbf1083612db5b15411fc140c90",
+            "reference": "6310108de98ffdbf1083612db5b15411fc140c90",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "mockery/mockery": "0.7.*"
+        },
+        "time": "2013-10-11 21:42:58",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Fuel\\Upload": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "FuelPHP Development Team",
+                "email": "team@fuelphp.com"
+            }
+        ],
+        "description": "Uploaded file processing.",
+        "homepage": "https://github.com/fuelphp/upload",
+        "keywords": [
+            "file uploads",
+            "upload"
+        ]
+    },
+    {
+        "name": "monolog/monolog",
+        "version": "1.5.0",
+        "version_normalized": "1.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Seldaek/monolog.git",
+            "reference": "583618d5cd2115a52101694aca87afb182b3e567"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/583618d5cd2115a52101694aca87afb182b3e567",
+            "reference": "583618d5cd2115a52101694aca87afb182b3e567",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "psr/log": "~1.0"
+        },
+        "require-dev": {
+            "doctrine/couchdb": "dev-master",
+            "mlehner/gelf-php": "1.0.*",
+            "raven/raven": "0.3.*"
+        },
+        "suggest": {
+            "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+            "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+            "ext-mongo": "Allow sending log messages to a MongoDB server",
+            "mlehner/gelf-php": "Allow sending log messages to a GrayLog2 server",
+            "raven/raven": "Allow sending log messages to a Sentry server"
+        },
+        "time": "2013-04-23 10:09:48",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Monolog": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jordi Boggiano",
+                "email": "j.boggiano@seld.be",
+                "homepage": "http://seld.be",
+                "role": "Developer"
+            }
+        ],
+        "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+        "homepage": "http://github.com/Seldaek/monolog",
+        "keywords": [
+            "log",
+            "logging",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "michelf/php-markdown",
+        "version": "1.4.0",
+        "version_normalized": "1.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/michelf/php-markdown.git",
+            "reference": "96d8150406f67e683ef4acc09fef91785fef1266"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/michelf/php-markdown/zipball/96d8150406f67e683ef4acc09fef91785fef1266",
+            "reference": "96d8150406f67e683ef4acc09fef91785fef1266",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2013-11-29 17:09:24",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-lib": "1.4.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Michelf": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Michel Fortin",
+                "email": "michel.fortin@michelf.ca",
+                "homepage": "http://michelf.ca/",
+                "role": "Developer"
+            },
+            {
+                "name": "John Gruber",
+                "homepage": "http://daringfireball.net/"
+            }
+        ],
+        "description": "PHP Markdown",
+        "homepage": "http://michelf.ca/projects/php-markdown/",
+        "keywords": [
+            "markdown"
+        ]
+    },
+    {
+        "name": "psr/log",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+            "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+            "shasum": ""
+        },
+        "time": "2012-12-21 11:40:51",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Psr\\Log\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for logging libraries",
+        "keywords": [
+            "log",
+            "psr",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "symfony/routing",
+        "version": "v2.6.3",
+        "version_normalized": "2.6.3.0",
+        "target-dir": "Symfony/Component/Routing",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Routing.git",
+            "reference": "28382c6806780ddc657c136a5ca4415dd3252f41"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Routing/zipball/28382c6806780ddc657c136a5ca4415dd3252f41",
+            "reference": "28382c6806780ddc657c136a5ca4415dd3252f41",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "doctrine/annotations": "~1.0",
+            "doctrine/common": "~2.2",
+            "psr/log": "~1.0",
+            "symfony/config": "~2.2",
+            "symfony/expression-language": "~2.4",
+            "symfony/http-foundation": "~2.3",
+            "symfony/yaml": "~2.0,>=2.0.5"
+        },
+        "suggest": {
+            "doctrine/annotations": "For using the annotation loader",
+            "symfony/config": "For using the all-in-one router or any loader",
+            "symfony/expression-language": "For using expression matching",
+            "symfony/yaml": "For using the YAML loader"
+        },
+        "time": "2015-01-05 14:28:40",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Routing\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Symfony Routing Component",
+        "homepage": "http://symfony.com",
+        "keywords": [
+            "router",
+            "routing",
+            "uri",
+            "url"
+        ]
+    },
+    {
+        "name": "symfony/http-foundation",
+        "version": "v2.6.3",
+        "version_normalized": "2.6.3.0",
+        "target-dir": "Symfony/Component/HttpFoundation",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/HttpFoundation.git",
+            "reference": "3f4ba2c658be910fe6cec46ed34ee900bd18bb01"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/3f4ba2c658be910fe6cec46ed34ee900bd18bb01",
+            "reference": "3f4ba2c658be910fe6cec46ed34ee900bd18bb01",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "symfony/expression-language": "~2.4"
+        },
+        "time": "2015-01-05 17:41:06",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\HttpFoundation\\": ""
+            },
+            "classmap": [
+                "Symfony/Component/HttpFoundation/Resources/stubs"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Symfony HttpFoundation Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/event-dispatcher",
+        "version": "v2.6.3",
+        "version_normalized": "2.6.3.0",
+        "target-dir": "Symfony/Component/EventDispatcher",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/EventDispatcher.git",
+            "reference": "40ff70cadea3785d83cac1c8309514b36113064e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/40ff70cadea3785d83cac1c8309514b36113064e",
+            "reference": "40ff70cadea3785d83cac1c8309514b36113064e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "~2.0,>=2.0.5",
+            "symfony/dependency-injection": "~2.6",
+            "symfony/expression-language": "~2.6",
+            "symfony/stopwatch": "~2.3"
+        },
+        "suggest": {
+            "symfony/dependency-injection": "",
+            "symfony/http-kernel": ""
+        },
+        "time": "2015-01-05 14:28:40",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\EventDispatcher\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Symfony EventDispatcher Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "guzzle/common",
+        "version": "v3.9.2",
+        "version_normalized": "3.9.2.0",
+        "target-dir": "Guzzle/Common",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/common.git",
+            "reference": "2e36af7cf2ce3ea1f2d7c2831843b883a8e7b7dc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/common/zipball/2e36af7cf2ce3ea1f2d7c2831843b883a8e7b7dc",
+            "reference": "2e36af7cf2ce3ea1f2d7c2831843b883a8e7b7dc",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2",
+            "symfony/event-dispatcher": ">=2.1"
+        },
+        "time": "2014-08-11 04:32:36",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Guzzle\\Common": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Common libraries used by Guzzle",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "collection",
+            "common",
+            "event",
+            "exception"
+        ]
+    },
+    {
+        "name": "guzzle/stream",
+        "version": "v3.9.2",
+        "version_normalized": "3.9.2.0",
+        "target-dir": "Guzzle/Stream",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/stream.git",
+            "reference": "60c7fed02e98d2c518dae8f97874c8f4622100f0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/stream/zipball/60c7fed02e98d2c518dae8f97874c8f4622100f0",
+            "reference": "60c7fed02e98d2c518dae8f97874c8f4622100f0",
+            "shasum": ""
+        },
+        "require": {
+            "guzzle/common": "self.version",
+            "php": ">=5.3.2"
+        },
+        "suggest": {
+            "guzzle/http": "To convert Guzzle request objects to PHP streams"
+        },
+        "time": "2014-05-01 21:36:02",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Guzzle\\Stream": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle stream wrapper component",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "Guzzle",
+            "component",
+            "stream"
+        ]
+    },
+    {
+        "name": "guzzle/parser",
+        "version": "v3.9.2",
+        "version_normalized": "3.9.2.0",
+        "target-dir": "Guzzle/Parser",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/parser.git",
+            "reference": "6874d171318a8e93eb6d224cf85e4678490b625c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/parser/zipball/6874d171318a8e93eb6d224cf85e4678490b625c",
+            "reference": "6874d171318a8e93eb6d224cf85e4678490b625c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "time": "2014-02-05 18:29:46",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Guzzle\\Parser": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Interchangeable parsers used by Guzzle",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "URI Template",
+            "cookie",
+            "http",
+            "message",
+            "url"
+        ]
+    },
+    {
+        "name": "guzzle/http",
+        "version": "v3.9.2",
+        "version_normalized": "3.9.2.0",
+        "target-dir": "Guzzle/Http",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/http.git",
+            "reference": "1e8dd1e2ba9dc42332396f39fbfab950b2301dc5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/http/zipball/1e8dd1e2ba9dc42332396f39fbfab950b2301dc5",
+            "reference": "1e8dd1e2ba9dc42332396f39fbfab950b2301dc5",
+            "shasum": ""
+        },
+        "require": {
+            "guzzle/common": "self.version",
+            "guzzle/parser": "self.version",
+            "guzzle/stream": "self.version",
+            "php": ">=5.3.2"
+        },
+        "suggest": {
+            "ext-curl": "*"
+        },
+        "time": "2014-08-11 04:32:36",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Guzzle\\Http": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "HTTP libraries used by Guzzle",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "Guzzle",
+            "client",
+            "curl",
+            "http",
+            "http client"
+        ]
+    },
+    {
+        "name": "evenement/evenement",
+        "version": "v2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/igorw/evenement.git",
+            "reference": "f6e843799fd4f4184d54d8fc7b5b3551c9fa803e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/igorw/evenement/zipball/f6e843799fd4f4184d54d8fc7b5b3551c9fa803e",
+            "reference": "f6e843799fd4f4184d54d8fc7b5b3551c9fa803e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2012-11-02 14:49:47",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Evenement": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Igor Wiedler",
+                "email": "igor@wiedler.ch",
+                "homepage": "http://wiedler.ch/igor/"
+            }
+        ],
+        "description": "Événement is a very simple event dispatching library for PHP",
+        "keywords": [
+            "event-dispatcher",
+            "event-emitter"
+        ]
+    },
+    {
+        "name": "react/stream",
+        "version": "v0.4.2",
+        "version_normalized": "0.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/stream.git",
+            "reference": "acc7a5fec02e0aea674560e1d13c40ed0c8c5465"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/stream/zipball/acc7a5fec02e0aea674560e1d13c40ed0c8c5465",
+            "reference": "acc7a5fec02e0aea674560e1d13c40ed0c8c5465",
+            "shasum": ""
+        },
+        "require": {
+            "evenement/evenement": "~2.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "react/event-loop": "0.4.*",
+            "react/promise": "~2.0"
+        },
+        "suggest": {
+            "react/event-loop": "0.4.*",
+            "react/promise": "~2.0"
+        },
+        "time": "2014-09-10 03:32:31",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.5-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\Stream\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Basic readable and writable stream interfaces that support piping.",
+        "keywords": [
+            "pipe",
+            "stream"
+        ]
+    },
+    {
+        "name": "react/event-loop",
+        "version": "v0.4.1",
+        "version_normalized": "0.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/event-loop.git",
+            "reference": "18c5297087ca01de85518e2b55078f444144aa1b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/event-loop/zipball/18c5297087ca01de85518e2b55078f444144aa1b",
+            "reference": "18c5297087ca01de85518e2b55078f444144aa1b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "suggest": {
+            "ext-event": "~1.0",
+            "ext-libev": "*",
+            "ext-libevent": ">=0.1.0"
+        },
+        "time": "2014-02-26 17:36:58",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\EventLoop\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Event loop abstraction layer that libraries can use for evented I/O.",
+        "keywords": [
+            "event-loop"
+        ]
+    },
+    {
+        "name": "react/socket",
+        "version": "v0.4.2",
+        "version_normalized": "0.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/socket.git",
+            "reference": "a6acf405ca53fc6cfbfe7c77778ededff46aa7cc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/socket/zipball/a6acf405ca53fc6cfbfe7c77778ededff46aa7cc",
+            "reference": "a6acf405ca53fc6cfbfe7c77778ededff46aa7cc",
+            "shasum": ""
+        },
+        "require": {
+            "evenement/evenement": "~2.0",
+            "php": ">=5.4.0",
+            "react/event-loop": "0.4.*",
+            "react/stream": "0.4.*"
+        },
+        "time": "2014-05-25 17:02:16",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\Socket\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Library for building an evented socket server.",
+        "keywords": [
+            "Socket"
+        ]
+    },
+    {
+        "name": "cboden/ratchet",
+        "version": "v0.3.2",
+        "version_normalized": "0.3.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ratchetphp/Ratchet.git",
+            "reference": "d36a8699df04354147a4f47845035b1ea8239189"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ratchetphp/Ratchet/zipball/d36a8699df04354147a4f47845035b1ea8239189",
+            "reference": "d36a8699df04354147a4f47845035b1ea8239189",
+            "shasum": ""
+        },
+        "require": {
+            "guzzle/http": "~3.6",
+            "php": ">=5.3.9",
+            "react/socket": "0.3.*|0.4.*",
+            "symfony/http-foundation": "~2.2",
+            "symfony/routing": "~2.2"
+        },
+        "time": "2014-06-08 15:19:45",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Ratchet": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Chris Boden",
+                "email": "cboden@gmail.com",
+                "homepage": "http://res.im",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP WebSocket library",
+        "homepage": "http://socketo.me",
+        "keywords": [
+            "Ratchet",
+            "WebSockets",
+            "server",
+            "sockets"
+        ]
+    }
+]
