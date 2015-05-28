@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Index extends Controller_Template
+class Controller_Campaign extends Controller_Template
 {
 
 	public function action_list()

@@ -1,0 +1,39 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1316" measuredH="668" mockupW="1277" mockupH="651">
+  <controls>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Image" x="66" y="138" w="313" h="441" measuredW="334" measuredH="500" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <filter>true</filter>
+        <src>../../../Documents/assets/6620977477_7d872435c7.jpg</src>
+        <text>Front%20Page%20Hero%20Graphic</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Paragraph" x="655" y="198" w="560" h="307" measuredW="275" measuredH="80" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Intro%20text%20stuff</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="__group__" x="39" y="17" w="1277" h="651" measuredW="1277" measuredH="651" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="1277" h="651" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="8">
+          <controlProperties>
+            <text>RPG%20Multiverse%0Ahttp%3A//rpg.multiverse.gam</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="__group__" x="1" y="72" w="1275" h="30" measuredW="1275" measuredH="30" zOrder="1" locked="false" isInGroup="8">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="200" h="30" measuredW="77" measuredH="79" zOrder="0" locked="false" isInGroup="1">
+              <controlProperties>
+                <text>Logo</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::MenuBar" x="198" y="1" w="1077" h="29" measuredW="346" measuredH="29" zOrder="1" locked="false" isInGroup="1">
+              <controlProperties>
+                <text>Home%2CAbout%2CBlog%2CPartner%2CSign-Up%2CLogin</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>
