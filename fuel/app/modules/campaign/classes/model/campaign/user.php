@@ -3,7 +3,6 @@
 class Model_Campaign_User extends \Model_Crud
 {
 	protected static $_properties = array(
-		
 		'id',
 		'campaign_id',
 		'user_id',
