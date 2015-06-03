@@ -5,10 +5,37 @@
 	<title><?php echo $title; ?></title>
 	<?php echo Asset::css('bootstrap.css'); ?>
 	<style>
-		body { margin: 40px; }
+		body .container { margin: 40px; }
+		nav.navbar{
+			margin-bottom:0;
+		}
 	</style>
 </head>
 <body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<span class="navbar-brand">RPG Multiverse</span>
+			<ul class="nav navbar-nav">
+				<li>
+					<?=Html::anchor('/campaign','Campaigns')?>
+				</li>
+				<li>
+					<?=Html::anchor('/characters','Characters')?>
+				</li>
+				<li>
+					<?=Html::anchor('/groups','Groups')?>
+				</li>
+				<li>
+					<?=Html::anchor('/users','Users')?>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<nav class="navbar navbar-inverse navbar-sm">
+		<div class="container-fluid">
+			<?php echo View::forge('menu',array('subnav'=>$subnav, 'item' => $nav)); ?>
+		</div>
+	</nav>
 	<div class="container">
 		<div class="col-md-12">
 			<h1><?php echo $title; ?></h1>
@@ -31,10 +58,9 @@
 <?php endif; ?>
 		</div>
 		<div class="col-md-12">
-<?php echo View::forge('menu',array('subnav'=>$data['subnav'])); ?>
 <?php echo $content; ?>
 		</div>
-		<footer>
+		<footer class="navbar navbar-default navbar-fixed-bottom">
 			<p class="pull-right">
 				<small>Page rendered in {exec_time}s using {mem_usage}mb of memory.</small><br>
 				<small>Fuel Version: <?php echo e(Fuel::VERSION); ?></small>

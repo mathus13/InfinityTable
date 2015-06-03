@@ -1,0 +1,17 @@
+{
+    "links": [
+        {
+            "id": "add",
+            "text": "New",
+            "url": "/campaign/add",
+            "class": "campaign-menu-add",
+            "title": "Create a new Campaign"
+        },
+        {
+            "id": "list",
+            "text": "List",
+            "url": "/campaign/list",
+            "class": "campaign-menu-list"
+        }
+    ]
+}
