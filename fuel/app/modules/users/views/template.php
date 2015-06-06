@@ -31,13 +31,16 @@
 <?php endif; ?>
 		</div>
 		<div class="col-md-12">
+<?php echo View::forge('menu',array('subnav'=>$data['subnav'])); ?>
 <?php echo $content; ?>
 		</div>
 		<footer>
-			<p class="pull-right">Page rendered in {exec_time}s using {mem_usage}mb of memory.</p>
+			<p class="pull-right">
+				<small>Page rendered in {exec_time}s using {mem_usage}mb of memory.</small><br>
+				<small>Fuel Version: <?php echo e(Fuel::VERSION); ?></small>
+			</p>
 			<p>
-				<a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.<br>
-				<small>Version: <?php echo e(Fuel::VERSION); ?></small>
+				An <a href="etherealvisions.us" target="_blank">Ethereal Development</a> Project
 			</p>
 		</footer>
 	</div>

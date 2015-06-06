@@ -1,0 +1,17 @@
+{
+    "links": [
+        {
+            "id": "new",
+            "text": "New",
+            "url": "/users/add",
+            "class": "users-menu-add",
+            "title": "Create a new user"
+        },
+        {
+            "id": "list",
+            "text": "List",
+            "url": "/users/list",
+            "class": "users-menu-list"
+        }
+    ]
+}

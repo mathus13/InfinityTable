@@ -1,5 +1,5 @@
 /* set the page title, including the version of these docs */
-var DocVersion = "1.7.2";
+var DocVersion = "1.7.3";
 
 // set the google CSE key based on the docversion
 if (DocVersion.indexOf('-dev') == -1) {
@@ -446,7 +446,11 @@ panes.core = {
 		"Cli":			"classes/cli.html",
 		"Config":		"classes/config.html",
 		"Cookie":		"classes/cookie.html",
-		"Crypt":		"classes/crypt.html",
+		"Crypt": {
+			"Configuration":	"classes/crypt/config.html",
+			"Usage":			"classes/crypt/usage.html",
+			"Advanced":			"classes/crypt/advanced.html"
+		},
 		"Database": {
 			"Introduction":   	  "classes/database/introduction.html",
 			"Usage":          	  "classes/database/usage.html",

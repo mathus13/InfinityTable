@@ -163,26 +163,257 @@
         ]
     },
     {
-        "name": "psr/log",
-        "version": "1.0.0",
-        "version_normalized": "1.0.0.0",
+        "name": "composer/installers",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/php-fig/log.git",
-            "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+            "url": "https://github.com/composer/installers.git",
+            "reference": "a66f93a541c2214b4865161426b077e2b7d951de"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
-            "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+            "url": "https://api.github.com/repos/composer/installers/zipball/a66f93a541c2214b4865161426b077e2b7d951de",
+            "reference": "a66f93a541c2214b4865161426b077e2b7d951de",
             "shasum": ""
         },
-        "time": "2012-12-21 11:40:51",
-        "type": "library",
+        "replace": {
+            "roundcube/plugin-installer": "*",
+            "shama/baton": "*"
+        },
+        "require-dev": {
+            "composer/composer": "1.0.*@dev",
+            "phpunit/phpunit": "4.1.*"
+        },
+        "time": "2015-04-21 19:54:55",
+        "type": "composer-installer",
+        "extra": {
+            "class": "Composer\\Installers\\Installer",
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
         "installation-source": "source",
         "autoload": {
             "psr-0": {
-                "Psr\\Log\\": ""
+                "Composer\\Installers\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kyle Robinson Young",
+                "email": "kyle@dontkry.com",
+                "homepage": "https://github.com/shama"
+            }
+        ],
+        "description": "A multi-framework Composer library installer",
+        "homepage": "http://composer.github.com/installers/",
+        "keywords": [
+            "Craft",
+            "Dolibarr",
+            "Hurad",
+            "MODX Evo",
+            "OXID",
+            "SMF",
+            "Thelia",
+            "WolfCMS",
+            "agl",
+            "aimeos",
+            "annotatecms",
+            "bitrix",
+            "cakephp",
+            "chef",
+            "codeigniter",
+            "concrete5",
+            "croogo",
+            "dokuwiki",
+            "drupal",
+            "elgg",
+            "fuelphp",
+            "grav",
+            "installer",
+            "joomla",
+            "kohana",
+            "laravel",
+            "lithium",
+            "magento",
+            "mako",
+            "mediawiki",
+            "modulework",
+            "moodle",
+            "phpbb",
+            "piwik",
+            "ppi",
+            "puppet",
+            "roundcube",
+            "shopware",
+            "silverstripe",
+            "symfony",
+            "typo3",
+            "wordpress",
+            "zend",
+            "zikula"
+        ]
+    },
+    {
+        "name": "fuel/docs",
+        "version": "1.7.2",
+        "version_normalized": "1.7.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fuel/docs.git",
+            "reference": "1.8/develop"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/fuel/docs/archive/1.7/master.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "type": "fuel-package",
+        "installation-source": "dist"
+    },
+    {
+        "name": "fuel/core",
+        "version": "1.7.2",
+        "version_normalized": "1.7.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fuel/core.git",
+            "reference": "1.8/develop"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/fuel/core/archive/1.7/master.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "type": "fuel-package",
+        "installation-source": "dist"
+    },
+    {
+        "name": "fuel/auth",
+        "version": "1.7.2",
+        "version_normalized": "1.7.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fuel/auth.git",
+            "reference": "1.8/develop"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/fuel/auth/archive/1.7/master.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "type": "fuel-package",
+        "installation-source": "dist"
+    },
+    {
+        "name": "fuel/email",
+        "version": "1.7.2",
+        "version_normalized": "1.7.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fuel/email.git",
+            "reference": "1.8/develop"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/fuel/email/archive/1.7/master.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "type": "fuel-package",
+        "installation-source": "dist"
+    },
+    {
+        "name": "fuel/oil",
+        "version": "1.7.2",
+        "version_normalized": "1.7.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fuel/oil.git",
+            "reference": "1.8/develop"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/fuel/oil/archive/1.7/master.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "type": "fuel-package",
+        "installation-source": "dist"
+    },
+    {
+        "name": "fuel/orm",
+        "version": "1.7.2",
+        "version_normalized": "1.7.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fuel/orm.git",
+            "reference": "1.8/develop"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/fuel/orm/archive/1.7/master.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "type": "fuel-package",
+        "installation-source": "dist"
+    },
+    {
+        "name": "fuel/parser",
+        "version": "1.7.2",
+        "version_normalized": "1.7.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fuel/parser.git",
+            "reference": "1.8/develop"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/fuel/parser/archive/1.7/master.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "type": "fuel-package",
+        "installation-source": "dist"
+    },
+    {
+        "name": "psr/log",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "9e45edca52cc9c954680072c93e621f8b71fab26"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/9e45edca52cc9c954680072c93e621f8b71fab26",
+            "reference": "9e45edca52cc9c954680072c93e621f8b71fab26",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2015-06-02 13:48:41",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Log\\": "Psr/Log/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -203,32 +434,83 @@
         ]
     },
     {
-        "name": "symfony/routing",
-        "version": "v2.6.3",
-        "version_normalized": "2.6.3.0",
-        "target-dir": "Symfony/Component/Routing",
+        "name": "pfbc/pfbc",
+        "version": "3.1",
+        "version_normalized": "3.1.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/Routing.git",
-            "reference": "28382c6806780ddc657c136a5ca4415dd3252f41"
+            "url": "https://github.com/lkorth/php-form-builder-class.git",
+            "reference": "e1f9c25b71ee82c60a62a61de63a5926f9d8fc17"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Routing/zipball/28382c6806780ddc657c136a5ca4415dd3252f41",
-            "reference": "28382c6806780ddc657c136a5ca4415dd3252f41",
+            "url": "https://api.github.com/repos/lkorth/php-form-builder-class/zipball/e1f9c25b71ee82c60a62a61de63a5926f9d8fc17",
+            "reference": "e1f9c25b71ee82c60a62a61de63a5926f9d8fc17",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.3"
+            "php": ">=5.3.0"
+        },
+        "time": "2014-03-14 04:14:24",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "PFBC": "."
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GNU GPL v3"
+        ],
+        "authors": [
+            {
+                "email": "ajporterfield@gmail.com",
+                "role": "Owner"
+            },
+            {
+                "email": "moncojhr@gmail.com",
+                "role": "Committer"
+            }
+        ],
+        "description": "Rapid form bulding in PHP",
+        "homepage": "http://code.google.com/p/php-form-builder-class/",
+        "keywords": [
+            "form",
+            "html",
+            "php"
+        ]
+    },
+    {
+        "name": "symfony/routing",
+        "version": "2.8.x-dev",
+        "version_normalized": "2.8.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Routing.git",
+            "reference": "76b18edcf09a967590d6e132851d0f964866e2e8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Routing/zipball/76b18edcf09a967590d6e132851d0f964866e2e8",
+            "reference": "76b18edcf09a967590d6e132851d0f964866e2e8",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9"
+        },
+        "conflict": {
+            "symfony/config": "<2.7"
         },
         "require-dev": {
             "doctrine/annotations": "~1.0",
             "doctrine/common": "~2.2",
             "psr/log": "~1.0",
-            "symfony/config": "~2.2",
-            "symfony/expression-language": "~2.4",
-            "symfony/http-foundation": "~2.3",
-            "symfony/yaml": "~2.0,>=2.0.5"
+            "symfony/config": "~2.7|~3.0.0",
+            "symfony/expression-language": "~2.4|~3.0.0",
+            "symfony/http-foundation": "~2.3|~3.0.0",
+            "symfony/phpunit-bridge": "~2.7|~3.0.0",
+            "symfony/yaml": "~2.0,>=2.0.5|~3.0.0"
         },
         "suggest": {
             "doctrine/annotations": "For using the annotation loader",
@@ -236,16 +518,16 @@
             "symfony/expression-language": "For using expression matching",
             "symfony/yaml": "For using the YAML loader"
         },
-        "time": "2015-01-05 14:28:40",
+        "time": "2015-05-15 14:11:12",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.6-dev"
+                "dev-master": "2.8-dev"
             }
         },
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
-            "psr-0": {
+            "psr-4": {
                 "Symfony\\Component\\Routing\\": ""
             }
         },
@@ -255,16 +537,16 @@
         ],
         "authors": [
             {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            },
-            {
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
             }
         ],
         "description": "Symfony Routing Component",
-        "homepage": "http://symfony.com",
+        "homepage": "https://symfony.com",
         "keywords": [
             "router",
             "routing",
@@ -274,40 +556,40 @@
     },
     {
         "name": "symfony/http-foundation",
-        "version": "v2.6.3",
-        "version_normalized": "2.6.3.0",
-        "target-dir": "Symfony/Component/HttpFoundation",
+        "version": "2.8.x-dev",
+        "version_normalized": "2.8.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/HttpFoundation.git",
-            "reference": "3f4ba2c658be910fe6cec46ed34ee900bd18bb01"
+            "reference": "06aa08b5d9157abc10bee99712124b8b994d4259"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/3f4ba2c658be910fe6cec46ed34ee900bd18bb01",
-            "reference": "3f4ba2c658be910fe6cec46ed34ee900bd18bb01",
+            "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/06aa08b5d9157abc10bee99712124b8b994d4259",
+            "reference": "06aa08b5d9157abc10bee99712124b8b994d4259",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.3"
+            "php": ">=5.3.9"
         },
         "require-dev": {
-            "symfony/expression-language": "~2.4"
+            "symfony/expression-language": "~2.4|~3.0.0",
+            "symfony/phpunit-bridge": "~2.7|~3.0.0"
         },
-        "time": "2015-01-05 17:41:06",
+        "time": "2015-05-15 14:11:12",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.6-dev"
+                "dev-master": "2.8-dev"
             }
         },
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
-            "psr-0": {
+            "psr-4": {
                 "Symfony\\Component\\HttpFoundation\\": ""
             },
             "classmap": [
-                "Symfony/Component/HttpFoundation/Resources/stubs"
+                "Resources/stubs"
             ]
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -316,57 +598,57 @@
         ],
         "authors": [
             {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            },
-            {
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
             }
         ],
         "description": "Symfony HttpFoundation Component",
-        "homepage": "http://symfony.com"
+        "homepage": "https://symfony.com"
     },
     {
         "name": "symfony/event-dispatcher",
-        "version": "v2.6.3",
-        "version_normalized": "2.6.3.0",
-        "target-dir": "Symfony/Component/EventDispatcher",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/EventDispatcher.git",
-            "reference": "40ff70cadea3785d83cac1c8309514b36113064e"
+            "reference": "f991afd968ea05582bae203754d761714598d018"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/40ff70cadea3785d83cac1c8309514b36113064e",
-            "reference": "40ff70cadea3785d83cac1c8309514b36113064e",
+            "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/f991afd968ea05582bae203754d761714598d018",
+            "reference": "f991afd968ea05582bae203754d761714598d018",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.3"
+            "php": ">=5.5.9"
         },
         "require-dev": {
             "psr/log": "~1.0",
-            "symfony/config": "~2.0,>=2.0.5",
-            "symfony/dependency-injection": "~2.6",
-            "symfony/expression-language": "~2.6",
-            "symfony/stopwatch": "~2.3"
+            "symfony/config": "~2.8|~3.0",
+            "symfony/dependency-injection": "~2.8|~3.0",
+            "symfony/expression-language": "~2.8|~3.0",
+            "symfony/phpunit-bridge": "~2.8|~3.0",
+            "symfony/stopwatch": "~2.8|~3.0"
         },
         "suggest": {
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-        "time": "2015-01-05 14:28:40",
+        "time": "2015-05-12 15:48:43",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.6-dev"
+                "dev-master": "3.0-dev"
             }
         },
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
-            "psr-0": {
+            "psr-4": {
                 "Symfony\\Component\\EventDispatcher\\": ""
             }
         },
@@ -376,16 +658,16 @@
         ],
         "authors": [
             {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            },
-            {
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
             }
         ],
         "description": "Symfony EventDispatcher Component",
-        "homepage": "http://symfony.com"
+        "homepage": "https://symfony.com"
     },
     {
         "name": "guzzle/common",
@@ -394,12 +676,12 @@
         "target-dir": "Guzzle/Common",
         "source": {
             "type": "git",
-            "url": "https://github.com/guzzle/common.git",
+            "url": "https://github.com/Guzzle3/common.git",
             "reference": "2e36af7cf2ce3ea1f2d7c2831843b883a8e7b7dc"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/common/zipball/2e36af7cf2ce3ea1f2d7c2831843b883a8e7b7dc",
+            "url": "https://api.github.com/repos/Guzzle3/common/zipball/2e36af7cf2ce3ea1f2d7c2831843b883a8e7b7dc",
             "reference": "2e36af7cf2ce3ea1f2d7c2831843b883a8e7b7dc",
             "shasum": ""
         },
@@ -431,7 +713,8 @@
             "common",
             "event",
             "exception"
-        ]
+        ],
+        "abandoned": "guzzle/guzzle"
     },
     {
         "name": "guzzle/stream",
@@ -440,12 +723,12 @@
         "target-dir": "Guzzle/Stream",
         "source": {
             "type": "git",
-            "url": "https://github.com/guzzle/stream.git",
+            "url": "https://github.com/Guzzle3/stream.git",
             "reference": "60c7fed02e98d2c518dae8f97874c8f4622100f0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/stream/zipball/60c7fed02e98d2c518dae8f97874c8f4622100f0",
+            "url": "https://api.github.com/repos/Guzzle3/stream/zipball/60c7fed02e98d2c518dae8f97874c8f4622100f0",
             "reference": "60c7fed02e98d2c518dae8f97874c8f4622100f0",
             "shasum": ""
         },
@@ -486,7 +769,8 @@
             "Guzzle",
             "component",
             "stream"
-        ]
+        ],
+        "abandoned": "guzzle/guzzle"
     },
     {
         "name": "guzzle/parser",
@@ -495,12 +779,12 @@
         "target-dir": "Guzzle/Parser",
         "source": {
             "type": "git",
-            "url": "https://github.com/guzzle/parser.git",
+            "url": "https://github.com/Guzzle3/parser.git",
             "reference": "6874d171318a8e93eb6d224cf85e4678490b625c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/parser/zipball/6874d171318a8e93eb6d224cf85e4678490b625c",
+            "url": "https://api.github.com/repos/Guzzle3/parser/zipball/6874d171318a8e93eb6d224cf85e4678490b625c",
             "reference": "6874d171318a8e93eb6d224cf85e4678490b625c",
             "shasum": ""
         },
@@ -532,7 +816,8 @@
             "http",
             "message",
             "url"
-        ]
+        ],
+        "abandoned": "guzzle/guzzle"
     },
     {
         "name": "guzzle/http",
@@ -541,12 +826,12 @@
         "target-dir": "Guzzle/Http",
         "source": {
             "type": "git",
-            "url": "https://github.com/guzzle/http.git",
+            "url": "https://github.com/Guzzle3/http.git",
             "reference": "1e8dd1e2ba9dc42332396f39fbfab950b2301dc5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/http/zipball/1e8dd1e2ba9dc42332396f39fbfab950b2301dc5",
+            "url": "https://api.github.com/repos/Guzzle3/http/zipball/1e8dd1e2ba9dc42332396f39fbfab950b2301dc5",
             "reference": "1e8dd1e2ba9dc42332396f39fbfab950b2301dc5",
             "shasum": ""
         },
@@ -591,34 +876,35 @@
             "curl",
             "http",
             "http client"
-        ]
+        ],
+        "abandoned": "guzzle/guzzle"
     },
     {
         "name": "evenement/evenement",
-        "version": "v2.0.0",
-        "version_normalized": "2.0.0.0",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/igorw/evenement.git",
-            "reference": "f6e843799fd4f4184d54d8fc7b5b3551c9fa803e"
+            "reference": "35e87541d4b53c22201519fce3caaa5b38ac8164"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/igorw/evenement/zipball/f6e843799fd4f4184d54d8fc7b5b3551c9fa803e",
-            "reference": "f6e843799fd4f4184d54d8fc7b5b3551c9fa803e",
+            "url": "https://api.github.com/repos/igorw/evenement/zipball/35e87541d4b53c22201519fce3caaa5b38ac8164",
+            "reference": "35e87541d4b53c22201519fce3caaa5b38ac8164",
             "shasum": ""
         },
         "require": {
             "php": ">=5.4.0"
         },
-        "time": "2012-11-02 14:49:47",
+        "time": "2014-07-09 21:08:03",
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "2.0-dev"
             }
         },
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-0": {
                 "Evenement": "src"
@@ -738,17 +1024,17 @@
     },
     {
         "name": "react/socket",
-        "version": "v0.4.2",
-        "version_normalized": "0.4.2.0",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/reactphp/socket.git",
-            "reference": "a6acf405ca53fc6cfbfe7c77778ededff46aa7cc"
+            "reference": "fc58f35e520a1d7dece2e7a5184daebed598ac67"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/reactphp/socket/zipball/a6acf405ca53fc6cfbfe7c77778ededff46aa7cc",
-            "reference": "a6acf405ca53fc6cfbfe7c77778ededff46aa7cc",
+            "url": "https://api.github.com/repos/reactphp/socket/zipball/fc58f35e520a1d7dece2e7a5184daebed598ac67",
+            "reference": "fc58f35e520a1d7dece2e7a5184daebed598ac67",
             "shasum": ""
         },
         "require": {
@@ -757,14 +1043,14 @@
             "react/event-loop": "0.4.*",
             "react/stream": "0.4.*"
         },
-        "time": "2014-05-25 17:02:16",
+        "time": "2015-05-10 13:17:32",
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "0.4-dev"
             }
         },
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-4": {
                 "React\\Socket\\": "src"
@@ -781,32 +1067,32 @@
     },
     {
         "name": "cboden/ratchet",
-        "version": "v0.3.2",
-        "version_normalized": "0.3.2.0",
+        "version": "v0.3.3",
+        "version_normalized": "0.3.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/ratchetphp/Ratchet.git",
-            "reference": "d36a8699df04354147a4f47845035b1ea8239189"
+            "reference": "6b247c05251b4b5cbd14243366b649f99a0e5681"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/ratchetphp/Ratchet/zipball/d36a8699df04354147a4f47845035b1ea8239189",
-            "reference": "d36a8699df04354147a4f47845035b1ea8239189",
+            "url": "https://api.github.com/repos/ratchetphp/Ratchet/zipball/6b247c05251b4b5cbd14243366b649f99a0e5681",
+            "reference": "6b247c05251b4b5cbd14243366b649f99a0e5681",
             "shasum": ""
         },
         "require": {
-            "guzzle/http": "~3.6",
+            "guzzle/http": "^3.6",
             "php": ">=5.3.9",
-            "react/socket": "0.3.*|0.4.*",
-            "symfony/http-foundation": "~2.2",
-            "symfony/routing": "~2.2"
+            "react/socket": "^0.3 || ^0.4",
+            "symfony/http-foundation": "^2.2",
+            "symfony/routing": "^2.2"
         },
-        "time": "2014-06-08 15:19:45",
+        "time": "2015-05-27 12:51:05",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
-            "psr-0": {
-                "Ratchet": "src"
+            "psr-4": {
+                "Ratchet\\": "src/Ratchet"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -817,7 +1103,6 @@
             {
                 "name": "Chris Boden",
                 "email": "cboden@gmail.com",
-                "homepage": "http://res.im",
                 "role": "Developer"
             }
         ],
