@@ -19,8 +19,13 @@
  * @package  app
  * @extends  Controller
  */
-class Controller_Welcome extends Controller
-{
+class Controller_Welcome extends Controller_Master {
+	
+	
+	public function before() {
+		parent::before();
+		$this->template->subnav = array();
+	}
 
 	/**
 	 * The basic welcome message
@@ -28,9 +33,10 @@ class Controller_Welcome extends Controller
 	 * @access  public
 	 * @return  Response
 	 */
-	public function action_index()
-	{
-		return Response::forge(View::forge('welcome/index'));
+	public function action_index() {
+		$this->template->nav = array('list'=> 'active' );
+		$this->template->title = 'Index &raquo; List';
+		$this->template->content = \View::forge('welcome/index', $this->_data);
 	}
 
 	/**
