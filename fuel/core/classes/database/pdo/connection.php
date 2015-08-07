@@ -11,6 +11,7 @@
 
 namespace Fuel\Core;
 
+
 class Database_PDO_Connection extends \Database_Connection
 {
 	/**
@@ -124,11 +125,8 @@ class Database_PDO_Connection extends \Database_Connection
 	 */
 	public function disconnect()
 	{
-		// destroy the PDO object
+		// Destroy the PDO object
 		$this->_connection = null;
-
-		// and reset the savepoint depth
-		$this->_transaction_depth = 0;
 
 		return true;
 	}
@@ -220,7 +218,7 @@ class Database_PDO_Connection extends \Database_Connection
 					// Only log if no paths we defined, or we have a path match
 					if ($include or empty($paths))
 					{
-						$stacktrace[] = array('file' => \Fuel::clean_path($page['file']), 'line' => $page['line']);
+						$stacktrace[] = array('file' => Fuel::clean_path($page['file']), 'line' => $page['line']);
 					}
 				}
 			}
@@ -319,6 +317,7 @@ class Database_PDO_Connection extends \Database_Connection
 				$result = $result->fetchAll(\PDO::FETCH_CLASS, 'stdClass');
 			}
 
+
 			// Return an iterator of results
 			return new \Database_Result_Cached($result, $sql, $as_object);
 		}
@@ -330,13 +329,11 @@ class Database_PDO_Connection extends \Database_Connection
 				$result->rowCount(),
 			);
 		}
-		elseif ($type === \DB::UPDATE or $type === \DB::DELETE)
+		else
 		{
 			// Return the number of rows affected
 			return $result->errorCode() === '00000' ? $result->rowCount() : -1;
 		}
-
-		return $result->errorCode() === '00000' ? true : false;
 	}
 
 	/**
@@ -348,40 +345,7 @@ class Database_PDO_Connection extends \Database_Connection
 	 */
 	public function list_tables($like = null)
 	{
-		if (strtolower($this->driver_name()) == 'mysql')
-		{
-			return $this->list_tables_mysql($like);
-		}
-
 		throw new \FuelException('Database method '.__METHOD__.' is not supported by '.__CLASS__);
-	}
-
-	/**
-	 * List tables for PDO_MYSQL
-	 *
-	 * @param string $like
-	 * @return array
-	 */
-	protected function list_tables_mysql($like = null)
-	{
-		$query = 'SHOW TABLES';
-
-		if (is_string($like))
-		{
-			$query .= ' LIKE ' . $this->quote($like);
-		}
-
-		$q = $this->_connection->prepare($query);
-		$q->execute();
-		$result = $q->fetchAll();
-
-		$tables = array();
-		foreach ($result as $row)
-		{
-			$tables[] = reset($row);
-		}
-
-		return $tables;
 	}
 
 	/**
@@ -403,10 +367,7 @@ class Database_PDO_Connection extends \Database_Connection
 		! is_null($like) and $like = str_replace('%', '.*', $like);
 		foreach ($result as $row)
 		{
-			if ( ! is_null($like) and ! preg_match('#'.$like.'#', $row['Field']))
-			{
-				continue;
-			}
+			if ( ! is_null($like) and ! preg_match('#'.$like.'#', $row['Field'])) continue;
 			list($type, $length) = $this->_parse_type($row['Type']);
 
 			$column = $this->datatype($type);

@@ -6,11 +6,12 @@
  * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2015 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
 namespace Fuel\Core;
+
 
 class Pagination
 {
@@ -218,6 +219,7 @@ class Pagination
 			return null;
 		}
 	}
+
 
 	/**
 	 * configuration value setter
@@ -508,6 +510,9 @@ class Pagination
 	 */
 	protected function _recalculate()
 	{
+		// calculate the number of pages
+		$this->config['total_pages'] = (int) ceil($this->config['total_items'] / $this->config['per_page']) ?: 1;
+
 		// get the current page number, either from the one set, or from the URI or the query string
 		if ($this->config['current_page'])
 		{
@@ -521,25 +526,18 @@ class Pagination
 			}
 			else
 			{
-				$this->config['calculated_page'] = (int) \Request::main()->uri->get_segment($this->config['uri_segment'], 1);
+				$this->config['calculated_page'] = (int) \Request::main()->uri->get_segment($this->config['uri_segment']);
 			}
 		}
 
-		// do we have the total number of items?
-		if ($this->config['total_items'] > 0)
+		// make sure the current page is within bounds
+		if ($this->config['calculated_page'] > $this->config['total_pages'])
 		{
-			// calculate the number of pages
-			$this->config['total_pages'] = (int) ceil($this->config['total_items'] / $this->config['per_page']) ?: 1;
-
-			// make sure the current page is within bounds
-			if ($this->config['calculated_page'] > $this->config['total_pages'])
-			{
-				$this->config['calculated_page'] = $this->config['total_pages'];
-			}
-			elseif ($this->config['calculated_page'] < 1)
-			{
-				$this->config['calculated_page'] = 1;
-			}
+			$this->config['calculated_page'] = $this->config['total_pages'];
+		}
+		elseif ($this->config['calculated_page'] < 1)
+		{
+			$this->config['calculated_page'] = 1;
 		}
 
 		// the current page must be zero based so that the offset for page 1 is 0.
@@ -576,12 +574,6 @@ class Pagination
 			else
 			{
 				$url['query'] = array();
-			}
-
-			// make sure we don't destroy any fragments
-			if (isset($url['fragment']))
-			{
-				$url['fragment'] = '#'.$url['fragment'];
 			}
 
 			// do we have a segment offset due to the base_url containing segments?

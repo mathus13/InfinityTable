@@ -70,8 +70,18 @@ namespace PHPSecLib;
  * @link      http://phpseclib.sourceforge.net
  */
 
-use \PHPSecLib\Crypt\Random;
 use \PHPSecLib\Math\BigInteger;
+
+/**
+ * Include Crypt_Random
+ */
+// the class_exists() will only be called if the crypt_random_string function hasn't been defined and
+// will trigger a call to __autoload() if you're wanting to auto-load classes
+// call function_exists() a second time to stop the include_once from being called outside
+// of the auto loader
+if (!function_exists('crypt_random_string')) {
+    include 'Random.php';
+}
 
 /**#@+
  * @access public
@@ -477,13 +487,14 @@ class Crypt_RSA
         $this->configFile = CRYPT_RSA_OPENSSL_CONFIG;
 
         if ( !defined('CRYPT_RSA_MODE') ) {
-            switch (true) {
-                // Math/BigInteger's openssl requirements are a little less stringent than Crypt/RSA's. in particular,
-                // Math/BigInteger doesn't require an openssl.cfg file whereas Crypt/RSA does. so if Math/BigInteger
-                // can't use OpenSSL it can be pretty trivially assumed, then, that Crypt/RSA can't either.
-                case defined('MATH_BIGINTEGER_OPENSSL_DISABLE'):
-                    define('CRYPT_RSA_MODE', CRYPT_RSA_MODE_INTERNAL);
-                    break;
+            // Math/BigInteger's openssl requirements are a little less stringent than Crypt/RSA's. in particular,
+            // Math/BigInteger doesn't require an openssl.cfg file whereas Crypt/RSA does. so if Math/BigInteger
+            // can't use OpenSSL it can be pretty trivially assumed, then, that Crypt/RSA can't either.
+            if ( defined('MATH_BIGINTEGER_OPENSSL_DISABLE') ) {
+                define('CRYPT_RSA_MODE', CRYPT_RSA_MODE_INTERNAL);
+            }
+
+            switch ( !defined('CRYPT_RSA_MODE') ) { // ie. only run this if the above didn't set CRYPT_RSA_MODE already
                 // openssl_pkey_get_details - which is used in the only place Crypt/RSA.php uses OpenSSL - was introduced in PHP 5.2.0
                 case !function_exists('openssl_pkey_get_details'):
                     define('CRYPT_RSA_MODE', CRYPT_RSA_MODE_INTERNAL);
@@ -516,7 +527,7 @@ class Crypt_RSA
                             define('MATH_BIGINTEGER_OPENSSL_DISABLE', true);
                     }
                     break;
-                default:
+                case true:
                     define('CRYPT_RSA_MODE', CRYPT_RSA_MODE_INTERNAL);
             }
         }
@@ -726,18 +737,17 @@ class Crypt_RSA
      */
     function _convertPrivateKey($n, $e, $d, $primes, $exponents, $coefficients)
     {
-        $signed = $this->privateKeyFormat != CRYPT_RSA_PRIVATE_FORMAT_XML;
         $num_primes = count($primes);
         $raw = array(
             'version' => $num_primes == 2 ? chr(0) : chr(1), // two-prime vs. multi
-            'modulus' => $n->toBytes($signed),
-            'publicExponent' => $e->toBytes($signed),
-            'privateExponent' => $d->toBytes($signed),
-            'prime1' => $primes[1]->toBytes($signed),
-            'prime2' => $primes[2]->toBytes($signed),
-            'exponent1' => $exponents[1]->toBytes($signed),
-            'exponent2' => $exponents[2]->toBytes($signed),
-            'coefficient' => $coefficients[2]->toBytes($signed)
+            'modulus' => $n->toBytes(true),
+            'publicExponent' => $e->toBytes(true),
+            'privateExponent' => $d->toBytes(true),
+            'prime1' => $primes[1]->toBytes(true),
+            'prime2' => $primes[2]->toBytes(true),
+            'exponent1' => $exponents[1]->toBytes(true),
+            'exponent2' => $exponents[2]->toBytes(true),
+            'coefficient' => $coefficients[2]->toBytes(true)
         );
 
         // if the format in question does not support multi-prime rsa and multi-prime rsa was used,
@@ -784,7 +794,7 @@ class Crypt_RSA
                     $source.= pack('Na*', strlen($private), $private);
                     $hashkey = 'putty-private-key-file-mac-key';
                 } else {
-                    $private.= Random::string(16 - (strlen($private) & 15));
+                    $private.= crypt_random_string(16 - (strlen($private) & 15));
                     $source.= pack('Na*', strlen($private), $private);
                     $sequence = 0;
                     $symkey = '';
@@ -844,7 +854,7 @@ class Crypt_RSA
                     );
                     $RSAPrivateKey = pack('Ca*a*', CRYPT_RSA_ASN1_SEQUENCE, $this->_encodeLength(strlen($RSAPrivateKey)), $RSAPrivateKey);
                     if (!empty($this->password) || is_string($this->password)) {
-                        $salt = Random::string(8);
+                        $salt = crypt_random_string(8);
                         $iterationCount = 2048;
 
                         $crypto = new Crypt_DES();
@@ -881,7 +891,7 @@ class Crypt_RSA
                 }
 
                 if (!empty($this->password) || is_string($this->password)) {
-                    $iv = Random::string(8);
+                    $iv = crypt_random_string(8);
                     $symkey = pack('H*', md5($this->password . $iv)); // symkey is short for symmetric key
                     $symkey.= substr(pack('H*', md5($symkey . $this->password . $iv)), 0, 8);
                     $des = new Crypt_TripleDES();
@@ -914,10 +924,8 @@ class Crypt_RSA
      */
     function _convertPublicKey($n, $e)
     {
-        $signed = $this->publicKeyFormat != CRYPT_RSA_PUBLIC_FORMAT_XML;
-
-        $modulus = $n->toBytes($signed);
-        $publicExponent = $e->toBytes($signed);
+        $modulus = $n->toBytes(true);
+        $publicExponent = $e->toBytes(true);
 
         switch ($this->publicKeyFormat) {
             case CRYPT_RSA_PUBLIC_FORMAT_RAW:
@@ -2259,7 +2267,7 @@ class Crypt_RSA
         $lHash = $this->hash->hash($l);
         $ps = str_repeat(chr(0), $this->k - $mLen - 2 * $this->hLen - 2);
         $db = $lHash . $ps . chr(1) . $m;
-        $seed = Random::string($this->hLen);
+        $seed = crypt_random_string($this->hLen);
         $dbMask = $this->_mgf1($seed, $this->k - $this->hLen - 1);
         $maskedDB = $db ^ $dbMask;
         $seedMask = $this->_mgf1($maskedDB, $this->hLen);
@@ -2377,7 +2385,7 @@ class Crypt_RSA
         $psLen = $this->k - $mLen - 3;
         $ps = '';
         while (strlen($ps) != $psLen) {
-            $temp = Random::string($psLen - strlen($ps));
+            $temp = crypt_random_string($psLen - strlen($ps));
             $temp = str_replace("\x00", '', $temp);
             $ps.= $temp;
         }
@@ -2483,7 +2491,7 @@ class Crypt_RSA
             return false;
         }
 
-        $salt = Random::string($sLen);
+        $salt = crypt_random_string($sLen);
         $m2 = "\0\0\0\0\0\0\0\0" . $mHash . $salt;
         $h = $this->hash->hash($m2);
         $ps = str_repeat(chr(0), $emLen - $sLen - $this->hLen - 2);

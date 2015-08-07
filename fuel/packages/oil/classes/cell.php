@@ -8,7 +8,7 @@
  * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2015 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -112,6 +112,7 @@ class Cell
 		}
 	}
 
+
 	public static function uninstall($package)
 	{
 		// Check to see if this package is already installed
@@ -150,7 +151,7 @@ class Cell
 			throw new \FuelException('No response from the API. Perhaps check your internet connection?');
 		}
 
-		elseif (empty($response['cell']))
+		else if (empty($response['cell']))
 		{
 			throw new \FuelException('Could not find the cell "' . $cell . '".');
 		}
@@ -185,6 +186,7 @@ HELP;
 		\Cli::write($output);
 
 	}
+
 
 	protected static function _use_git()
 	{

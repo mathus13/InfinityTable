@@ -257,10 +257,9 @@ $val->add_field('email', 'Email address', 'match_value[me@mydomain.com,1]|valid_
 						</tr>
 						<tr>
 							<th>match_collection</th>
-							<td><kbd>$collection</kbd> = array(), <kbd>$strict</kbd> = false</td>
+							<td><kbd>$collection</kbd> = array()</td>
 							<td>
-								Will try to match the field against a collection of valid values, will be done using == unless 2nd parameter
-                                is given as true (then === is used).
+								Will try to match the field against a collection of valid values.
 							</td>
 						</tr>
 						<tr>
@@ -376,10 +375,6 @@ $val->add_field('email', 'Email address', 'match_value[me@mydomain.com,1]|valid_
 						<tr>
 							<th>lowercase</th>
 							<td>Used in combination with alpha to only allow lowercase characters.</td>
-						</tr>
-						<tr>
-							<th>specials</th>
-							<td>Allow alphabetical and special language characters.</td>
 						</tr>
 						<tr>
 							<th>numeric</th>
@@ -524,7 +519,7 @@ $val->add_model('Model_User');</code></pre>
 
 		<footer>
 			<p>
-				&copy; FuelPHP Development Team 2010-2015 - <a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.
+				&copy; FuelPHP Development Team 2010-2014 - <a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.
 			</p>
 		</footer>
 	</div>
