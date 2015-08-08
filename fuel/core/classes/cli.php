@@ -6,7 +6,7 @@
  * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2015 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -24,6 +24,7 @@ namespace Fuel\Core;
  */
 class Cli
 {
+
 	public static $readline_support = false;
 
 	public static $wait_msg = 'Press any key to continue...';
@@ -156,6 +157,7 @@ class Cli
 		echo $prefix;
 		return fgets(STDIN);
 	}
+
 
 	/**
 	 * Asks the user for input.  This can have either 1 or 2 arguments.
@@ -360,6 +362,7 @@ class Cli
 		}
 	}
 
+
 	/**
 	 * if operating system === windows
 	 */
@@ -522,3 +525,4 @@ class Cli
 		return $orig;
 	}
 }
+

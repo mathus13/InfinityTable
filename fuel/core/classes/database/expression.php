@@ -17,8 +17,11 @@
 
 namespace Fuel\Core;
 
+
+
 class Database_Expression
 {
+
 	// Raw expression string
 	protected $_value;
 

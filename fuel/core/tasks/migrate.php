@@ -6,7 +6,7 @@
  * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2015 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -45,11 +45,6 @@ class Migrate
 	protected static $package_count = 0;
 
 	/**
-	 * @var  bool  flag to indicate a rerun is needed
-	 */
-	protected static $rerun = false;
-
-	/**
 	 * sets the properties by grabbing Cli options
 	 */
 	public function __construct()
@@ -82,7 +77,7 @@ class Migrate
 					// get all modules that have files in the migration folder
 					foreach(new \GlobIterator(realpath($path).DS.'*') as $m)
 					{
-						if (count(new \GlobIterator($m->getPathname().rtrim(DS.\Config::get('migrations.folder'), '\\/').DS.'*.php')))
+						if (count(new \GlobIterator($m->getPathname().rtrim(DS.\Config::get('migrations.folder'),'\\/').DS.'*.php')))
 						{
 							static::$modules[] = $m->getBasename();
 						}
@@ -108,7 +103,7 @@ class Migrate
 					// get all modules that have files in the migration folder
 					foreach(new \GlobIterator(realpath($path).DS.'*') as $p)
 					{
-						if (count(new \GlobIterator($p->getPathname().rtrim(DS.\Config::get('migrations.folder'), '\\/').DS.'*.php')))
+						if (count(new \GlobIterator($p->getPathname().rtrim(DS.\Config::get('migrations.folder'),'\\/').DS.'*.php')))
 						{
 							static::$packages[] = $p->getBasename();
 						}
@@ -150,47 +145,40 @@ class Migrate
 			return static::help();
 		}
 
-		do
+		// run app (default) migrations if default is true
+		if (static::$default)
 		{
-			// reset the rerun flag
-			static::$rerun = false;
+			static::$name('default', 'app');
+		}
 
-			// run app (default) migrations if default is true
-			if (static::$default)
+		// run migrations on all specified modules
+		foreach (static::$modules as $module)
+		{
+			// check if the module exists
+			if ( ! \Module::exists($module))
 			{
-				static::$name('default', 'app');
+				\Cli::write('Requested module "'.$module.'" does not exist!', 'light_red');
 			}
-
-			// run migrations on all specified modules
-			foreach (static::$modules as $module)
+			else
 			{
-				// check if the module exists
-				if ( ! \Module::exists($module))
-				{
-					\Cli::write('Requested module "'.$module.'" does not exist!', 'light_red');
-				}
-				else
-				{
-					// run the migration
-					static::$name($module, 'module');
-				}
-			}
-
-			// run migrations on all specified packages
-			foreach (static::$packages as $package)
-			{
-				// check if the module exists
-				if ( ! \Package::exists($package))
-				{
-					\Cli::write('Requested package "'.$package.'" does not exist!', 'light_red');
-				}
-				else
-				{
-					static::$name($package, 'package');
-				}
+				// run the migration
+				static::$name($module, 'module');
 			}
 		}
-		while (static::$rerun);
+
+		// run migrations on all specified packages
+		foreach (static::$packages as $package)
+		{
+			// check if the module exists
+			if ( ! \Package::exists($package))
+			{
+				\Cli::write('Requested package "'.$package.'" does not exist!', 'light_red');
+			}
+			else
+			{
+				static::$name($package, 'package');
+			}
+		}
 	}
 
 	/**
@@ -249,10 +237,7 @@ class Migrate
 		{
 			if ($migrations === false)
 			{
-				\Cli::write('Some migrations for '.$type.':'.$name.' are postponed due to dependencies.', 'cyan');
-
-				// set the rerun flag
-				static::$rerun = true;
+				\Cli::write('Some migrations where skipped for '.$type.':'.$name.'. Please re-run the migrations.', 'cyan');
 			}
 			elseif ($version !== '')
 			{

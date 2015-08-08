@@ -6,7 +6,7 @@
  * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2015 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -14,6 +14,7 @@ namespace Fuel\Core;
 
 class Route
 {
+
 	/**
 	 * @var  array  segments array
 	 */
@@ -40,7 +41,7 @@ class Route
 	public $case_sensitive = false;
 
 	/**
-	 * @var  boolean  whether to strip the extension from the URI
+	 * @var  boolean  wether to strip the extension from the URI
 	 */
 	public $strip_extension = true;
 
@@ -153,10 +154,9 @@ class Route
 	/**
 	 * Parses a route match and returns the controller, action and params.
 	 *
-	 * @access  public
-	 * @param   string  $uri           The matched route
-	 * @param   array   $named_params  Named parameters
-	 * @return  object  $this
+	 * @access	public
+	 * @param	string	The matched route
+	 * @return	object  $this
 	 */
 	public function matched($uri = '', $named_params = array())
 	{

@@ -2,14 +2,15 @@
 
 namespace Fuel\Migrations;
 
-include __DIR__."/../normalizedrivertypes.php";
-
 class Auth_Create_Grouptables
 {
 	function up()
 	{
-		// get the drivers defined
-		$drivers = normalize_driver_types();
+		// get the driver used
+		\Config::load('auth', true);
+
+		$drivers = \Config::get('auth.driver', array());
+		is_array($drivers) or $drivers = array($drivers);
 
 		if (in_array('Ormauth', $drivers))
 		{
@@ -48,8 +49,11 @@ class Auth_Create_Grouptables
 
 	function down()
 	{
-		// get the drivers defined
-		$drivers = normalize_driver_types();
+		// get the driver used
+		\Config::load('auth', true);
+
+		$drivers = \Config::get('auth.driver', array());
+		is_array($drivers) or $drivers = array($drivers);
 
 		if (in_array('Ormauth', $drivers))
 		{

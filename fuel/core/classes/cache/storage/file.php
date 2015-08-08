@@ -6,14 +6,17 @@
  * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2015 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
 namespace Fuel\Core;
 
+
+
 class Cache_Storage_File extends \Cache_Storage_Driver
 {
+
 	/**
 	 * @const  string  Tag used for opening & closing cache properties
 	 */
@@ -160,7 +163,7 @@ class Cache_Storage_File extends \Cache_Storage_Driver
 			{
 				// remove the folder if no more files are left
 				$files = \File::read_dir($folder);
-				empty($files) and rmdir($folder);
+				empty ($files) and rmdir($folder);
 			}
 
 			return true;
@@ -196,7 +199,7 @@ class Cache_Storage_File extends \Cache_Storage_Driver
 			'created'          => $this->created,
 			'expiration'       => $this->expiration,
 			'dependencies'     => $this->dependencies,
-			'content_handler'  => $this->content_handler,
+			'content_handler'  => $this->content_handler
 		);
 		$properties = '{{'.self::PROPS_TAG.'}}'.json_encode($properties).'{{/'.self::PROPS_TAG.'}}';
 
@@ -252,7 +255,7 @@ class Cache_Storage_File extends \Cache_Storage_Driver
 			{
 				// recursively create the directory. we can't use mkdir permissions or recursive
 				// due to the fact that mkdir is restricted by the current users umask
-				$basepath = rtrim(static::$path, DS);
+				$basepath = rtrim(static::$path,DS);
 				$chmod = \Config::get('file.chmod.folders', 0775);
 				foreach ($subdirs as $dir)
 				{

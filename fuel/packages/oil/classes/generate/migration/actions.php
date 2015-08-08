@@ -8,7 +8,7 @@
  * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2015 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -25,6 +25,7 @@ namespace Oil;
  */
 class Generate_Migration_Actions
 {
+
 	/**
 	 * Each migration action should return an array with two items, 0 being the up and 1 the being down.
 	 */
@@ -166,7 +167,7 @@ DOWN;
 
 					case 'enum':
 					case 'set':
-					  $constraint = '"\''.implode('\',\'', $column['options']).'\'"';
+					  $constraint = '"\''.implode('\',\'',$column['options']).'\'"';
 					break;
 				}
 			break;
@@ -232,7 +233,7 @@ UP;
 
 						case 'enum':
 						case 'set':
-							$constraint = '"\''.implode('\',\'', $column['options']).'\'"';
+							$constraint = '"\''.implode('\',\'',$column['options']).'\'"';
 						break;
 					}
 				break;
@@ -246,7 +247,7 @@ UP;
 			{
 			  $primary_keys[] = "'{$column['name']}'";
 			}
-			elseif ($column['key'] == 'MUL')
+			else if ($column['key'] == 'MUL')
 			{
 			  $indexes[] = $column['name'];
 			}
