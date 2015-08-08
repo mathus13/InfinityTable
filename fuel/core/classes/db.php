@@ -10,8 +10,11 @@
 
 namespace Fuel\Core;
 
+
+
 class DB
 {
+
 	// Query types
 	const SELECT =  1;
 	const INSERT =  2;
@@ -19,6 +22,7 @@ class DB
 	const DELETE =  4;
 
 	public static $query_count = 0;
+
 
 	/**
 	 * Create a new [Database_Query] of the given type.
@@ -394,7 +398,7 @@ class DB
 	 * @param   string  $db connection
 	 * @param   bool    $rollback_all:
 	 *             true  - rollback everything and close transaction;
-	 *             false - rollback only current level
+	 *             false - rollback only current level 
 	 * @return  bool
 	 */
 	public static function rollback_transaction($db = null, $rollback_all = true)

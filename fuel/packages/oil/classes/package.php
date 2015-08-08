@@ -8,7 +8,7 @@
  * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2015 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -83,6 +83,7 @@ class Package
 		throw new Exception('Could not find package "' . $package . '".');
 	}
 
+
 	public static function uninstall($package)
 	{
 		$package_folder = PKGPATH . $package;
@@ -130,6 +131,7 @@ HELP;
 		\Cli::write($output);
 
 	}
+
 
 	private static function _use_git()
 	{

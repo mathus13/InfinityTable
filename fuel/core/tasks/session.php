@@ -6,7 +6,7 @@
  * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2015 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -35,11 +35,12 @@ namespace Fuel\Tasks;
 
 class Session
 {
+
     // default function if no command is selected. Provided user with menu
     public static function run()
     {
         // Prompt the user with menu options
-        $option = \Cli::prompt('What would you like to do?', array('create', 'remove', 'clear', 'help'));
+        $option = \Cli::prompt('What would you like to do?', array('create','remove', 'clear', 'help'));
 
         switch($option)
         {
@@ -70,7 +71,7 @@ class Session
         if (\Config::get('session.driver') != 'db')
         {
             // prompt the user to confirm they want to remove the table.
-            $continue = \Cli::prompt(\Cli::color('Your current driver type is not set db. Would you like to continue and add the sessions table anyway?', 'yellow'), array('y', 'n'));
+            $continue = \Cli::prompt(\Cli::color('Your current driver type is not set db. Would you like to continue and add the sessions table anyway?', 'yellow'), array('y','n'));
 
             if ($continue === 'n')
             {
@@ -119,7 +120,7 @@ class Session
         \Config::load('session', true);
 
         // prompt the user to confirm they want to remove the table.
-        $iamsure = \Cli::prompt('Are you sure you want to delete the sessions table?', array('y', 'n'));
+        $iamsure = \Cli::prompt('Are you sure you want to delete the sessions table?', array('y','n'));
 
         // if they are sure, then let's drop it
         if ($iamsure === 'y')
@@ -142,7 +143,7 @@ class Session
         \Config::load('session', true);
 
         // prompt the user to confirm they want to clear the table.
-        $iamsure = \Cli::prompt('Are you sure you want to clear the sessions table?', array('y', 'n'));
+        $iamsure = \Cli::prompt('Are you sure you want to clear the sessions table?', array('y','n'));
 
         // if they are sure, then let's drop it
         if ($iamsure === 'y')

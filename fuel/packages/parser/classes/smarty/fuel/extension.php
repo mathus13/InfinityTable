@@ -8,7 +8,7 @@
  * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2015 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -30,6 +30,7 @@ use Uri;
  * Provides Smarty support for commonly used FuelPHP classes and methods.
  */
 class Smarty_Fuel_Extension {
+
     /**
      * Sets up all of the functions this extension makes available.
      */
@@ -79,7 +80,7 @@ class Smarty_Fuel_Extension {
     /**
      * Provides the url() functionality.  Generates a full url (including
      * domain and index.php).
-     *
+     * 
      * Usage: {url uri='' params=[name=>$value]}
      *
      * @return  string
@@ -138,7 +139,7 @@ class Smarty_Fuel_Extension {
 
     /**
      * Usage: {form attrs=[] hidden=[]}...{/form}
-     *
+     * 
      * @return  string
      */
     public function form($params, $content, $smarty, &$repeat) {
@@ -154,7 +155,7 @@ class Smarty_Fuel_Extension {
 
     /**
      * Usage: {form_fieldset attrs=[] legend=''}...{/form}
-     *
+     * 
      * @return  string
      */
     public function form_fieldset($params, $content, $smarty, &$repeat) {
@@ -490,7 +491,7 @@ class Smarty_Fuel_Extension {
         }
         $attrs = isset($params['folder']) ? $params['folder'] : array();
         $secure = isset($params['secure']) ? $params['secure'] : null;
-        return Html::anchor($params['href'], $params['text'], $attrs, $secure);
+        return Html::anchor($params['file'], $params['text'], $attrs, $secure);
     }
 
     /**
@@ -510,7 +511,7 @@ class Smarty_Fuel_Extension {
 
     /**
      * Usage: {markdown}...{/markdown}
-     *
+     * 
      * @return  string
      */
     public function markdown_parse($params, $content, $smarty, &$repeat) {

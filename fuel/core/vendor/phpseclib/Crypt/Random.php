@@ -6,6 +6,9 @@ namespace PHPSecLib;
 /**
  * Random Number Generator
  *
+ * The idea behind this function is that it can be easily replaced with your own crypt_random_string()
+ * function. eg. maybe you have a better source of entropy for creating the initial states or whatever.
+ *
  * PHP versions 4 and 5
  *
  * Here's a short example of how to use this library:
@@ -13,7 +16,7 @@ namespace PHPSecLib;
  * <?php
  *    include 'Crypt/Random.php';
  *
- *    echo bin2hex(Random::string(8));
+ *    echo bin2hex(crypt_random_string(8));
  * ?>
  * </code>
  *
@@ -36,24 +39,24 @@ namespace PHPSecLib;
  * THE SOFTWARE.
  *
  * @category  Crypt
- * @package   Random
+ * @package   Crypt_Random
  * @author    Jim Wigginton <terrafrost@php.net>
  * @copyright MMVII Jim Wigginton
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
 
-namespace phpseclib\Crypt;
+// laravel is a PHP framework that utilizes phpseclib. laravel workbenches may, independently,
+// have phpseclib as a requirement as well. if you're developing such a program you may encounter
+// a "Cannot redeclare crypt_random_string()" error.
+if (!function_exists('crypt_random_string')) {
+    /**
+     * "Is Windows" test
+     *
+     * @access private
+     */
+    define('CRYPT_RANDOM_IS_WINDOWS', strtoupper(substr(PHP_OS, 0, 3)) === 'WIN');
 
-/**
- * Pure-PHP Random Number Generator
- *
- * @package Random
- * @author  Jim Wigginton <terrafrost@php.net>
- * @access  public
- */
-class Random
-{
     /**
      * Generate a random string.
      *
@@ -65,9 +68,9 @@ class Random
      * @return String
      * @access public
      */
-    static function string($length)
+    function crypt_random_string($length)
     {
-        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+        if (CRYPT_RANDOM_IS_WINDOWS) {
             // method 1. prior to PHP 5.3 this would call rand() on windows hence the function_exists('class_alias') call.
             // ie. class_alias is a function that was introduced in PHP 5.3
             if (function_exists('mcrypt_create_iv') && function_exists('class_alias')) {

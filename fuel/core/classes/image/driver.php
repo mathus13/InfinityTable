@@ -6,7 +6,7 @@
  * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2015 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -14,6 +14,7 @@ namespace Fuel\Core;
 
 abstract class Image_Driver
 {
+
 	protected $image_fullpath  = null;
 	protected $image_directory = null;
 	protected $image_filename  = null;
@@ -123,7 +124,7 @@ abstract class Image_Driver
 		$filename = realpath($filename);
 		$return = array(
 			'filename'    => $filename,
-			'return_data' => $return_data,
+			'return_data' => $return_data
 		);
 		if (is_file($filename))
 		{
@@ -135,7 +136,7 @@ abstract class Image_Driver
 					'image_fullpath'  => $filename,
 					'image_directory' => dirname($filename),
 					'image_filename'  => basename($filename),
-					'image_extension' => $ext,
+					'image_extension' => $ext
 				));
 				if ( ! $return_data)
 				{
@@ -202,7 +203,7 @@ abstract class Image_Driver
 			'x1' => $x1,
 			'y1' => $y1,
 			'x2' => $x2,
-			'y2' => $y2,
+			'y2' => $y2
 		);
 	}
 
@@ -220,6 +221,7 @@ abstract class Image_Driver
 		$this->queue('resize', $width, $height, $keepar, $pad);
 		return $this;
 	}
+
 
 	/**
 	 * Creates a vertical / horizontal or both mirror image.
@@ -335,7 +337,7 @@ abstract class Image_Driver
 			'cwidth'  => $origwidth,
 			'cheight' => $origheight,
 			'x' => $x,
-			'y' => $y,
+			'y' => $y
 		);
 	}
 
@@ -410,7 +412,7 @@ abstract class Image_Driver
 			$degrees = 360 + $degrees;
 		}
 		return array(
-			'degrees' => $degrees,
+			'degrees' => $degrees
 		);
 	}
 
@@ -481,7 +483,7 @@ abstract class Image_Driver
 				'filename' => $filename,
 				'x' => $x,
 				'y' => $y,
-				'padding' => $padding,
+				'padding' => $padding
 			);
 		}
 		return $return;
@@ -515,7 +517,7 @@ abstract class Image_Driver
 
 		return array(
 			'size' => $size,
-			'color' => $color,
+			'color' => $color
 		);
 	}
 
@@ -542,7 +544,7 @@ abstract class Image_Driver
 	protected function _mask($maskimage)
 	{
 		return array(
-			'maskimage' => $maskimage,
+			'maskimage' => $maskimage
 		);
 	}
 
@@ -594,7 +596,7 @@ abstract class Image_Driver
 			'tr' => $tr,
 			'bl' => $bl,
 			'br' => $br,
-			'antialias' => $antialias,
+			'antialias' => $antialias
 		);
 	}
 
@@ -652,7 +654,7 @@ abstract class Image_Driver
 
 		$this->debug("", "Saving image as <code>$filename</code>");
 		return array(
-			'filename' => $filename,
+			'filename' => $filename
 		);
 	}
 
@@ -703,7 +705,7 @@ abstract class Image_Driver
 
 		$this->debug('', "Outputting image as $filetype");
 		return array(
-			'filetype' => $filetype,
+			'filetype' => $filetype
 		);
 	}
 
@@ -749,17 +751,17 @@ abstract class Image_Driver
 				$red   = hexdec(substr($hex, 0, 2));
 				$green = hexdec(substr($hex, 2, 2));
 				$blue  = hexdec(substr($hex, 4, 2));
-				$alpha = (strlen($hex) == 8) ? hexdec(substr($hex, 6, 2)) : 255;
+				$alpha = hexdec(substr($hex, 6, 2));
 			}
 			else
 			{
 				$red   = hexdec(substr($hex, 0, 1).substr($hex, 0, 1));
 				$green = hexdec(substr($hex, 1, 1).substr($hex, 1, 1));
 				$blue  = hexdec(substr($hex, 2, 1).substr($hex, 2, 1));
-				$alpha = (strlen($hex) > 3) ? hexdec(substr($hex, 3, 1).substr($hex, 3, 1)) : 255;
+				$alpha = hexdec(substr($hex, 3, 1).substr($hex, 3, 1));
 			}
 		}
-
+		
 		$alpha = floor($alpha / 2.55);
 
 		return array(
@@ -809,7 +811,7 @@ abstract class Image_Driver
 	{
 		// Sanitize double negatives
 		$input = str_replace('--', '', $input);
-
+		
 		// Depending on php configuration, float are sometimes converted to strings
 		// using commas instead of points. This notation can create issues since the
 		// conversion from string to float will return an integer.
@@ -912,3 +914,4 @@ abstract class Image_Driver
 		}
 	}
 }
+

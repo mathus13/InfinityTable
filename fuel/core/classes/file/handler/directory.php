@@ -6,14 +6,17 @@
  * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2015 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
 namespace Fuel\Core;
 
+
+
 class File_Handler_Directory
 {
+
 	/**
 	 * @var	string	path to the file
 	 */
@@ -182,3 +185,5 @@ class File_Handler_Directory
 		throw new \BadMethodCallException('Get_size method is unavailable on directories.');
 	}
 }
+
+

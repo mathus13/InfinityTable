@@ -6,7 +6,7 @@
  * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2015 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -102,6 +102,7 @@ if ( ! function_exists('logger'))
 		return \Log::instance()->log($level, (empty($method) ? '' : $method.' - ').$msg);
 	}
 }
+
 
 /**
  * Takes an array of attributes and turns it into a string for an html tag
@@ -249,7 +250,7 @@ if ( ! function_exists('e'))
 {
 	function e($string)
 	{
-		return \Security::htmlentities($string);
+		return Security::htmlentities($string);
 	}
 }
 
@@ -317,7 +318,7 @@ if (!function_exists('http_build_url'))
 			$flags |= HTTP_URL_STRIP_FRAGMENT;
 		}
 		// HTTP_URL_STRIP_AUTH becomes HTTP_URL_STRIP_USER and HTTP_URL_STRIP_PASS
-		elseif ($flags & HTTP_URL_STRIP_AUTH)
+		else if ($flags & HTTP_URL_STRIP_AUTH)
 		{
 			$flags |= HTTP_URL_STRIP_USER;
 			$flags |= HTTP_URL_STRIP_PASS;
@@ -375,9 +376,10 @@ if (!function_exists('http_build_url'))
 		// note: scheme and host are never stripped
 		foreach ($keys as $key)
 		{
-			if ($flags & (int) constant('HTTP_URL_STRIP_' . strtoupper($key)))
+			if ($flags & (int)constant('HTTP_URL_STRIP_' . strtoupper($key)))
 				unset($parse_url[$key]);
 		}
+
 
 		$new_url = $parse_url;
 
@@ -429,7 +431,7 @@ if ( ! function_exists('get_common_path'))
  */
 if ( ! function_exists('call_fuel_func_array'))
 {
-	function call_fuel_func_array($callback, array $args)
+	function call_fuel_func_array($callback , array $args)
 	{
 		// deal with "class::method" syntax
 		if (is_string($callback) and strpos($callback, '::') !== false)

@@ -2,6 +2,7 @@
 
 namespace Fuel\Core;
 
+
 /**
  * Request_Curl Class
  *
@@ -54,7 +55,7 @@ class Request_Curl extends \Request_Driver
 	protected function connection()
 	{
 		// If no a protocol in URL, assume its a local link
-		! preg_match('!^\w+://! i', $this->resource) and $this->resource = \Uri::create($this->resource);
+		! preg_match('!^\w+://! i', $this->resource) and $this->resource = Uri::create($this->resource);
 
 		return curl_init($this->resource);
 	}
@@ -342,17 +343,9 @@ class Request_Curl extends \Request_Driver
 					return \Format::forge($input)->to_csv();
 				break;
 
+			// Format as Query String
 			default:
-					if (count($input) === 1 and key($input) === 'form-data')
-					{
-						// multipart/form-data
-						return $input['form-data'];
-					}
-					else
-					{
-						//application/x-www-form-urlencoded
-						return http_build_query($input, null, '&');
-					}
+					return http_build_query($input, null, '&');
 				break;
 		}
 	}

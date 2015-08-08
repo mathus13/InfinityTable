@@ -6,14 +6,17 @@
  * @version    1.7
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2015 Fuel Development Team
+ * @copyright  2010 - 2014 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
 namespace Fuel\Core;
 
+
+
 class Cache_Storage_Redis extends \Cache_Storage_Driver
 {
+
 	/**
 	 * @const  string  Tag used for opening & closing cache properties
 	 */
@@ -217,7 +220,7 @@ class Cache_Storage_Redis extends \Cache_Storage_Driver
 			'created'          => $this->created,
 			'expiration'       => $this->expiration,
 			'dependencies'     => $this->dependencies,
-			'content_handler'  => $this->content_handler,
+			'content_handler'  => $this->content_handler
 		);
 		$properties = '{{'.static::PROPS_TAG.'}}'.json_encode($properties).'{{/'.static::PROPS_TAG.'}}';
 
