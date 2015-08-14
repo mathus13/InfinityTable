@@ -1,3 +1,4 @@
 /.phpintel/
 .htaccess
 /fuel/vendor/
+db.php
