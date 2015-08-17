@@ -1,0 +1,17 @@
+{
+    "links": [
+        {
+            "id": "add",
+            "text": "New",
+            "url": "/characters/add",
+            "class": "character-menu-add",
+            "title": "Create a new Character"
+        },
+        {
+            "id": "list",
+            "text": "List",
+            "url": "/characters/list",
+            "class": "character-menu-list"
+        }
+    ]
+}

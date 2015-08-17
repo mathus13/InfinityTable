@@ -1,4 +1,5 @@
 <?php
+require_once 'master.php';
 /**
  * Fuel is a fast, lightweight, community driven PHP5 framework.
  *
@@ -19,7 +20,8 @@
  * @package  app
  * @extends  Controller
  **/
-class Controller_Welcome extends Controller_Master {
+
+class Controller_Welcome extends App\Controller_Master {
 	
 	
 	public function before() {

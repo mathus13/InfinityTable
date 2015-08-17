@@ -1,3 +1,7 @@
+<?php
+$nav = (isset($nav)) ? $nav : array();
+$subnav = (isset($subnav)) ? $subnav : array();
+?>
 <!DOCTYPE html>
 <html>
 <head>

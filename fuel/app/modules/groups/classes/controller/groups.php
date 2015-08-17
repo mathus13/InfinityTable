@@ -1,6 +1,8 @@
 <?php
+namespace Groups;
+require_once APPPATH.'/classes/controller/master.php';
 
-class Controller_Groups extends Controller_Master {
+class Controller_Groups extends \App\Controller_Master {
 
 	public function action_list() {
 		$data["subnav"] = array('list'=> 'active' );
