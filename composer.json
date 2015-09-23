@@ -139,7 +139,8 @@
         "monolog/monolog": "1.5.*",
         "michelf/php-markdown": "1.4.0",
         "cboden/ratchet": "0.3.*",
-        "pfbc/pfbc": "3.1"
+        "pfbc/pfbc": "3.1",
+        "slim/slim": "3.x-dev"
     },
     "suggest": {
         "dwoo/dwoo" : "Allow Dwoo templating with the Parser package",
