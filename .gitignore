@@ -2,3 +2,5 @@
 .htaccess
 /fuel/vendor/
 db.php
+/vendor/
+/composer.lock
