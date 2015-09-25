@@ -4,3 +4,4 @@
 db.php
 /vendor/
 /composer.lock
+*_real.json

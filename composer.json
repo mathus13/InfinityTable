@@ -8,8 +8,13 @@
         "slim/slim": "3.x-dev",
         "twig/twig": "^2.0@dev",
         "phpunit/phpunit": "~4.8",
-        "react/zmq": "^0.4.0@dev",
-        "predis/predis": "^1.1@dev"
+        "predis/predis": "^1.1@dev",
+        "doctrine/dbal": "^2.6@dev"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Ethereal\\": "lib"
+        }
+    }
 }
