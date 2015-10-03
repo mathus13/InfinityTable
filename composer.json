@@ -9,7 +9,8 @@
         "twig/twig": "^2.0@dev",
         "phpunit/phpunit": "~4.8",
         "predis/predis": "^1.1@dev",
-        "doctrine/dbal": "^2.6@dev"
+        "doctrine/dbal": "^2.6@dev",
+        "guzzlehttp/guzzle": "^6.1@dev"
     },
     "minimum-stability": "dev",
     "autoload": {
