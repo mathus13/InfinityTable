@@ -33,11 +33,13 @@ $container['config'] = function ($c) {
     return new Ethereal\Config;
 };
 $container['cache'] = function ($c) {
-    return new Ethereal\Cache([
+    $cache =  new Ethereal\Cache([
 	    'scheme' => 'tcp',
 	    'host'   => 'redis',
 	    'port'   => 6379,
 	]);
+    $cache->setNamespace('infinityTable');
+    return $cache;
 };
 
 //Load Slim

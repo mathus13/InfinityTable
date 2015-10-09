@@ -13,10 +13,11 @@ class Config
     
     public function __construct(Ethereal\Cache $cache)
     {
+        $this->cache = $cache;
+        if ($this->cache->get())
         if (!is_dir($this->dir)) {
             throw new \Exception('Invalid Config Directory: '.$this->dir);
         }
-        $this->cache = $cache;
         $config = array();
         $files = array();
         foreach (new \DirectoryIterator($this->dir) as $file) {
@@ -36,7 +37,7 @@ class Config
                 throw new \Exception('Invalid Config: '.$json);
             }
         }
-        $this->cache->set('config', $config);
+        $this->cache->set('Ethereal\Config', $config);
         $this->config = $config;
     }
 
