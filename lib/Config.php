@@ -2,25 +2,49 @@
 namespace Ethereal;
 
 use DirectoryIterator;
+use Ethereal\Cache;
 
-class Config {
+class Config
+{
     
-    private $_config;
-    protected $_dir = 'config';
+    private $config;
+    protected $cache;
+    protected $dir = __DIR__.'/config/';
     
-    public function __construct() {
+    public function __construct(Ethereal\Cache $cache)
+    {
+        if (!is_dir($this->dir)) {
+            throw new \Exception('Invalid Config Directory: '.$this->dir);
+        }
+        $this->cache = $cache;
         $config = array();
-        foreach (new DirectoryIterator($this->_dir) as $file) {
-            if( strpos($file->getFilename(), '.json') && $file->isReadable()) {
-                $h = \fopen($file->getPathname());
-                $json = fread($h);
-                if ($json = json_decode($json,true)) {
-                   foreach($json as $k => $v) {
-                       $config[$k] = $v;
-                   } 
-                }
+        $files = array();
+        foreach (new \DirectoryIterator($this->dir) as $file) {
+            if (strpos($file->getFilename(), '.json') && $file->isReadable()) {
+                $files[$file->getFilename()] = $file->getPathname();
             }
         }
-        $this->_config = $config;
+        ksort($files);
+        foreach ($files as $name => $path) {
+            $h = fopen($path, 'r+');
+            $json = fread($h, 2048);
+            if ($parse = json_decode($json)) {
+                foreach ($parse as $k => $v) {
+                    $config[$k] = $v;
+                }
+            } else {
+                throw new \Exception('Invalid Config: '.$json);
+            }
+        }
+        $this->cache->set('config', $config);
+        $this->config = $config;
+    }
+
+    public function get($name)
+    {
+        if (isset($this->config[$name])) {
+            return $this->config[$name];
+        }
+        return null;
     }
 }

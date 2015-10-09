@@ -1,0 +1,3 @@
+--Folder in which to place config files--
+- files should be json with a .json extension
+- files with a suffix _real are already in git ignore

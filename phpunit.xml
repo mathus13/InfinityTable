@@ -1,0 +1,7 @@
+<phpunit verbose="true" colors="true">
+  <testsuites>
+   <testsuite name="Db Table Tests">
+      <directory suffix="Test.php">lib/Db/tests</directory>
+   </testsuite>
+</testsuites>
+</phpunit>
