@@ -1,5 +1,0 @@
-{
-    "db": {
-        "url": "mysql://user@password:host:port/db"
-    }
-}
