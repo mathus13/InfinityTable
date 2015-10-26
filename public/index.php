@@ -57,3 +57,7 @@ $container['cache'] = function ($c) {
 
 //Load Slim
 $app = new \Slim\App();
+
+$app->get('/groups', function ($request, $responce, $args) {
+
+});
