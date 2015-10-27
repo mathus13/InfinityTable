@@ -1,8 +1,8 @@
-This application intends to be THE home for the rempte tabletop rpg EXPERIENCE.
+#Infinity Table#
+This application intends to be THE home for the remote tabletop rpg EXPERIENCE.
 
-We hope to allow groups of gaming enthusiests to be able to productivly game from across the globe. 
+We hope to allow groups of gaming enthusiasts to be able to productively game from across the globe. 
 
-Built upon codeigniter, utilizing both mysql and couchdb database servers, there will be alot of flexibility built to this system. 
 
 
 ##To Do##
@@ -13,12 +13,10 @@ Just about everything
 ##Anatomy##
 
 ###Modules (libraries)### 
-  
-- bitauth https://github.com/danmontgomery/codeigniter-bitauth
 
-- charcters
+- characters
 
-- groups (teams? seperate from bitauth groups which are only used for administrative levels -- moderator)
+- groups (teams?  -- moderator)
 
 - games
 
@@ -27,7 +25,7 @@ Just about everything
   
 - Welcome (dashboard)
 
-- barraks (character management)
+- barracks (character management)
 
 - tavern (group section (forums?))
 
