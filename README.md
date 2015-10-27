@@ -5,31 +5,30 @@ We hope to allow groups of gaming enthusiests to be able to productivly game fro
 Built upon codeigniter, utilizing both mysql and couchdb database servers, there will be alot of flexibility built to this system. 
 
 
-==To Do==
+##To Do##
+
 Just about everything
 
 
-==Anatomy==
+##Anatomy##
 
-Modules (libraries) - 
+###Modules (libraries)### 
   
-  -bitauth https://github.com/danmontgomery/codeigniter-bitauth
+- bitauth https://github.com/danmontgomery/codeigniter-bitauth
 
-  -charcters
+- charcters
 
-  -groups (teams? seperate from bitauth groups which are only used for administrative levels -- moderator)
+- groups (teams? seperate from bitauth groups which are only used for administrative levels -- moderator)
 
-  -games
+- games
 
--------------------
-Controllers - 
+
+###Controllers### 
   
-  -Welcome (dashboard)
+- Welcome (dashboard)
 
-  -barraks (character management)
+- barraks (character management)
 
-  -tavern (group section (forums?))
+- tavern (group section (forums?))
 
-  -dungeon (gaming section -- plan to integrate video conferencing, white board and the like)
-
-=====================
+- dungeon (gaming section -- plan to integrate video conferencing, white board and the like)
