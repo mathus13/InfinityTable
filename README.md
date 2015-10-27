@@ -23,9 +23,6 @@ Just about everything
 ###Controllers### 
   
 - Welcome (dashboard)
-
 - barracks (character management)
-
 - tavern (group section (forums?))
-
 - dungeon (gaming section -- plan to integrate video conferencing, white board and the like)
