@@ -5,13 +5,11 @@ We hope to allow groups of gaming enthusiests to be able to productivly game fro
 Built upon codeigniter, utilizing both mysql and couchdb database servers, there will be alot of flexibility built to this system. 
 
 
-===================
-To Do:
+==To Do==
 Just about everything
 
 
-===================
-Anatomy:
+==Anatomy==
 
 Modules (libraries) - 
   
