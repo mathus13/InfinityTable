@@ -5,3 +5,5 @@ db.php
 /vendor/
 /composer.lock
 *_real.json
+/bower_components/
+/node_modules/
