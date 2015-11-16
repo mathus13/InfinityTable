@@ -1,0 +1,7 @@
+<phpunit verbose="true" colors="true">
+  <testsuites>
+   <testsuite name="Ethereal lib Tests">
+      <directory suffix="Test.php">lib/tests</directory>
+   </testsuite>
+</testsuites>
+</phpunit>

@@ -1,0 +1,1 @@
+{"builders":{"configs":{}},"mixinTypes":["contribution"],"runners":{"configs":{"system:/javascript/web/grunt":{"ram":1000,"variables":{},"options":{}}},"default":"project:/apache%20php"},"type":"GruntJS","attributes":{"framework":["BasicJS"],"contribute_branch":["feature/FuelPHP"],"contribute_mode":["contribute"],"language":["javascript"]}}

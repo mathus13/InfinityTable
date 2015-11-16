@@ -1,0 +1,9 @@
+/.phpintel/
+.htaccess
+/fuel/vendor/
+db.php
+/vendor/
+/composer.lock
+*_real.json
+/bower_components/
+/node_modules/

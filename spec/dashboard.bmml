@@ -1,0 +1,53 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1169" measuredH="715" mockupW="1140" mockupH="651">
+  <controls>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Paragraph" x="606" y="214" w="-1" h="-1" measuredW="275" measuredH="80" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>*Activity%20Feed*%0A*%20The%20Silver%20Falcons%0A*%20%20Session%20held%20on%202/1%20%5Bsee%20notes%5D</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::CoverFlow" x="59" y="214" w="-1" h="-1" measuredW="493" measuredH="198" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/7222578060_803ec7c7c0.jpg</src>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Paragraph" x="541" y="178" w="404" h="15" measuredW="275" measuredH="80" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Welcome%2C%20*Sam%20Soanso*.%20We%20have%20been%20expecting%20you</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::iPadPopover" x="153" y="427" w="304" h="238" measuredW="222" measuredH="187" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <popoverArrowSide>top</popoverArrowSide>
+        <text>Name%3A%20Thor</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="__group__" x="29" y="64" w="1140" h="651" measuredW="1140" measuredH="651" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="1140" h="651" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>RPG%20Multiverse%0Ahttp%3A//rpg.multiverse.gam</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="__group__" x="1" y="72" w="1138" h="30" measuredW="1138" measuredH="30" zOrder="1" locked="false" isInGroup="7">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="179" h="30" measuredW="77" measuredH="79" zOrder="0" locked="false" isInGroup="1">
+              <controlProperties>
+                <text>Logo</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::MenuBar" x="177" y="1" w="961" h="29" measuredW="346" measuredH="29" zOrder="1" locked="false" isInGroup="1">
+              <controlProperties>
+                <text>Home%2CAbout%2CBlog%2CPartner%2CSign-Up%2CLogin</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::List" x="1069" y="163" w="100" h="527" measuredW="100" measuredH="126" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>*Online%20Friends*%0ATom%20Smithson%0AErik%20Waters%0AShawn%20Barratt</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
