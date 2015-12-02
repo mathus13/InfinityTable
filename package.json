@@ -1,0 +1,17 @@
+{
+  "name": "infinity_table",
+  "version": "1.0.0",
+  "description": "This application intends to be THE home for the remote tabletop rpg EXPERIENCE.",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-bower-concat": "^0.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
