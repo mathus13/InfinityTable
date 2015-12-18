@@ -4,18 +4,23 @@ namespace Infinity\Campaigns;
 use Ethereal\Db\MetaTable;
 use Infinity\Campaigns\Campaign;
 
-class Campaigns extends MetaTable implements \Ethereal\Db\TableInterface
+class Users extends MetaTable implements \Ethereal\Db\TableInterface
 {
-    protected $table = 'campaigns';
-    protected $meta_table = 'campaign_md';
-    protected $rowClass = 'Infinity\Campaigns\Campaign';
+    protected $table = 'users';
+    protected $meta_table = 'user_md';
+    protected $rowClass = 'Infinity\Users\User';
     protected $columns = array(
         'id',
-        'title',
+        'email',
+        'username',
+        'activated',
+        'banned',
+        'ban_reason',
+        'last_ip',
+        'last_login',
         'created_date',
-        'created_by',
-        'owner',
-        'status',
+        'modified',
+        'active'
     );
 
     public function search(array $params)
@@ -24,6 +29,16 @@ class Campaigns extends MetaTable implements \Ethereal\Db\TableInterface
         $search = $this->getSearchQB();
         foreach ($params as $k => $v) {
             switch ($k) {
+                case 'id':
+                case 'created_date':
+                case 'active':
+                case 'email':
+                case 'username':
+                case 'activated':
+                case 'banned':
+                    $search->where("clients.{$k} = :{$k}");
+                    $search->setParameter(":{$k}", $v);
+                    break;
                 case 'term':
                     $search->where(
                         $this->qb()->expr()->orX(
@@ -31,18 +46,6 @@ class Campaigns extends MetaTable implements \Ethereal\Db\TableInterface
                             $this->qb()->expr()->like('md_value', "'%{$v}%'")
                         )
                     );
-                    break;
-                case 'id':
-                case 'created_date':
-                case 'active':
-                case 'owner':
-                case 'created_by':
-                    $search->where("clients.{$k} = :{$k}");
-                    $search->setParameter(":{$k}", $v);
-                    break;
-                case 'title':
-                    $search->where("title LIKE :title");
-                    $search->setParameter(':title', "%{$v}%");
                     break;
                 default:
                     $search->where(
@@ -56,5 +59,13 @@ class Campaigns extends MetaTable implements \Ethereal\Db\TableInterface
         $search->groupBy('clients.id');
         $search->orderBy('created_date');
         return $this->fetchAll($search);
+    }
+
+    public function create($data)
+    {
+        if (isset($data['password'])) {
+            $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+        }
+        return parent::create($data);
     }
 }

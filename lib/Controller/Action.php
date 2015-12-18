@@ -12,7 +12,7 @@ class Action
     public function __construct(
         \Psr\Http\Message\ServerRequestInterface $request,
         \Psr\Http\Message\ResponseInterface $response,
-        \Interop\Container\ContainerInterface $container,
+        \Pimple\Container $container,
         array $args
     ) {
         $this->request = $request;
@@ -38,13 +38,17 @@ class Action
         if (property_exists($this, $property)) {
             return $this->{$property};
         }
-        if ($this->container->has($property)) {
-            if ($service = $this->container->get($property)) {
-                return $service;
-            }
-        }
+
         if (isset($this->args[$property])) {
             return $this->args[$property];
+        }
+
+        try {
+            if ($service = $this->container[$property]) {
+                return $service;
+            }
+        } catch(Exception $e) {
+            //property wasnt in di container
         }
         return false;
     }

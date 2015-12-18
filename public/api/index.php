@@ -10,42 +10,48 @@ session_start();
 defined('APP_START_TIME') or define('APP_START_TIME', microtime(true));
 defined('APP_START_MEM') or define('APP_START_MEM', memory_get_usage());
 
-define('DOCROOT', __DIR__.DIRECTORY_SEPARATOR);
-require_once dirname(__DIR__).'/vendor/autoload.php';
+define('DOCROOT', dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR);
+require_once DOCROOT.'/vendor/autoload.php';
 use Ethereal\Cache;
 use Ethereal\Config;
 use Ethereal\Db;
+use Infinity\AppConfig;
+use Infinity\Campaigns\Controllers\Campaign as CampaignController;
+use Monolog\Handler\ErrorLogHandler;
+use Monolog\Logger;
+use Pimple\Container as Di;
 use Slim\App;
-use Clients\Company\Controllers\Clients as ClientController;
-
-/**
- * Set error reporting and display errors settings.  You will want to change these when in production.
- */
-error_reporting(-1);
-ini_set('display_errors', 1);
 
 //Set Container
-$container = new \Slim\Container;
+$di = new Di;
 
 //hook system
-$container['loaded_hooks'] = (isset($hooks))? $hooks : array();
-$container['hooks'] = function ($c) {
+$di['loaded_hooks'] = (isset($hooks))? $hooks : array();
+$di['hooks'] = function ($c) {
     return new Ethereal\Hooks($c['loaded_hooks']);
 };
 
+$di['logger'] = function ($c) {
+    $log = new Monolog\Logger('apache');
+    $log->pushHandler(new Monolog\Handler\ErrorLogHandler);
+    return $log;
+};
+
 //database
-$container['db'] = function ($c) {
+$di['db'] = function ($c) {
     return new Ethereal\Db($c['config']);
 };
 
 //config system
-$container['config'] = function ($c) {
+$di['config'] = function ($c) {
     $cache = $c['cache'];
-    return new Ethereal\Config($cache);
+    $config =  new AppConfig($cache, $c['hooks']);
+    $c['logger']->addInfo('Db', (array) $config->get('db'));
+    return $config;
 };
 
 //caching layer
-$container['cache'] = function ($c) {
+$di['cache'] = function ($c) {
     $cache =  new Ethereal\Cache([
         'scheme' => 'tcp',
         'host'   => 'redis',
@@ -56,10 +62,15 @@ $container['cache'] = function ($c) {
 };
 
 //Load Slim
+$configuration = [
+    'settings' => [
+        'displayErrorDetails' => true,
+    ],
+];
+$container = new \Slim\Container($configuration);
 $app = new \Slim\App($container);
-
-$app->group('/groups', function () {
-    $this->map(['GET', 'POST', 'OPTIONS'], '', function ($request, $response, $args) {
+$app->group('/groups', function () use ($di) {
+    $this->map(['GET', 'POST', 'OPTIONS'], '', function ($request, $response, $args) use ($di) {
         $actions = array(
             'GET'     => 'listClients',
             'POST'    => 'create',
@@ -70,12 +81,12 @@ $app->group('/groups', function () {
         $controller = new GroupController(
             $request,
             $response,
-            $this->getContainer(),
+            $di,
             $args
         );
         return $controller->fire($actions[$request->getMethod()]);
     });
-    $this->map(['GET', 'PUT', 'DELETE', 'OPTIONS'], '/{client_id}', function ($request, $response, $args) {
+    $this->map(['GET', 'PUT', 'DELETE', 'OPTIONS'], '/{id}', function ($request, $response, $args) use ($di) {
         $actions = array(
             'GET'     => 'getById',
             'PUT'     => 'update',
@@ -85,9 +96,46 @@ $app->group('/groups', function () {
         $controller = new GroupController(
             $request,
             $response,
-            $this->getContainer(),
+            $di,
             $args
         );
         return $controller->fire($actions[$request->getMethod()]);
     });
 });
+
+$app->group('/campaigns', function () use ($di) {
+    $this->map(['GET', 'POST', 'OPTIONS'], '', function ($request, $response, $args) use ($di) {
+        $actions = array(
+            'GET'     => 'listItems',
+            'POST'    => 'create',
+            'OPTIONS' => 'getOptions'
+        );
+        $args = array_merge($request->getQueryParams(), $args);
+        
+        $controller = new CampaignController(
+            $request,
+            $response,
+            $di,
+            $args
+        );
+        $di['logger']->addInfo($actions[$request->getMethod()]);
+        return $controller->fire($actions[$request->getMethod()]);
+    });
+    $this->map(['GET', 'PUT', 'DELETE', 'OPTIONS'], '/{id}', function ($request, $response, $args) use ($di) {
+        $actions = array(
+            'GET'     => 'getById',
+            'PUT'     => 'update',
+            'DELETE'  => 'delete',
+            'OPTIONS' => 'getItemOptions'
+        );
+        $controller = new CampaignController(
+            $request,
+            $response,
+            $di,
+            $args
+        );
+        return $controller->fire($actions[$request->getMethod()]);
+    });
+});
+
+$app->run();

@@ -1,13 +1,13 @@
 <?php
-namespace Infinity\Games;
+namespace Infinity\Users;
 
-use Ethereal\Db\Row;
+use Ethereal\Db\MetaTableRow;
 use Ethereal\Db\RowInterface;
 use Ethereal\Db\TableInterface;
 
-class Game extends \Ethereal\Db\Row implements \Ethereal\Db\RowInterface
+class User extends MetaTableRow implements RowInterface
 {
-    public function __construct($data, \Ethereal\Db\TableInterface $table)
+    public function __construct($data, TableInterface $table)
     {
         if (isset($data['meta_data'])) {
             foreach (explode('||', $data['meta_data']) as $meta) {
@@ -30,8 +30,18 @@ class Game extends \Ethereal\Db\Row implements \Ethereal\Db\RowInterface
     public function delete()
     {
         $this->active = 0;
-        $this->disabled_by = 0;
-        $this->disabled_date = date('Y-m-d h:i:s');
         $this->save();
+    }
+
+    public function ban($reason)
+    {
+        $this->banned = 1;
+        $this->ban_reason = $reason;
+        $this->save();
+    }
+
+    public function authenticate($password)
+    {
+        return password_verify($password, $this->password);
     }
 }

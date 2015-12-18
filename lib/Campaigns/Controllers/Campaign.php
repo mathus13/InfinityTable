@@ -5,7 +5,7 @@ namespace Infinity\Campaigns\Controllers;
 use \Infinity\Campaigns\Campaigns as ClientsTable;
 use \Infinity\Controller\Api as ApiController;
 
-class Campaigns extends ApiController
+class Campaign extends ApiController
 {
     protected $table;
 

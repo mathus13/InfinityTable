@@ -37,6 +37,7 @@ class Api extends Action
             'details' => 'There was an error, but we dont kow what it was'
         ),
     );
+    protected $type = 'unknown';
 
     protected function beforeAction()
     {
@@ -74,5 +75,55 @@ class Api extends Action
             )
         );
         $this->response = $this->response->withStatus($error['status'], $error['message']);
+    }
+
+    public function listItems()
+    {
+        if (count($this->args) > 0) {
+            $items = $this->table->search($this->args);
+        } else {
+            $items = $this->table->getAllActive();
+        }
+        $items = $this->buildItems($items);
+        $this->return['args'] = $this->args;
+        $this->return['data'] = $items;
+    }
+
+    private function buildItems(array $rows)
+    {
+        $items = array();
+        foreach ($rows as $item) {
+            $item = array(
+                'id' => $item->id,
+                'type' =>  $this->type,
+                'attributes' => $item->toArray()
+            );
+            $items[] = $item;
+        }
+        return $items;
+    }
+
+    public function createItem()
+    {
+        $data = $this->request->getParsedBody();
+        $item = $this->table->create($data);
+        $item->save();
+        $this->return['data'] = $item->toArray();
+        $this->response = $this->response->withStatus(201, 'Item Created');
+    }
+
+    public function updateItem()
+    {
+        $id = $this->id;
+        if (!$id) {
+            $this->throwError(103, "URL segment 3 (id) missing");
+            return;
+        }
+        $item = $this->table->find($id);
+        foreach ($this->request->getParsedBody() as $k => $v) {
+            $item->{$k} = $v;
+        }
+        $item->save();
+        $this->return['data'] = $this->buildItems(array($item));
     }
 }
