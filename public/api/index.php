@@ -72,7 +72,7 @@ $app = new \Slim\App($container);
 $app->group('/groups', function () use ($di) {
     $this->map(['GET', 'POST', 'OPTIONS'], '', function ($request, $response, $args) use ($di) {
         $actions = array(
-            'GET'     => 'listClients',
+            'GET'     => 'listItems',
             'POST'    => 'create',
             'OPTIONS' => 'getOptions'
         );
@@ -104,6 +104,41 @@ $app->group('/groups', function () use ($di) {
 });
 
 $app->group('/campaigns', function () use ($di) {
+    $this->map(['GET', 'POST', 'OPTIONS'], '', function ($request, $response, $args) use ($di) {
+        $actions = array(
+            'GET'     => 'listItems',
+            'POST'    => 'create',
+            'OPTIONS' => 'getOptions'
+        );
+        $args = array_merge($request->getQueryParams(), $args);
+        
+        $controller = new CampaignController(
+            $request,
+            $response,
+            $di,
+            $args
+        );
+        $di['logger']->addInfo($actions[$request->getMethod()]);
+        return $controller->fire($actions[$request->getMethod()]);
+    });
+    $this->map(['GET', 'PUT', 'DELETE', 'OPTIONS'], '/{id}', function ($request, $response, $args) use ($di) {
+        $actions = array(
+            'GET'     => 'getById',
+            'PUT'     => 'update',
+            'DELETE'  => 'delete',
+            'OPTIONS' => 'getItemOptions'
+        );
+        $controller = new CampaignController(
+            $request,
+            $response,
+            $di,
+            $args
+        );
+        return $controller->fire($actions[$request->getMethod()]);
+    });
+});
+
+$app->group('/games', function () use ($di) {
     $this->map(['GET', 'POST', 'OPTIONS'], '', function ($request, $response, $args) use ($di) {
         $actions = array(
             'GET'     => 'listItems',

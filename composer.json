@@ -29,7 +29,9 @@
         "twig/twig": "^2.0@dev",
         "guzzlehttp/guzzle": "^6.1@dev",
         "ethereal/SimpleHooks": "0.1.x-dev",
-        "ethereal/SimpleTable": "0.1.x-dev"
+        "ethereal/SimpleTable": "0.1.x-dev",
+        "bshaffer/oauth2-server-php": "^1.8",
+        "ramsey/uuid": "^3.1"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.8"

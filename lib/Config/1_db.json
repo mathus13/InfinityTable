@@ -1,5 +1,10 @@
 {
     "db": {
-        "url": "mysql://user@password:host:port/db"
+    	"driver": "pdo_mysql",
+    	"user": "user",
+    	"host": "localhost",
+    	"password": "password",
+    	"dbname": "gb01",
+    	"charset": "utf8"
     }
 }

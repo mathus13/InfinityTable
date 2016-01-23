@@ -8,37 +8,12 @@ use \Infinity\Controller\Api as ApiController;
 class Campaign extends ApiController
 {
     protected $table;
+    protected $type = 'campaign';
 
     protected function beforeAction()
     {
         parent::beforeAction();
         $this->table = new ClientsTable($this->db);
-    }
-
-    public function listClients()
-    {
-        if (count($this->args) > 0) {
-            $items = $this->table->search($this->args);
-        } else {
-            $items = $this->table->getAllActive();
-        }
-        $items = $this->buildItems($items);
-        $this->return['args'] = $this->args;
-        $this->return['data'] = $items;
-    }
-
-    private function buildItems(array $rows)
-    {
-        $items = array();
-        foreach ($rows as $client) {
-            $item = array(
-                'id' => $client->id,
-                'type' => 'campaign',
-                'attributes' => $client->toArray()
-            );
-            $items[] = $item;
-        }
-        return $items;
     }
 
     public function create()

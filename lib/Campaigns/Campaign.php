@@ -1,11 +1,10 @@
 <?php
 namespace Infinity\Campaigns;
 
-use Ethereal\Db\Row;
-use Ethereal\Db\RowInterface;
+use Ethereal\Db\MetaTableRow;
 use Ethereal\Db\TableInterface;
 
-class Campaign extends \Ethereal\Db\Row implements \Ethereal\Db\RowInterface
+class Campaign extends MetaTableRow implements \Ethereal\Db\RowInterface
 {
     public function __construct($data, \Ethereal\Db\TableInterface $table)
     {
