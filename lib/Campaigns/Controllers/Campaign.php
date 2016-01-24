@@ -39,7 +39,7 @@ class Campaign extends ApiController
 
     public function getById()
     {
-        $id = $this->client_id;
+        $id = $this->id;
         if (!$id) {
             $this->throwError(103, "URL segment 3 (id) missing");
             return;
@@ -58,7 +58,7 @@ class Campaign extends ApiController
 
     public function delete()
     {
-        $id = $this->client_id;
+        $id = $this->id;
         if (!$id) {
             $this->throwError(103, "URL segment 3 (id) missing");
             return;
@@ -80,13 +80,14 @@ class Campaign extends ApiController
 
     public function update()
     {
-        $id = $this->client_id;
+        $id = $this->id;
         if (!$id) {
             $this->throwError(103, "URL segment 3 (id) missing");
             return;
         }
         $client = $this->table->find($id);
-        foreach ($this->request->getParsedBody() as $k => $v) {
+        $data = json_decode($this->request->getBody());
+        foreach ($data as $k => $v) {
             $client->{$k} = $v;
         }
         $client->save();
@@ -95,7 +96,7 @@ class Campaign extends ApiController
 
     public function getItemOptions()
     {
-        $id = $this->required('client_id');
+        $id = $this->required('id');
         $this->return['links'] = array(
             'Get Campaign' => array(
                 'href' => "/campaigns/{$id}",
@@ -115,6 +116,18 @@ class Campaign extends ApiController
                     'method' => 'DELETE'
                 )
             ),
+            'Get Players' => array(
+                'href' => "/players",
+                'meta' => array(
+                    'method' => 'get'
+                )
+            ),
+            'Get Characters' => array(
+                'href' => "/characters",
+                'meta' => array(
+                    'method' => 'get'
+                )
+            )
         );
     }
 }

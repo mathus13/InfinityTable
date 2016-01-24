@@ -89,7 +89,7 @@ class Api extends Action
         $this->return['data'] = $items;
     }
 
-    private function buildItems(array $rows)
+    protected function buildItems(array $rows)
     {
         $items = array();
         foreach ($rows as $item) {
@@ -105,7 +105,7 @@ class Api extends Action
 
     public function createItem()
     {
-        $data = $this->request->getParsedBody();
+        $data = json_decode($this->request->getBody());
         $item = $this->table->create($data);
         $item->save();
         $this->return['data'] = $item->toArray();

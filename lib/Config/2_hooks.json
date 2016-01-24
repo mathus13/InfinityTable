@@ -1,0 +1,8 @@
+{
+	"hooks": {
+		"Infinity\\links\\init": {
+			"class": "\\Infinity\\Users\\Users",
+			"method": "getLinks"
+		}
+	}
+}

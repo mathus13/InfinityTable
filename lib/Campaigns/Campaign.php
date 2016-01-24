@@ -1,21 +1,22 @@
 <?php
 namespace Infinity\Campaigns;
 
-use Ethereal\Db\MetaTableRow;
+use Ethereal\Db\RowInterface;
 use Ethereal\Db\TableInterface;
+use Infinity\Campaigns\Link;
+use Infinity\LinkedRow;
+use Infinity\Links\LinkableInterface;
 
-class Campaign extends MetaTableRow implements \Ethereal\Db\RowInterface
+class Campaign extends LinkedRow implements RowInterface, LinkableInterface
 {
-    public function __construct($data, \Ethereal\Db\TableInterface $table)
+ 
+    protected $linkNamespace = 'campaign';
+
+    public function __construct($data, TableInterface $table)
     {
-        if (isset($data['meta_data'])) {
-            foreach (explode('||', $data['meta_data']) as $meta) {
-                if (strpos($meta, '::') === false) {
-                    continue;
-                }
-                list($key, $value) = explode('::', $meta);
-                $data[$key] = $value;
-            }
+        $data = (array) $data;
+        if (!array_key_exists('meta_data', $data) || !isset($data['meta_data'])) {
+            $data['meta_data'] = '';
         }
         parent::__construct($data, $table);
         if (!$this->created_date) {
@@ -32,5 +33,10 @@ class Campaign extends MetaTableRow implements \Ethereal\Db\RowInterface
         $this->disabled_by = 0;
         $this->disabled_date = date('Y-m-d h:i:s');
         $this->save();
+    }
+
+    public function getLinkable()
+    {
+        return new Link($this->id);
     }
 }
