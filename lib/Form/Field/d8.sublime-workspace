@@ -1,0 +1,1597 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Meta",
+				"MetaTableRow	(Game.php)"
+			],
+			[
+				"fun",
+				"func	PHP Method"
+			],
+			[
+				"Ca",
+				"CampaignController"
+			],
+			[
+				"con",
+				"container"
+			],
+			[
+				"In",
+				"Infinity	(composer.json)"
+			],
+			[
+				"infini",
+				"infinityStore	(app.js)"
+			],
+			[
+				"st",
+				"store"
+			],
+			[
+				"navb",
+				"navbar-nav	BootstrapClass"
+			],
+			[
+				"list",
+				"list-group-item	BootstrapClass"
+			],
+			[
+				"get_",
+				"get_class	PHP"
+			],
+			[
+				"DOc",
+				"Doctrine\\DBAL\\QueryBuilder"
+			],
+			[
+				"execute",
+				"executeQuery"
+			],
+			[
+				"conn",
+				"connectionParams"
+			],
+			[
+				"assert",
+				"assertTrue"
+			],
+			[
+				"name",
+				"namespace	(Table.php)"
+			],
+			[
+				"fo",
+				"foreach	foreach …"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"class",
+				"class	PHP Class"
+			],
+			[
+				"where",
+				"where_values"
+			],
+			[
+				"row",
+				"rowClass"
+			],
+			[
+				"cla",
+				"class_exists	PHP"
+			],
+			[
+				"admin",
+				"admin_lvl"
+			],
+			[
+				"pro",
+				"providers"
+			],
+			[
+				"PHP",
+				"PHP_EOL"
+			],
+			[
+				"_tm",
+				"_tmpFile"
+			],
+			[
+				"getPro",
+				"getProvidersByName"
+			],
+			[
+				"get",
+				"getByAcct"
+			],
+			[
+				"_get",
+				"_getInstance"
+			],
+			[
+				"REG",
+				"REG_DR_"
+			],
+			[
+				"_ftp",
+				"_ftp_addr"
+			],
+			[
+				"_ft",
+				"_ftp_user"
+			],
+			[
+				"_t",
+				"_tmpFile"
+			],
+			[
+				"_msg",
+				"_msgData"
+			],
+			[
+				"_file",
+				"_filePrefix"
+			],
+			[
+				"array_key",
+				"array_key_exists	PHPArray"
+			],
+			[
+				"num",
+				"numResults"
+			],
+			[
+				"var",
+				"var_export	PHP"
+			],
+			[
+				"call",
+				"call_acct"
+			],
+			[
+				"cur",
+				"cur_acct"
+			],
+			[
+				"display",
+				"display_errors"
+			],
+			[
+				"allow",
+				"allowAcct"
+			],
+			[
+				"strto",
+				"strtoupper	PHPString"
+			],
+			[
+				"day",
+				"daytype"
+			],
+			[
+				"nurse",
+				"nurse_partners"
+			],
+			[
+				"msg",
+				"msg_context"
+			],
+			[
+				"glyphicpl",
+				"glyphicon-plus-sign	BootstrapClass"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"ocData",
+				"ocData-View"
+			],
+			[
+				"repla",
+				"replaceWith	.replaceWith()"
+			],
+			[
+				"oc",
+				"ocCal"
+			],
+			[
+				"table",
+				"table-bordered	BootstrapClass"
+			],
+			[
+				"help",
+				"help-block	BootstrapClass"
+			],
+			[
+				"_data",
+				"_database"
+			],
+			[
+				"meth",
+				"method_exists	PHP"
+			],
+			[
+				"start",
+				"startLoad"
+			],
+			[
+				"stop",
+				"stopLoad"
+			],
+			[
+				"clear",
+				"clearInterval	jsWindow"
+			],
+			[
+				"btn-",
+				"btn-group	BootstrapClass"
+			],
+			[
+				"table-",
+				"table-hover	BootstrapClass"
+			],
+			[
+				"handle",
+				"handleSearch"
+			],
+			[
+				"navbar",
+				"navbar	BootstrapClass"
+			],
+			[
+				"ORDER",
+				"ORDER_NUM"
+			],
+			[
+				"header",
+				"page-header	BootstrapClass"
+			],
+			[
+				"pane",
+				"panel-default	BootstrapClass"
+			],
+			[
+				"email",
+				"email_date"
+			],
+			[
+				"modue",
+				"modules"
+			],
+			[
+				"getAppt",
+				"getApptById"
+			],
+			[
+				"parse",
+				"parse	$.parseJSON()"
+			],
+			[
+				"dta",
+				"database"
+			],
+			[
+				"hol",
+				"holcheck"
+			],
+			[
+				"data",
+				"database"
+			],
+			[
+				"ed",
+				"ed_report"
+			],
+			[
+				"comm",
+				"comments_field"
+			],
+			[
+				"disp",
+				"disp_fields"
+			],
+			[
+				"recip",
+				"recipient"
+			],
+			[
+				"require",
+				"require_once"
+			],
+			[
+				"cal",
+				"cal_dates"
+			],
+			[
+				"comp",
+				"company_name"
+			],
+			[
+				"gly",
+				"glyphicon-asterisk	BootstrapClass"
+			],
+			[
+				"form",
+				"form-control	BootstrapClass"
+			],
+			[
+				"next",
+				"next_month"
+			],
+			[
+				"btn-gr",
+				"btn-group-lg	BootstrapClass"
+			],
+			[
+				"last",
+				"last_month"
+			],
+			[
+				"container",
+				"container-fluid	BootstrapClass"
+			],
+			[
+				"text",
+				"textarea"
+			],
+			[
+				"day_",
+				"day_start"
+			],
+			[
+				"one",
+				"one_day"
+			],
+			[
+				"show",
+				"showIn"
+			],
+			[
+				"CLOSE",
+				"CLOSE_DATE"
+			],
+			[
+				"clea",
+				"clearResult"
+			],
+			[
+				"jqu",
+				"jquery"
+			],
+			[
+				"acc",
+				"account"
+			],
+			[
+				"removeCLass",
+				"removeClass"
+			],
+			[
+				"oc_",
+				"oc_link"
+			],
+			[
+				"getSchedule",
+				"getScheduleFile"
+			],
+			[
+				"ob_flu",
+				"ob_flush()	standard Function"
+			],
+			[
+				"ob_",
+				"ob_clean()	standard Function"
+			],
+			[
+				"ob_sta",
+				"ob_start()	standard Function"
+			],
+			[
+				"HTTP",
+				"HTTP_HOST"
+			],
+			[
+				"onc",
+				"oncall_table"
+			],
+			[
+				"fax",
+				"fax_ob"
+			],
+			[
+				"error",
+				"error_log"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"cli",
+				"client_form"
+			],
+			[
+				"clien",
+				"clientForm"
+			],
+			[
+				"clie",
+				"clientTable"
+			],
+			[
+				"client",
+				"client_data"
+			],
+			[
+				"init",
+				"initManageClients"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"tab",
+				"table-responsive	BootstrapClass"
+			],
+			[
+				"lg-",
+				"col-lg-12	BootstrapClass"
+			],
+			[
+				"navbar-fix",
+				"navbar-fixed-bottom	BootstrapClass"
+			],
+			[
+				"end",
+				"endif"
+			],
+			[
+				"im",
+				"img-responsive	BootstrapClass"
+			],
+			[
+				"nav",
+				"navbar-inverse	BootstrapClass"
+			],
+			[
+				"navbar-",
+				"navbar-default	BootstrapClass"
+			],
+			[
+				"text-",
+				"text-muted	BootstrapClass"
+			],
+			[
+				"pull",
+				"pull-right	BootstrapClass"
+			],
+			[
+				"glyphp",
+				"glyphicon-print	BootstrapClass"
+			],
+			[
+				"acct",
+				"acct_info"
+			],
+			[
+				"sched",
+				"schedCheck"
+			],
+			[
+				"conta",
+				"contact"
+			],
+			[
+				"dat",
+				"database"
+			],
+			[
+				"is",
+				"is_dir"
+			],
+			[
+				"phys",
+				"phys_update"
+			],
+			[
+				"co",
+				"co_update"
+			],
+			[
+				"_",
+				"_query"
+			],
+			[
+				"html",
+				"htmlspecialchars"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/sbarratt/Sites/d8/sites/default/settings.php",
+			"settings":
+			{
+				"buffer_size": 29202,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/sbarratt/Sites/d8/sites/sites.php",
+			"settings":
+			{
+				"buffer_size": 2410,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"project",
+				"Project: Save As"
+			],
+			[
+				"add",
+				"Project: Add Folder"
+			],
+			[
+				"pull",
+				"Git: Pull Current Branch"
+			],
+			[
+				"sniffer",
+				"PHP Code Sniffer: Turn Execute On Save On"
+			],
+			[
+				"phpcs",
+				"PHP Code Sniffer: Sniff this file"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"com",
+				"Composer: Update"
+			],
+			[
+				"spa",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"ta",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"clo",
+				"Project: Close"
+			],
+			[
+				"run",
+				"PHPUnit: Run"
+			],
+			[
+				"un",
+				"PHPUnit: Run"
+			],
+			[
+				"unit",
+				"PHPUnit: Run"
+			],
+			[
+				"uni",
+				"PHPUnit: Run"
+			],
+			[
+				"gett",
+				"PHP: Generate Getters"
+			],
+			[
+				"keyb",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"commi",
+				"Git (SideBarGit): Add & Commit & Push…"
+			],
+			[
+				"gti add",
+				"Git: Add Current File"
+			],
+			[
+				"tab",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"bro",
+				"SFTP: Browse Remote…"
+			],
+			[
+				"uplo",
+				"SFTP: Upload File"
+			],
+			[
+				"brow",
+				"SFTP: Browse Remote…"
+			],
+			[
+				"sftp",
+				"SFTP: Browse Remote…"
+			],
+			[
+				"ftp",
+				"SFTP: Browse Server…"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"sft",
+				"SFTP: Show Panel"
+			],
+			[
+				"up",
+				"SFTP: Upload File"
+			],
+			[
+				"doc",
+				"DocBlockr: Decorate line comment"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"form",
+				"XML Lint: Format"
+			],
+			[
+				"xml",
+				"XML Lint: Format"
+			],
+			[
+				"forma",
+				"Format Code"
+			],
+			[
+				"comm",
+				"SVN: Commit…"
+			],
+			[
+				"svn com",
+				"SVN: Commit…"
+			],
+			[
+				"svn stat",
+				"SVN: Status"
+			],
+			[
+				"svn log",
+				"SVN: Log"
+			],
+			[
+				"svn diff",
+				"SVN: (File) Diff"
+			],
+			[
+				"diff",
+				"SVN: (File) Diff"
+			],
+			[
+				"svn fi",
+				"SVN: (File) Diff"
+			],
+			[
+				"svn",
+				"SVN: Commit…"
+			],
+			[
+				"svn add",
+				"SVN: Add, Interactive…"
+			],
+			[
+				"svn dif",
+				"SVN: (File) Diff, Custom Revisions…"
+			],
+			[
+				"svn lo",
+				"SVN: (File) Log"
+			],
+			[
+				"reve",
+				"SVN: (Folder) Revert"
+			],
+			[
+				"svn sett",
+				"Preferences: SVN Settings"
+			],
+			[
+				"div",
+				"SVN: (File) Diff, Custom Revisions…"
+			],
+			[
+				"setting",
+				"Preferences: Settings - User"
+			],
+			[
+				"sett",
+				"Preferences: Settings - Default"
+			],
+			[
+				"pref",
+				"Preferences: Settings - Default"
+			],
+			[
+				"dif",
+				"SVN: (File) Diff, Remote"
+			],
+			[
+				"mer",
+				"Sublimerge: View Diff"
+			],
+			[
+				"merg",
+				"SVN: Merge…"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/sbarratt/Sites/d8",
+		"/home/sbarratt/Sites/d8/sites",
+		"/home/sbarratt/Sites/d8/sites/default",
+		"/home/sbarratt/Sites/d8/sites/default/files"
+	],
+	"file_history":
+	[
+		"/home/sbarratt/Sites/RPG/composer.json",
+		"/home/sbarratt/Sites/RPG/vendor/ethereal/SimpleTable/lib/Db/MetaTable.php",
+		"/home/sbarratt/Downloads/bpe_cwp-20151222-201058.sql",
+		"/etc/apache2/sites-available/d8.conf",
+		"/etc/hosts",
+		"/home/sbarratt/Sites/RPG/lib/Campaigns/Controllers/Campaign.php",
+		"/home/sbarratt/Sites/RPG/vendor/ethereal/SimpleTable/lib/Db/Table.php",
+		"/home/sbarratt/Sites/RPG/lib/Controller/Api.php",
+		"/home/sbarratt/Sites/RPG/lib/Controller/Action.php",
+		"/home/sbarratt/Sites/RPG/lib/AppConfig.php",
+		"/home/sbarratt/Sites/RPG/lib/Config/1_db.json",
+		"/home/sbarratt/Sites/RPG/lib/Config/1_db_real.json",
+		"/home/sbarratt/Sites/RPG/lib/Users/Users",
+		"/etc/apache2/sites-available/rpg.conf",
+		"/home/sbarratt/Sites/RPG/vendor/ethereal/simpleCache/lib/Cache/Interface.php",
+		"/home/sbarratt/Sites/RPG/multiverse.sql",
+		"/home/sbarratt/Sites/RPG/public/api/index.php",
+		"/home/sbarratt/Sites/RPG/readme.md",
+		"/home/sbarratt/Sites/RPG/Gruntfile.js",
+		"/home/sbarratt/Sites/RPG/lib/Campaigns/.gitkeep",
+		"/home/sbarratt/Documents/wbd/devtest/readme.txt",
+		"/home/sbarratt/Sites/RPG/composer.lock",
+		"/home/sbarratt/.chrome-remote-desktop-session",
+		"/home/sbarratt/Sites/RPG/public/api",
+		"/home/sbarratt/Docker/docker-mattermost/entrypoint.sh",
+		"/home/sbarratt/Docker/docker-mattermost/Dockerfile",
+		"/home/sbarratt/Docker/docker-mattermost/config.default.json",
+		"/home/sbarratt/Docker/docker-mattermost/README.md",
+		"/home/sbarratt/Sites/RPG/lib/tests/ConfigTest.php",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/models/post.js",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/router.js",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/templates/application.hbs",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/templates/posts/index.hbs",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/index.html",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/app.js",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/adapters/application.js",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/routes/application.js",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/routes/post.js",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/templates/posts.hbs",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/templates/post.hbs",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/routes/posts.js",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/templates/favs.hbs",
+		"/home/sbarratt/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/sbarratt/.config/sublime-text-3/Packages/User/JSON.sublime-settings",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/templates/posts.index.hbs",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/routes/about.js",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/templates/about.hbs",
+		"/home/sbarratt/Sites/RPG/public/infinity/dist/assets/infinity.js",
+		"/home/sbarratt/Sites/RPG/public/infinity/package.json",
+		"/home/sbarratt/Sites/RPG/public/infinity/ember-cli-build.js",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/routes/posts.post.js",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/templates/posts.post.hbs",
+		"/home/sbarratt/Sites/RPG/public/infinity/bower.json",
+		"/home/sbarratt/Sites/RPG/public/infinity/app/routes/favorites.js",
+		"/home/sbarratt/Sites/RPG/public/infinity/config/environment.js",
+		"/home/sbarratt/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/sbarratt/Sites/RPG/public/index.php",
+		"/home/sbarratt/Sites/RPG/lib/Db/Table.php",
+		"/home/sbarratt/Sites/RPG/lib/Db/tests/DatabaseTableTest.php",
+		"/home/sbarratt/Sites/RPG/vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/QueryBuilder.php",
+		"/home/sbarratt/Sites/RPG/lib/Config.php",
+		"/home/sbarratt/Sites/RPG/vendor/predis/predis/src/Client.php",
+		"/home/sbarratt/Sites/RPG/lib/Db.php",
+		"/home/sbarratt/Sites/RPG/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+		"/home/sbarratt/Sites/RPG/lib/Db/InvalidTableException.php",
+		"/home/sbarratt/Sites/RPG/lib/Db/Row.php",
+		"/home/sbarratt/Sites/RPG/lib/Cache.php",
+		"/home/sbarratt/.bashrc",
+		"/home/sbarratt/Sites/RPG/lib/config/readme.md",
+		"/home/sbarratt/Sites/RPG/lib/config/1_db_real.json",
+		"/home/sbarratt/Sites/RPG/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php",
+		"/home/sbarratt/Sites/RPG/vendor/doctrine/dbal/lib/Doctrine/DBAL/Configuration.php",
+		"/home/sbarratt/Sites/RPG/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php",
+		"/home/sbarratt/Sites/RPG/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php",
+		"/home/sbarratt/Sites/RPG/phpunit.xml",
+		"/home/sbarratt/Sites/RPG/lib/Db/phpunit.xml",
+		"/home/sbarratt/Sites/RPG/vendor/composer/autoload_psr4.php",
+		"/home/sbarratt/.config/sublime-text-3/Packages/User/snippets/PHP Method.sublime-snippet",
+		"/home/sbarratt/.config/sublime-text-3/Packages/User/snippets/PHP Class.sublime-snippet",
+		"/home/sbarratt/.config/sublime-text-3/Packages/User/PHP Companion.sublime-settings",
+		"/home/sbarratt/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/sbarratt/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/sbarratt/.config/sublime-text-3/Packages/PHP Companion/PHP Companion.sublime-settings",
+		"/home/sbarratt/Sites/RPG/fuel/app/config/production/db.php",
+		"/home/sbarratt/.config/sublime-text-3/Packages/DocBlockr/README.md",
+		"/home/sbarratt/.config/sublime-text-3/Packages/DocBlockr/Base File.sublime-settings",
+		"/home/sbarratt/.config/sublime-text-3/Packages/User/Base File.sublime-settings",
+		"/home/sbarratt/Sites/RPG/fuel/app/config/development/db.php",
+		"/home/sbarratt/Sites/RPG/terminal.glue",
+		"/home/sbarratt/Sites/bpe-clients/clients/123/msg_edit.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/4691/includes/security.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/4691/load.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/4691/apptForm.html",
+		"/home/sbarratt/Sites/bpe-clients/clients/4691/apptForm.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/4691/columns.html",
+		"/home/sbarratt/Sites/bpe-clients/clients/4691/apptView.html",
+		"/home/sbarratt/Sites/bpe-clients/clients/4691/script.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/4691/appt.js",
+		"/home/sbarratt/Sites/bpe-clients/clients/core/ads-crud.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/123/contact.php",
+		"/home/sbarratt/Sites/bpe-clients/123/call.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/7773 - Copy/appt.js",
+		"/home/sbarratt/Sites/bpe-clients/clients/2761/config.inc.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/2761/includes/security.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/4691/config.inc.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/8223/load.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/core/practice.class.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/core/oncall.class.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/core/provider.class.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/core/table.class.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/123/import.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/core/miapi.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/123/fax_log.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/123/fax_print.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/core/sql-crud.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/2023/load.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/123/fax_send.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/99123/insert.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/0720/apptlog.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/1455/includes/security.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/1455/call.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/core/params.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/1455/triage.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/1455/oc.php",
+		"/home/sbarratt/Sites/bpe-clients/clients/1455/config.inc.php",
+		"/home/sbarratt/Downloads/noname (2).eml",
+		"/home/sbarratt/Downloads/noname (3).eml",
+		"/home/sbarratt/Sites/bpe-clients/clients/core/appt.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			"/home/sbarratt/Sites/RPG/public/infinity/app",
+			"/home/sbarratt/Sites/RPG/public/infinity",
+			"/home/sbarratt/Sites/bpe-clients/clients/123",
+			"",
+			"/home/sbarratt/Sites/wbd/sites/scotts",
+			"",
+			"/home/sbarratt/Sites/wbd/apps/tracker/trunk/src/www/js",
+			"/home/sbarratt/Sites/wbd",
+			"/home/sbarratt/Sites/wbd/apps/era",
+			"/home/sbarratt/Sites/wbd",
+			"/home/sbarratt/Sites/wbd/apps/era/trunk/sql",
+			"/home/sbarratt/Sites/wbd/apps/era",
+			"*.js",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"characters",
+			"users",
+			"protected",
+			" = array()",
+			"Campaign",
+			"campaign",
+			"GroupController",
+			"$this->getContainer()",
+			"$container[",
+			"^0",
+			"\\n",
+			"'",
+			"\"",
+			"route",
+			"Attr",
+			"this.infinityStore",
+			"sessionRequiresAuthentication",
+			"simple-auth",
+			"sessionRequiresAuthentication",
+			"Ember.Object.extend(",
+			"p",
+			"App.infinityStore",
+			"store",
+			"App",
+			"application",
+			"li",
+			"ul",
+			"{{#link-to",
+			"{{",
+			"h2",
+			"_dir",
+			"_config",
+			"$_config",
+			"db",
+			"}\n",
+			"qb->",
+			"_Db",
+			"_config",
+			"dirname(",
+			"'../../",
+			"$this->getPrimaryKey()",
+			"F",
+			"$this->db->createQueryBuilder()",
+			"FUEL_",
+			"FUEL_START_TIME",
+			"Follow up with Office in 48 Hours",
+			"CALL OFFICE IN AM FOR CONSULT",
+			"Call Pharmacy Now",
+			"immediately",
+			"Immediately",
+			"IMMEDIATELY",
+			"immediately",
+			"Immediately",
+			"immediately",
+			"$ads->connect(",
+			"divID",
+			"location",
+			"Holyoke",
+			"2023",
+			"on",
+			"2023",
+			"-",
+			"error_log",
+			"error_log\n",
+			"*",
+			"conn_id",
+			"numResults",
+			"private",
+			"MA-GREENFIELD FAMILY MEDICINE",
+			"echo '",
+			"'/core/",
+			"past",
+			"$$homeacct",
+			" if(!is_numeric($homeacct) || $homeacct == 0){",
+			"]",
+			"$input[",
+			"]",
+			"$input[",
+			"=",
+			"getVar",
+			"post",
+			";",
+			"id",
+			"$id",
+			"\n		break;",
+			"5907",
+			"start",
+			" )",
+			"( ",
+			" ",
+			"$_POST",
+			"A",
+			"console",
+			"</dd>",
+			"</dt><dd style=\\\"display:inline-block\\\">",
+			"<dt>",
+			"\"display:inline-block\"",
+			".replace",
+			"replace",
+			"sibling",
+			"badge hidden-xs",
+			"S",
+			"TABLE",
+			"$res[$y]",
+			"language=\"JavaScript\"",
+			"abbr",
+			"getActiveMessages",
+			"..",
+			"PEDIATRICS",
+			"vertical-align:top;",
+			"$date",
+			"date",
+			"ob_start",
+			"container",
+			"name",
+			"sm",
+			"xs",
+			"sm",
+			"apptView",
+			"form",
+			"\".$account[0]['name'].\"",
+			"acct",
+			"sql",
+			"_start",
+			"'A'",
+			"_POST",
+			"start",
+			"$this->ringcentral"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"",
+			"\\'",
+			"f",
+			"(\n'",
+			"'href",
+			"$1','$2$3",
+			"($1),",
+			"'Telephone Triage For Obstetrics & Gynecology: Vicki Long and Patricia McMullen: Lippincott Williams, & Wilkins, 2010','$1'",
+			"){",
+			"plugin('Timeline')",
+			"plugin('Workflow')",
+			"plugin('XItem')",
+			"\n",
+			"",
+			"),\n\n",
+			")\n",
+			")\\r\\n",
+			"\n		this.win.setSize(width,height);\n		this.win.setPagePosition(x,y);\n",
+			"\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/sbarratt/Sites/d8/sites/default/settings.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 29202,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29202,
+								29202
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": false,
+							"WordCountSyntax": "php",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 9468.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/sbarratt/Sites/d8/sites/sites.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2410,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2219,
+								2219
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": false,
+							"WordCountSyntax": "php",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 234.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.composer":
+	{
+		"height": 134.0
+	},
+	"output.exec":
+	{
+		"height": 122.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 146.0
+	},
+	"output.sftp":
+	{
+		"height": 152.0
+	},
+	"pinned_build_system": "",
+	"project": "d8.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"metat",
+				"vendor/ethereal/SimpleTable/lib/Db/MetaTableRow.php"
+			],
+			[
+				"table",
+				"vendor/ethereal/SimpleTable/lib/Db/Table.php"
+			],
+			[
+				"metatabe",
+				"vendor/ethereal/SimpleTable/lib/Db/MetaTable.php"
+			],
+			[
+				"meta",
+				"vendor/ethereal/SimpleTable/lib/Db/MetaTable.php"
+			],
+			[
+				"ember-",
+				"public/infinity/ember-cli-build.js"
+			],
+			[
+				"infini",
+				"public/infinity/dist/assets/infinity.js"
+			],
+			[
+				"predisclient",
+				"vendor/predis/predis/src/Client.php"
+			],
+			[
+				"queryb",
+				"vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/QueryBuilder.php"
+			],
+			[
+				"dbalconfi",
+				"vendor/doctrine/dbal/lib/Doctrine/DBAL/Configuration.php"
+			],
+			[
+				"abstractmysq",
+				"vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php"
+			],
+			[
+				"dbaldriver",
+				"vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php"
+			],
+			[
+				"dbalconn",
+				"vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php"
+			],
+			[
+				"testcase",
+				"vendor/phpunit/phpunit/src/Framework/TestCase.php"
+			],
+			[
+				"99123inse",
+				"bpe-clients/clients/99123/insert.php"
+			],
+			[
+				"sql-",
+				"bpe-clients/core/sql-crud.php"
+			],
+			[
+				"apput",
+				"bpe-clients/clients/core/js/app.utils.js"
+			],
+			[
+				"appt.ph",
+				"bpe-clients/clients/core/appt.php"
+			],
+			[
+				"123contat",
+				"bpe-clients/clients/123/contact.php"
+			],
+			[
+				"app.u",
+				"bpe-clients/clients/core/js/app.utils.js"
+			],
+			[
+				"123call",
+				"bpe-clients/clients/123/call.php"
+			],
+			[
+				"coreheader",
+				"bpe-clients/clients/core/header_top.php"
+			],
+			[
+				"onca",
+				"bpe-clients/clients/core/oncall.class.php"
+			],
+			[
+				"app.uti",
+				"clients/core/js/app.utils.js"
+			],
+			[
+				"app.",
+				"clients/core/js/app.js"
+			],
+			[
+				"header",
+				"clients/core/header_top.php"
+			],
+			[
+				"sql",
+				"core/sql-crud.php"
+			],
+			[
+				"apptt",
+				"123/apptTest.php"
+			],
+			[
+				"heade",
+				"core/header_top.php"
+			],
+			[
+				"heat",
+				"123/header_top.php"
+			],
+			[
+				"message",
+				"123/message.js"
+			],
+			[
+				"deta",
+				"123/detail.php"
+			],
+			[
+				"client",
+				"123/disp_clients.php"
+			],
+			[
+				"formcl",
+				"123/form_client.php"
+			],
+			[
+				"print",
+				"123/printFax.php"
+			],
+			[
+				"fax",
+				"123/fax_send.php"
+			],
+			[
+				"inlin",
+				"123/inline-upd.php"
+			],
+			[
+				"menu",
+				"apps/base/trunk/src/apps/default/models/MenuModel.php"
+			],
+			[
+				"xsltprocessor",
+				"sites/scotts/trunk/src/wframe/api/WbdXSLTProcessor.class.php"
+			],
+			[
+				"scottstwpresenter.class.php",
+				"sites/scotts/trunk/src/wframe/scottstw/ScottsTWPresenter.class.php"
+			],
+			[
+				"loader.cla",
+				"sites/scotts/trunk/src/wframe/api/Loader.class.php"
+			],
+			[
+				"scotts",
+				"sites/scotts/trunk/src/www/scottstw.php"
+			],
+			[
+				"oo_core",
+				"apps/base/trunk/src/bootstrap/00_core.php"
+			],
+			[
+				"tracker.c",
+				"apps/tracker/trunk/src/www/css/tracker.css"
+			],
+			[
+				"tracker_module_gr",
+				"apps/tracker/trunk/src/www/js/tracker_module_grid.js"
+			],
+			[
+				"importmo",
+				"apps/tracker/trunk/src/apps/tracker/models/ImportModel.php"
+			],
+			[
+				"validate",
+				"apps/tracker/trunk/src/classlib/Wbd/Tracker/Validate.php"
+			],
+			[
+				"valida",
+				"contrib/zend-framework/stable/src/classlib/Zend/Validate.php"
+			],
+			[
+				"notifi",
+				"apps/notification/trunk/cron/hourly/notification_bounceReport.php"
+			],
+			[
+				"_events",
+				"libs/workflow/trunk/sql/1262892792_add_events_table.sql"
+			],
+			[
+				"schedulemo",
+				"apps/reporting/trunk/src/apps/reporting/models/ScheduleModel.php"
+			],
+			[
+				"maillog",
+				"libs/notification/trunk/src/classlib/Wbd/Notification/Logger/MailLog.php"
+			],
+			[
+				"board",
+				"libs/classlib/trunk/src/Wbd/Event/Board.php"
+			],
+			[
+				"excel",
+				"contrib/PHPExcel/stable/src/classlib/phpexcel/PHPExcel/Reader/Excel2007.php"
+			],
+			[
+				"selectone",
+				"libs/form/trunk/src/classlib/Wbd/Form/Field/SelectOne.php"
+			],
+			[
+				"schedu",
+				"apps/reporting/trunk/src/apps/reporting/models/ScheduleModel.php"
+			],
+			[
+				"filesmo",
+				"apps/reporting/trunk/src/apps/reporting/models/FilesModel.php"
+			],
+			[
+				"group",
+				"apps/membership/trunk/src/apps/membership/models/GroupTable.php"
+			],
+			[
+				"era_list_approvals",
+				"sites/thdbrands/trunk/src/apps/era/views/scripts/index/era_list_approvals.phtml"
+			],
+			[
+				"builder",
+				"apps/reporting/trunk/src/apps/reporting/controllers/BuilderController.php"
+			],
+			[
+				"usert",
+				"apps/membership/trunk/src/apps/membership/models/UserTable.php"
+			],
+			[
+				"era_list_appro",
+				"apps/era/trunk/src/apps/era/views/scripts/index/era_list_approvals.phtml"
+			],
+			[
+				"era_list_app",
+				"sites/alere/trunk/src/apps/era/views/scripts/index/era_list_approvals.phtml"
+			],
+			[
+				"feedback",
+				"apps/era/trunk/src/apps/era/views/scripts/index/feedback.phtml"
+			],
+			[
+				"feedback.phtml",
+				"sites/worldkitchen/trunk/src/apps/era/views/scripts/index/feedback.phtml"
+			],
+			[
+				"1367515871_add_vproof_stats_table.sq",
+				"apps/quickproof/trunk/sql/1367515871_add_vproof_stats_table.sql"
+			],
+			[
+				"filemodel",
+				"apps/reporting/trunk/src/apps/reporting/models/FilesModel.php"
+			],
+			[
+				"multifile",
+				"libs/form/trunk/src/www/js/Ext.ux.MultiFileField.js"
+			],
+			[
+				"status",
+				"apps/tracker/trunk/modules/status/trunk/src/classlib/Wbd/Tracker/Module/Status.php"
+			],
+			[
+				"event",
+				"libs/notification/trunk/src/classlib/Wbd/Notification/EventHandler.php"
+			],
+			[
+				"record",
+				"apps/tracker/trunk/src/classlib/Wbd/Tracker/Module/Record.php"
+			],
+			[
+				"groupta",
+				"apps/membership/trunk/src/apps/membership/models/GroupTable.php"
+			],
+			[
+				"usertable",
+				"apps/membership/trunk/src/apps/membership/models/UserTable.php"
+			],
+			[
+				"1_not",
+				"libs/notification/trunk/src/bootstrap/1_notifications.php"
+			],
+			[
+				"phpup",
+				"libs/file/trunk/src/classlib/Wbd/File/PhpUpload.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 712.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/projects/wbd-git.sublime-project"
+			],
+			[
+				"ake",
+				"~/Documents/projects/aker.sublime-project"
+			]
+		],
+		"width": 541.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 245.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 1
+	}
+}

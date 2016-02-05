@@ -17,6 +17,9 @@ class Campaigns extends MetaTable implements \Ethereal\Db\TableInterface
         'owner',
         'status',
     );
+    private $users;
+    private $characters;
+    private $games;
 
     public function search(array $params)
     {
@@ -56,5 +59,39 @@ class Campaigns extends MetaTable implements \Ethereal\Db\TableInterface
         $search->groupBy('clients.id');
         $search->orderBy('created_date');
         return $this->fetchAll($search);
+    }
+
+    public function getUsers()
+    {
+        if (!$this->users) {
+            $links = \Infinity\Di::getDi()['links'];
+            foreach ($links->getLinks('campaign', $this->id, 'user') as $link) {
+                $this->users[] = $link;
+            }
+        }
+        return $this->users;
+
+    }
+
+    public function getCharacters()
+    {
+        if (!$this->characters) {
+            $links = \Infinity\Di::getDi()['links'];
+            foreach ($links->getLinks('campaign', $this->id, 'character') as $link) {
+                $this->characters[] = $link;
+            }
+        }
+        return $this->characters;
+    }
+
+    public function getGames()
+    {
+        if (!$this->games) {
+            $links = \Infinity\Di::getDi()['links'];
+            foreach ($links->getLinks('campaign', $this->id, 'game') as $link) {
+                $this->games[] = $link;
+            }
+        }
+        return $this->games;
     }
 }
