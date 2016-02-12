@@ -1,28 +1,11 @@
 #Infinity Table#
-This application intends to be THE home for the remote tabletop rpg EXPERIENCE.
+Application for running pen & paper RPGs online
+##Goals##
 
-We hope to allow groups of gaming enthusiasts to be able to productively game from across the globe. 
-
-
-
-##To Do##
-
-Just about everything
-
-
-##Anatomy##
-
-###Modules (libraries)### 
-
-- characters
-- groups (teams?  -- moderator)
-- forms
-- games
-
-
-###Controllers### 
-  
-- Welcome (dashboard)
-- barracks (character management)
-- tavern (group section (forums?))
-- dungeon (gaming section -- plan to integrate video conferencing, white board and the like)
++  Making geography and non-issue in the world of tabletop gaming
++  **System Agnostic** (*heck, you can make your own*)
++  Organize your groups, campaigns, characters, and the game sessions themselves in an easy to use application
++  LARP Integrations
++  Other lofty thoughts...
++  PHP Backend written on top of [Slim MicroFramwork](http://www.slimframework.com/)
++  *mostly* RESTful API following the [JSON API spec](http://jsonapi.org/)
