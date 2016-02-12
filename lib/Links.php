@@ -30,7 +30,7 @@ class Links
     }
     
     /**
-     * Pass the fully qualified class name for the source object 
+     * Pass the fully qualified class name for the source object
      * and an optional cross-linked obbject
      * ommit the 3rd argument to find all linked objects
      **/
@@ -41,7 +41,7 @@ class Links
   
     public function addLink(Links\LinkInterface $from, Links\LinkInterface $to)
     {
-        $this->storage->addLink($from->getNamespace(), $from->getId(), $to->getNamespace(), $to->getId());
+        $this->storage->setLink($from, $to);
     }
 
     public function removeLink(Links\LinkInterface $from, Links\LinkInterface $to)

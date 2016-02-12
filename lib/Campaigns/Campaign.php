@@ -11,6 +11,11 @@ class Campaign extends LinkedRow implements RowInterface, LinkableInterface
 {
  
     protected $linkNamespace = 'campaign';
+    protected $linkFields = array(
+        'users' => 'hasmany',
+        'characters' => 'hasmany',
+        'games' => 'hasmany'
+    );
 
     public function __construct($data, TableInterface $table)
     {
@@ -25,6 +30,8 @@ class Campaign extends LinkedRow implements RowInterface, LinkableInterface
         if (!$this->created_by) {
             $this->created_by = 0;
         }
+
+        
     }
 
     public function delete()

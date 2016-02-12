@@ -126,4 +126,21 @@ class Api extends Action
         $item->save();
         $this->return['data'] = $this->buildItems(array($item));
     }
+
+    public function link()
+    {
+        $id = $this->id;
+        if (!$id) {
+            $this->throwError(103, "URL segment 3 (id) missing");
+            return;
+        }
+        try {
+            $item = $this->table->find($id);
+            $item->link($this->to, $this->to_id);
+            $this->return['data'] = $link->toArray();
+            $this->response = $this->response->withStatus(201, 'Link Created');
+        } catch (Exception $e) {
+            $this->response = $this->response->withStatus(500, $e->getMessage());
+        }
+    }
 }

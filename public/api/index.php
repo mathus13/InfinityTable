@@ -94,6 +94,15 @@ $app->group('/campaigns', function () use ($di) {
         );
         return $controller->fire($actions[$request->getMethod()]);
     });
+    $this->get('/{id}/link/{to}/{to_id}', function ($request, $response, $args) use ($di) {
+        $controller = new CampaignController(
+            $request,
+            $response,
+            $di,
+            $args
+        );
+        return $controller->fire('link');
+    });
 });
 
 $app->group('/games', function () use ($di) {
