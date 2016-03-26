@@ -1,0 +1,17 @@
+redis:
+  image: redis
+
+db:
+  image: infinity:db
+  environment:
+    - MYSQL_PASSWORD=ewYjdVpOObw$0Yd
+    - MYSQL_ROOT_PASSWORD=ewYjdVpOObw$0Yd
+    - MYSQL_USER=web
+
+api:
+  image: infinity:api
+  ports: 
+    - 8000:8000
+  links: 
+    - redis:redis
+    - db:db
