@@ -37,7 +37,7 @@ $app->group('/groups', function () use ($di) {
         );
         $args = array_merge($request->getQueryParams(), $args);
         
-        $controller = new GroupController(
+        $controller = new Infinity\Groups\Controller(
             $request,
             $response,
             $di,
