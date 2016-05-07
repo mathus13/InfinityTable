@@ -24,7 +24,6 @@
     "require": {
         "php": ">=5.3.9",
         "monolog/monolog": "1.*",
-        "cboden/ratchet": "0.3.*",
         "slim/slim": "^3.0@RC",
         "twig/twig": "^2.0@dev",
         "guzzlehttp/guzzle": "^6.1@dev",
