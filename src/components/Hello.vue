@@ -1,6 +1,12 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1 class="primary">{{ msg }}</h1>
+    <div class="btn-group">
+      <button class="btn btn-primary">primary</button>
+      <button class="btn btn-success">success</button>
+      <button class="btn btn-warn">warn</button>
+      <button class="btn btn-danger">danger</button>
+    </div>
   </div>
 </template>
 
@@ -17,10 +23,3 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1 {
-  color: #42b983;
-}
-</style>

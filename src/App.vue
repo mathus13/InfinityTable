@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-main">
     <navbar>
       <img class="logo" src="./assets/logo.png"/>
     </navbar>
@@ -893,20 +893,31 @@ export default {
   $icon-font-path: "../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
   @import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
 
+  body
+    background: $gray-base;
+    #app
+      background: $gray-lighter;
+      nav
+        background: $gray-light;
+
+
   footer
-    background: #696969;
+    background: $gray-base;
     min-height: 13em;
     width: 100%;
-    color: $block-text-color;
+    color: $gray-light;
     margin-top: 5rem;
     padding: 4rem 20rem;
     display: block;
 
   #app a
-    color: #42b983;
+    color: $gray-base;
     text-decoration: none;
 
   .logo
     width: 100px;
     height: 100px
+
+  .primary
+    color: $brand-primary
 </style>

@@ -43,7 +43,8 @@ class Di
         //config system
         $di['config'] = function ($c) {
             $cache = $c['cache'];
-            $config =  new AppConfig($cache);
+            $hooks = $c['hooks'];
+            $config =  new AppConfig($cache, $hooks);
             $config->setLogger($c['logger']);
             return $config;
         };
