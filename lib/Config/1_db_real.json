@@ -1,0 +1,10 @@
+{
+    "db": {
+    	"driver": "pdo_mysql",
+    	"user": "mathus",
+    	"pass": "inco13",
+    	"host": "data.etherealvisions.us",
+    	"dbname": "gb01_testing",
+    	"charset": "utf8"
+    }
+}

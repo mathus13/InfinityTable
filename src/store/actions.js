@@ -1,7 +1,7 @@
-import store from './store'
+import store from './resources'
 
-export const clientsCommit = (site_ob) => {
-  store.dispatch('CLIENTS_COMMIT', site_ob, 'clients')
+export const clientsCommit = (siteOb) => {
+  store.dispatch('CLIENTS_COMMIT', siteOb, 'clients')
 }
 
 export const clientsSet = (sites) => {
@@ -9,15 +9,15 @@ export const clientsSet = (sites) => {
 }
 
 export const clientsDelete = (site) => {
-	store.dispatch('CLIENTS_DELETE', site, 'clients')
+  store.dispatch('CLIENTS_DELETE', site, 'clients')
 }
 
 export const clientsFetch = () => {
-	store.dispatch('CLIENTS_FETCH', 'clients')
+  store.dispatch('CLIENTS_FETCH', 'clients')
 }
 
-export const appointmantsCommit = (site_ob) => {
-  store.dispatch('APPTOINTMENTS_COMMIT', site_ob, 'appointments')
+export const appointmantsCommit = (siteOb) => {
+  store.dispatch('APPTOINTMENTS_COMMIT', siteOb, 'appointments')
 }
 
 export const appointmantsSet = (sites) => {
@@ -25,15 +25,15 @@ export const appointmantsSet = (sites) => {
 }
 
 export const appointmantsDelete = (site) => {
-	store.dispatch('APPTOINTMENTS_DELETE', site, 'appointments')
+  store.dispatch('APPTOINTMENTS_DELETE', site, 'appointments')
 }
 
 export const appointmentsFetch = () => {
-	store.dispatch('APPOINTMENTS_FETCH', 'appointments')
+  store.dispatch('APPOINTMENTS_FETCH', 'appointments')
 }
 
-export const sitesCommit = (site_ob) => {
-  store.dispatch('SITES_COMMIT', site_ob, 'sites')
+export const sitesCommit = (siteOb) => {
+  store.dispatch('SITES_COMMIT', siteOb, 'sites')
 }
 
 export const sitesSet = (sites) => {
@@ -41,9 +41,9 @@ export const sitesSet = (sites) => {
 }
 
 export const sitesDelete = (site) => {
-	store.dispatch('SITES_DELETE', site, 'sites')
+  store.dispatch('SITES_DELETE', site, 'sites')
 }
 
 export const sitesFetch = () => {
-	store.dispatch('SITES_FETCH', 'sites')
+  store.dispatch('SITES_FETCH', 'sites')
 }
