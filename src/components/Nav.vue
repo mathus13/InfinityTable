@@ -19,36 +19,22 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
         <ul class="menu nav navbar-nav">
-          <li><a v-link="{ path: '/triage'}"><span>Triages</span></a></li>
-          <li><a v-link="{ path: '/messages'}"><span>Messages</span></a></li>
+          <li><a v-link="{ path: '/games'}"><span>Games</span></a></li>
+          <li><a v-link="{ path: '/groups'}"><span>Messages</span></a></li>
           <li>
             <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Appointments <span class="caret"></span>
+              Characters <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a v-link="{ path: '/sites'}">Manage Sites</a>
+                <a v-link="{ path: '/characters'}">New Character</a>
               </li>
               <li class="seperator"></li>
-              <li v-for="site in sites">
-                <a v-link="{ path: '/appointments', params: {site_id: site.id}}">{{site.title}}</a>
+              <li v-for="hero in heros">
+                <a v-link="{ path: '/characters', params: {hero_id: hero.id}}">{{hero.name}}</a>
               </li>
             </ul>
           </li>
-          <li><a v-link="{ path: '/clients'}"><span>Clients</span></a></li>
-          <li><a id="oc_link" href="oc.php"><span>On Call Info</span></a></li>
-          <li><a id="sndlink" href="miapi.php"><span>Send Message</span></a></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-              Admin <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a v-link="{ path: '/bye'}"><span>Account Info</span></a></li>
-              <li><a id="apptS_link" href="apptSched.php"><span>Appt Admin</span></a></li>
-              <li><a id="contactlink" href="contact.php"><span>Contact Info</span></a></li>
-              <li><a id="usrlink" href="users.php"><span>User Control</span></a></li>
-            </ul>
-         </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><span class="navbar-text"></span></li>
@@ -63,7 +49,15 @@
   import Resources from '../store/resources'
   export default {
     props: {
-      user: Object
+//      user: Object
+    },
+    data () {
+      return {
+        heros: [],
+        user: {
+
+        }
+      }
     },
     name: 'Nav',
     store: Resources,
