@@ -1,49 +1,81 @@
 import store from './store'
 
-export const clientsCommit = (site_ob) => {
-  store.dispatch('CLIENTS_COMMIT', site_ob, 'clients')
+export const campaignsCommit = (site_ob) => {
+  store.dispatch('CAMPAIGNS_COMMIT', site_ob, 'campaigns')
 }
 
-export const clientsSet = (sites) => {
-  store.dispatch('CLIENTS_SET', sites, 'clients')
+export const campaignsSet = (1) => {
+  store.dispatch('CAMPAIGNS_SET', sites, 'campaigns')
 }
 
-export const clientsDelete = (site) => {
-	store.dispatch('CLIENTS_DELETE', site, 'clients')
+export const campaignsDelete = (site) => {
+	store.dispatch('CAMPAIGNS_DELETE', site, 'campaigns')
 }
 
-export const clientsFetch = () => {
-	store.dispatch('CLIENTS_FETCH', 'clients')
+export const campaignsFetch = () => {
+	store.dispatch('CAMPAIGNS_FETCH', 'campaigns')
 }
 
-export const appointmantsCommit = (site_ob) => {
-  store.dispatch('APPTOINTMENTS_COMMIT', site_ob, 'appointments')
+export const charactersCommit = (site_ob) => {
+  store.dispatch('CHARACTERS_COMMIT', site_ob, 'characters')
 }
 
-export const appointmantsSet = (sites) => {
-  store.dispatch('APPTOINTMENTS_SET', sites, 'appointments')
+export const charactersSet = (sites) => {
+  store.dispatch('CHARACTERS_SET', sites, 'characters')
 }
 
-export const appointmantsDelete = (site) => {
-	store.dispatch('APPTOINTMENTS_DELETE', site, 'appointments')
+export const charactersDelete = (site) => {
+	store.dispatch('CHARACTERS_DELETE', site, 'characters')
 }
 
-export const appointmentsFetch = () => {
-	store.dispatch('APPOINTMENTS_FETCH', 'appointments')
+export const charactersFetch = () => {
+	store.dispatch('CHARACTERS_FETCH', 'characters')
 }
 
-export const sitesCommit = (site_ob) => {
-  store.dispatch('SITES_COMMIT', site_ob, 'sites')
+export const groupsCommit = (site_ob) => {
+  store.dispatch('GROUPS_COMMIT', site_ob, 'groups')
 }
 
-export const sitesSet = (sites) => {
-  store.dispatch('SITES_SET', sites, 'sites')
+export const groupsSet = (sites) => {
+  store.dispatch('GROUPS_SET', sites, 'groups')
 }
 
-export const sitesDelete = (site) => {
-	store.dispatch('SITES_DELETE', site, 'sites')
+export const groupsDelete = (site) => {
+	store.dispatch('GROUPS_DELETE', site, 'groups')
 }
 
-export const sitesFetch = () => {
-	store.dispatch('SITES_FETCH', 'sites')
+export const groupsFetch = () => {
+	store.dispatch('GROUPS_FETCH', 'groups')
+}
+
+export const sessionsCommit = (site_ob) => {
+  store.dispatch('SESSIONS_COMMIT', site_ob, 'sessions')
+}
+
+export const sessionsSet = (sites) => {
+  store.dispatch('SESSIONS_SET', sites, 'sessions')
+}
+
+export const sessionsDelete = (site) => {
+	store.dispatch('SESSIONS_DELETE', site, 'sessions')
+}
+
+export const sessionsFetch = () => {
+	store.dispatch('SESSIONS_FETCH', 'sessions')
+}
+
+export const usersCommit = (site_ob) => {
+  store.dispatch('USERS_COMMIT', site_ob, 'users')
+}
+
+export const usersSet = (sites) => {
+  store.dispatch('USERS_SET', sites, 'users')
+}
+
+export const usersDelete = (site) => {
+	store.dispatch('USERS_DELETE', site, 'users')
+}
+
+export const usersFetch = () => {
+	store.dispatch('USERS_FETCH', 'users')
 }
