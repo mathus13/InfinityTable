@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VueResource from 'vue-resource'
-import {clientsSet} from './actions.js'
-import {appoitnmentsSet} from './actions.js'
-import {sitesSet} from './actions.js'
+import {campaignsSet} from './actions.js'
+import {usersSet} from './actions.js'
+import {groupsSet} from './actions.js'
+import {sessionsSet} from './actions.js'
+import {charactersSet} from './actions.js'
 Vue.use(Vuex)
 Vue.use(VueResource)
 
@@ -43,11 +45,10 @@ var apiCommit = function (mutation, state, store) {
 
 }
 
-var api_get = function (mutation, state, store) {
-  console.log(mutation);
+var api_get = function (mutation) {
   var url = baseURL,
-    resource = mutation.payload[0],
-    apiReturn
+    resource = mutation.payload[0]
+
   url += resource
   prefix = resource.toUpperCase()
   Vue.http({url: url, method: 'GET'}).then(function (response) {
@@ -110,30 +111,18 @@ var api_delete = function (mutation, state, store) {
 }
 
 const apiMiddleware = {
-  onInit (state) {
+  onInit () {
 //    api_get(state)
   },
   onMutation (mutation, state, store) {
-    switch (mutation.type) {
-      case 'CAMPAIGNS_FETCH':
-      case 'CHARACTERS_FETCH':
-      case 'GROUPS_FETCH':
-      case 'SESSIONS_FETCH':
-      case 'USERS_FETCH':
+    switch (true) {
+      case mutation.type.indexOf('_FETCH') :
         api_get(mutation, state, store)
         break
-      case 'CAMPAIGNS_COMMIT':
-      case 'GROUPS_COMMIT':
-      case 'CHARACTERS_COMMIT':
-      case 'SESSIONS_COMMIT':
-      case 'USERS_COMMIT':
+      case mutation.type.indexOf('_COMMIT') :
         apiCommit(mutation, state, store)
         break
-      case 'CAMPAIGNS_DELETE':
-      case 'GROUPS_DELETE':
-      case 'CHARACTERS_DELETE':
-      case 'SESSIONS_DELETE':
-      case 'USERS_DELETE':
+      case mutation.type.indexOf('_DELETE') :
         api_delete(mutation, state, store)
         break
     }

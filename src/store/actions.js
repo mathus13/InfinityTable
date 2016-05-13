@@ -4,7 +4,7 @@ export const campaignsCommit = (site_ob) => {
   store.dispatch('CAMPAIGNS_COMMIT', site_ob, 'campaigns')
 }
 
-export const campaignsSet = (1) => {
+export const campaignsSet = (sites) => {
   store.dispatch('CAMPAIGNS_SET', sites, 'campaigns')
 }
 

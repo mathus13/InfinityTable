@@ -19,8 +19,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
         <ul class="menu nav navbar-nav">
-          <li><a v-link="{ path: '/games'}"><span>Games</span></a></li>
-          <li><a v-link="{ path: '/groups'}"><span>Messages</span></a></li>
+          <li><a v-link="{ path: '/groups'}"><span>Groups</span></a></li>
+          <li><a v-link="{ path: '/campaigns'}"><span>Campaigns</span></a></li>
+          <li><a v-link="{ path: '/sessions'}"><span>Sessions</span></a></li>
+          <li><a v-link="{ path: '/messages'}"><span>Messages</span></a></li>
           <li>
             <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Characters <span class="caret"></span>
