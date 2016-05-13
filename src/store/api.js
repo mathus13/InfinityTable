@@ -1,36 +1,53 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VueResource from 'vue-resource'
-import actions from './actions.js'
+import {clientsSet} from './actions.js'
+import {appoitnmentsSet} from './actions.js'
+import {sitesSet} from './actions.js'
 Vue.use(Vuex)
 Vue.use(VueResource)
 
-var site
+var site = {}
 var method = 'POST'
-var prefix
+var prefix = ''
+var baseURL = 'http://rpg.sbarratt/api/'
 
 var apiCommit = function (mutation, state, store) {
-  var url = 'http://clients.local/api/'
+
+  var url = baseURL
   var resource = mutation.payload[1]
+
   site = mutation.payload[0]
   url += resource
   prefix = resource.toUpperCase()
   if (undefined !== site.id) {
+
     method = 'PUT'
     url = url + '/' + site.id
+
   }
+
   Vue.http({url: url, method: method, data: site}).then(function (response) {
+
     switch (response.status) {
-      case 201:
+
+      case '201':
         store.dispatch(prefix + '_COMMIT_RESPONSE', response.data.data)
         break
+      default:
+        break;
+
     }
+
   })
+
 }
 
-var apiGet = function (mutation, state, store) {
-  var url = 'http://clients.local/api/'
-  var resource = mutation.payload[0]
+var api_get = function (mutation, state, store) {
+  console.log(mutation);
+  var url = baseURL,
+    resource = mutation.payload[0],
+    apiReturn
   url += resource
   prefix = resource.toUpperCase()
   Vue.http({url: url, method: 'GET'}).then(function (response) {
@@ -38,29 +55,43 @@ var apiGet = function (mutation, state, store) {
     switch (response.status) {
       case 200:
         var apiReturn = response.data
-        for (let site of apiReturn.data) {
+        for (site of apiReturn.data) {
+
           if (site.hasOwnProperty('id')) {
+
             items.push(site.attributes)
+
           }
+
         }
         break
     }
     switch (prefix) {
-      case 'CLIENTS':
-        actions.clientsSet(items)
+      case 'CAMPAIGNS':
+        campaignsSet(items)
         break
-      case 'APPOINTMENTS':
-        actions.appoitnmentsSet(items)
+      case 'CHARACTERS':
+        charactersSet(items)
         break
-      case 'SITES':
-        actions.sitesSet(items)
+      case 'GROUPS':
+        groupsSet(items)
         break
+      case 'SESSIONS':
+        sessionsSet(items)
+        break
+      case 'USERS':
+        usersSet(items)
+        break
+      default:
+        // ignore
     }
+
   })
+
 }
 
-var apiDelete = function (mutation, state, store) {
-  var url = 'http://clients.local/api/'
+var api_delete = function (mutation, state, store) {
+  var url = baseURL
   var resource = mutation.payload[1]
   site = mutation.payload[0]
   if (undefined === site.id) {
@@ -80,24 +111,30 @@ var apiDelete = function (mutation, state, store) {
 
 const apiMiddleware = {
   onInit (state) {
-//    apiGet(state)
+//    api_get(state)
   },
   onMutation (mutation, state, store) {
     switch (mutation.type) {
-      case 'CLIENTS_FETCH':
-      case 'SITES_FETCH':
-      case 'APPOINTMENTS_FETCH':
-        apiGet(mutation, state, store)
+      case 'CAMPAIGNS_FETCH':
+      case 'CHARACTERS_FETCH':
+      case 'GROUPS_FETCH':
+      case 'SESSIONS_FETCH':
+      case 'USERS_FETCH':
+        api_get(mutation, state, store)
         break
-      case 'CLIENTS_COMMIT':
-      case 'APPOINTMNETS_COMMIT':
-      case 'SITES_COMMIT':
+      case 'CAMPAIGNS_COMMIT':
+      case 'GROUPS_COMMIT':
+      case 'CHARACTERS_COMMIT':
+      case 'SESSIONS_COMMIT':
+      case 'USERS_COMMIT':
         apiCommit(mutation, state, store)
         break
-      case 'CLIENTS_DELETE':
-      case 'APPOINTMNETS_DELETE':
-      case 'SITES_DELETE':
-        apiDelete(mutation, state, store)
+      case 'CAMPAIGNS_DELETE':
+      case 'GROUPS_DELETE':
+      case 'CHARACTERS_DELETE':
+      case 'SESSIONS_DELETE':
+      case 'USERS_DELETE':
+        api_delete(mutation, state, store)
         break
     }
   }
