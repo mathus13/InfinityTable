@@ -2,14 +2,14 @@
 namespace Infinity\Games;
 
 use Infinity\Games\Game;
-use Infinity\MetaTable as MetaTable;
+use Ethereal\Db\MetaTable;
 
 class Games extends MetaTable implements \Ethereal\Db\TableInterface
 {
     protected $table = 'game';
     protected $meta_table = 'game_md';
     protected $rowClass = 'Infinity\Games\Game';
-    private $columns = array(
+    protected $columns = array(
         'id',
         'title',
         'created_date',

@@ -7,12 +7,13 @@ if (class_exists('Redis')) {
 session_start();
 
 // Get the start time and memory for use later
+
+define('REQTIME', time());
 defined('APP_START_TIME') or define('APP_START_TIME', microtime(true));
 defined('APP_START_MEM') or define('APP_START_MEM', memory_get_usage());
 
 define('DOCROOT', dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR);
 require_once DOCROOT.'vendor/autoload.php';
-use Infinity\Campaigns\Controllers\Campaign as CampaignController;
 use Infinity\Di;
 use Slim\App;
 
@@ -28,116 +29,84 @@ $configuration = [
 ];
 $container = new \Slim\Container($configuration);
 $app = new \Slim\App($container);
-$app->group('/groups', function () use ($di) {
-    $this->map(['GET', 'POST', 'OPTIONS'], '', function ($request, $response, $args) use ($di) {
-        $actions = array(
+
+//api resources, key to controller
+$resources = array(
+//Clients
+    'sessions' => array(
+        'class' => 'Infinity\Games\Controllers\Games',
+        'collectionActions' => array(
             'GET'     => 'listItems',
             'POST'    => 'createItem',
             'OPTIONS' => 'getOptions'
-        );
-        $args = array_merge($request->getQueryParams(), $args);
-        
-        $controller = new GroupController(
-            $request,
-            $response,
-            $di,
-            $args
-        );
-        return $controller->fire($actions[$request->getMethod()]);
-    });
-    $this->map(['GET', 'PUT', 'DELETE', 'OPTIONS'], '/{id}', function ($request, $response, $args) use ($di) {
-        $actions = array(
-            'GET'     => 'getById',
-            'PUT'     => 'update',
+        ),
+        'itemActions' => array(
+            'GET'     => 'listItems',
+            'PUT'     => 'updateItem',
             'DELETE'  => 'delete',
             'OPTIONS' => 'getItemOptions'
-        );
-        $controller = new GroupController(
-            $request,
-            $response,
-            $di,
-            $args
-        );
-        return $controller->fire($actions[$request->getMethod()]);
-    });
-});
-
-$app->group('/campaigns', function () use ($di) {
-    $this->map(['GET', 'POST', 'OPTIONS'], '', function ($request, $response, $args) use ($di) {
-        $actions = array(
+        )
+    ),
+    'groups' => array(
+        'class' => 'Infinity\Groups\Controllers\Groups',
+        'collectionActions' => array(
             'GET'     => 'listItems',
             'POST'    => 'createItem',
             'OPTIONS' => 'getOptions'
-        );
-        $args = array_merge($request->getQueryParams(), $args);
-        
-        $controller = new CampaignController(
-            $request,
-            $response,
-            $di,
-            $args
-        );
-        return $controller->fire($actions[$request->getMethod()]);
-    });
-    $this->map(['GET', 'PUT', 'DELETE', 'OPTIONS'], '/{id}', function ($request, $response, $args) use ($di) {
-        $actions = array(
-            'GET'     => 'getById',
-            'PUT'     => 'update',
-            'DELETE'  => 'delete',
-            'OPTIONS' => 'getItemOptions'
-        );
-        $controller = new CampaignController(
-            $request,
-            $response,
-            $di,
-            $args
-        );
-        return $controller->fire($actions[$request->getMethod()]);
-    });
-    $this->get('/{id}/link/{to}/{to_id}', function ($request, $response, $args) use ($di) {
-        $controller = new CampaignController(
-            $request,
-            $response,
-            $di,
-            $args
-        );
-        return $controller->fire('link');
-    });
-});
-
-$app->group('/games', function () use ($di) {
-    $this->map(['GET', 'POST', 'OPTIONS'], '', function ($request, $response, $args) use ($di) {
-        $actions = array(
+        ),
+        'itemActions' => array(
             'GET'     => 'listItems',
-            'POST'    => 'create',
-            'OPTIONS' => 'getOptions'
-        );
-        $args = array_merge($request->getQueryParams(), $args);
-        
-        $controller = new CampaignController(
-            $request,
-            $response,
-            $di,
-            $args
-        );
-        $di['logger']->addInfo($actions[$request->getMethod()]);
-        return $controller->fire($actions[$request->getMethod()]);
-    });
-    $this->map(['GET', 'PUT', 'DELETE', 'OPTIONS'], '/{id}', function ($request, $response, $args) use ($di) {
-        $actions = array(
-            'GET'     => 'getById',
-            'PUT'     => 'update',
+            'PUT'     => 'updateItem',
             'DELETE'  => 'delete',
             'OPTIONS' => 'getItemOptions'
-        );
-        $controller = new CampaignController(
-            $request,
-            $response,
-            $di,
-            $args
-        );
-        return $controller->fire($actions[$request->getMethod()]);
+        )
+    ),
+    'campaigns' => array(
+        'class' => 'Infinity\Campaigns\Controllers\Campaign',
+        'collectionActions' => array(
+            'GET'     => 'listItems',
+            'POST'    => 'createItem',
+            'OPTIONS' => 'getOptions'
+        ),
+        'itemActions' => array(
+            'GET'     => 'listItems',
+            'PUT'     => 'updateItem',
+            'DELETE'  => 'delete',
+            'OPTIONS' => 'getItemOptions'
+        )
+    ),
+);
+
+//build resources
+foreach ($resources as $resource => $config) {
+    $app->group("/{$resource}", function () use ($di, $config) {
+        $this->map(['GET', 'POST', 'OPTIONS'], '', function ($request, $response, $args) use ($di, $config) {
+            $actions = $config['collectionActions'];
+            $args = array_merge($request->getQueryParams(), $args);
+            
+            $controller = new $config['class'](
+                $request,
+                $response,
+                $di,
+                $args
+            );
+            return $controller->fire($actions[$request->getMethod()]);
+        });
+        $this->map(['GET', 'PUT', 'DELETE', 'OPTIONS'], '/{id}', function ($request, $response, $args) use ($di, $config) {
+            $actions = $config['itemActions'];
+            $controller = new $config['class'](
+                $request,
+                $response,
+                $di,
+                $args
+            );
+            $resp = $controller->fire($actions[$request->getMethod()]);
+            $di['logger']->addInfo("args", array($actions[$request->getMethod()], $args));
+            $time = time() - REQTIME;
+            error_log("{$class}->{$action} in {$time}() seconds");
+            return $resp;
+        });
     });
-});
+}
 
 $app->run();

@@ -4,7 +4,7 @@ module.exports = {
         "es6": true,
         "amd": true
     },
-    "extends": "eslint:recommended",
+//    "extends": "eslint:recommended",
     "parserOptions": {
         "sourceType": "module"
     },

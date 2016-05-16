@@ -5,28 +5,30 @@ Vue.use(Vuex)
 Vue.use(VueResource)
 
 const state = {
-  resource: 'groups',
+  resource: 'sessions',
   loaded: false,
-  groups: {}
+  sessions: {}
 }
 
 const mutations = {
-  GROUPS_SET (state, groups) {
-    state.groups = groups
+  SESSIONS_SET (state, sessions) {
+    state.sessions = sessions
   },
-  GROUPS_COMMIT () {
+  SESSIONS_FETCH () {
   },
-  GROUPS_COMMIT_RESPONSE (state, group) {
-    state.groups.push(group)
+  SESSIONS_COMMIT () {
   },
-  GROUPS_DELETE () {
+  SESSIONS_COMMIT_RESPONSE (state, group) {
+    state.sessions.push(group)
+  },
+  SESSIONS_DELETE () {
 
   },
-  GROUPS_COMMIT_DELETE (state, group) {
+  SESSIONS_COMMIT_DELETE (state, group) {
     var index
-    for (index in state.groups) {
-      if (state.groups[index].id == group.id) {
-        state.groups.splice(index, 1)
+    for (index in state.sessions) {
+      if (state.sessions[index].id == group.id) {
+        state.sessions.splice(index, 1)
         return
       }
     }

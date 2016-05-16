@@ -47,6 +47,10 @@ class Api extends Action
 
     protected function dispatch()
     {
+        $this->response = $this->response->withHeader('Content-Type', 'application/vnd.api+json');
+        $this->response = $this->response->withHeader('Access-Control-Allow-Origin', '*');
+        $this->response = $this->response->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
+        $this->response = $this->response->withHeader('Access-Control-Allow-Headers', 'origin, content-type, accept, authorization');
         $response = $this->response->withHeader('Content-Type', 'application/vnd.api+json');
         if (!empty($this->return)) {
             $response->getBody()->write(

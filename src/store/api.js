@@ -48,7 +48,6 @@ var apiCommit = function (mutation, state, store) {
 var api_get = function (mutation) {
   var url = baseURL,
     resource = mutation.payload[0]
-
   url += resource
   prefix = resource.toUpperCase()
   Vue.http({url: url, method: 'GET'}).then(function (response) {
@@ -116,14 +115,17 @@ const apiMiddleware = {
   },
   onMutation (mutation, state, store) {
     switch (true) {
-      case mutation.type.indexOf('_FETCH') :
+      case mutation.type.indexOf('_FETCH') > -1:
         api_get(mutation, state, store)
         break
-      case mutation.type.indexOf('_COMMIT') :
+      case mutation.type.indexOf('_COMMIT') > -1:
         apiCommit(mutation, state, store)
         break
-      case mutation.type.indexOf('_DELETE') :
+      case mutation.type.indexOf('_DELETE') > -1:
         api_delete(mutation, state, store)
+        break
+      default:
+        console.log(mutation)
         break
     }
   }

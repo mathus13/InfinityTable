@@ -1,20 +1,20 @@
 <template>
     <div>
       <form v-if="showform">
-        <div class="form-group">
+        <div class="form-group col-md-6">
           <label>Title</label>
           <input v-model="edit_session.title" class="form-control"/>
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
           <label>Date/Time</label>
-          <input v-model="edit_session.title" class="form-control"/>
+          <input v-model="edit_session.date" class="form-control"/>
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-12">
           <label>Description</label>
           <textarea v-model="edit_session.description" class="form-control"></textarea>
         </div>
         <input v-if="edit_session.id" type="hidden" name="id" value="{{edit_session.id}}"/>
-        <div class="form-group btn-group">
+        <div class="form-group btn-group col-md-12">
           <button class="btn btn-primary" type="button" v-on:click="commit_session">
             Save
           </button>
